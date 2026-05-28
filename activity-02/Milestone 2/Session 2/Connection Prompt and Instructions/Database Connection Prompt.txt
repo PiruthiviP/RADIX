@@ -1,0 +1,89 @@
+You are operating as a Senior Full-Stack Systems Engineer.
+
+Context:
+• This workspace already contains the full application codebase
+• Supabase is the only backend
+• Runtime data comes from JSON tables only: companies_json, innovx_json, hiring_rounds_json
+• The application MUST use real-time Supabase data
+
+IMPORTANT:
+• A large normalized relational schema exists upstream
+• It must NEVER be queried at runtime
+• All runtime data is accessed ONLY via JSON columns
+
+Runtime Contract (Non-Negotiable):
+• Table: companies_json
+• Columns:
+  - json_id
+  - company_id
+  - short_json (jsonb)
+  - full_json (jsonb)
+
+JSON Schema Authority:
+• The authoritative JSON key definitions are located in:
+  - /schema/company_short.schema.json
+  - /schema/company_full.schema.json
+• These files define the ONLY fields allowed in the UI
+• Keys are case-sensitive
+• No field may appear in UI unless present in these schemas
+
+- Table: innovx_json
+- Columns:
+  - id
+  - company_id
+  - name
+  - json_data (jsonb)
+
+JSON Schema Authority:
+- The authoritative JSON key definitions are located in:
+  - /schema/innovx_json.schema
+- These files define the ONLY fields allowed in the UI
+- Keys are case-sensitive
+- No field may appear in UI unless present in this schema
+
+- Table: job_role_details_json
+- Columns:
+  - id
+  - company_id
+  - company_name
+  - job_role_json (jsonb)
+
+JSON Schema Authority:
+- The authoritative JSON key definitions are located in:
+  - /schema/job_role_details_json.schema
+- These files define the ONLY fields allowed in the UI
+- Keys are case-sensitive
+- No field may appear in UI unless present in this schema
+
+Data Access Rules:
+❌ No joins
+❌ No normalized table queries
+❌ No mock or static data
+❌ No inferred or computed fields
+
+Usage Rules:
+• Lists, cards, dashboards → short_json only
+• Company detail views → full_json only
+• full_json must be fetched lazily (on navigation)
+• If a key is missing → render “Not Available” or empty state
+• Innovx data views → innovx_json.json_data only
+• Hiring Details/skillset/details → hiring_rounds_json.hiring_rounds_json only
+• Each table's JSON must be fetched independently (no joins)
+
+Refactor Instructions:
+1. Remove all static datasets and mock services
+2. Remove all join-based Supabase queries
+3. Replace them with JSON-based queries on companies_json, innovx_json, and job_role_details_json
+4. Bind every UI field directly to JSON keys
+5. Ensure empty database renders empty UI
+
+Validation:
+• Every rendered field must map 1:1 to a JSON key
+• No schema guessing
+• No renaming
+• No fallback logic
+
+Final Objective:
+Refactor the entire application so it is fully driven by real-time Supabase JSON data using the schema files as the sole authority.
+Insatall all required Dependencies, Create Supabase Config and Data Files, Add Dummy .env file so user can only update the .env file
+and have its application connected to the database
