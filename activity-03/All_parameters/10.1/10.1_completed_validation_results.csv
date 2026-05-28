@@ -1,0 +1,12 @@
+Company Name,Validation Status,Temporal Validity Score (%),Temporal Stagnation Risk Score (%),Passed Checks,Failed Checks,Temporal Errors
+Accenture plc,CURRENT,100.0,0.0,0,0,
+Google LLC (Subsidiary of Alphabet Inc.),CURRENT,100.0,0.0,0,0,
+Apple Inc.,CURRENT,100.0,0.0,0,0,
+Tata Consultancy Services Limited,CURRENT,100.0,0.0,0,0,
+Infosys Limited,CURRENT,100.0,0.0,0,0,
+"Amazon.com, Inc.",CURRENT,100.0,0.0,2,0,
+Llama Logisol Private Limited,CURRENT,100.0,0.0,2,0,
+Swiggy Limited,CURRENT,100.0,0.0,2,0,
+Leap Finance Private Limited,CURRENT,100.0,0.0,2,0,
+Capgemini,CURRENT,100.0,0.0,1,0,
+Microsoft Corporation,CURRENT,100.0,0.0,2,0,

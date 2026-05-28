@@ -1,0 +1,4 @@
+Company Name,Field,Smart Parser Value,Naive Parser Value,Status
+Dynamic Startup Inc.,annual_revenue,None,0.0,PASSED
+Dynamic Startup Inc.,remote_policy_details,Unknown,NA,PASSED
+Standard Corp plc,regulatory_status,SEC Regulated,NA,PASSED

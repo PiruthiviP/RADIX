@@ -1,0 +1,8 @@
+Company Name,Validation Status,Validity Score (%),Hallucination Risk Score (%),Passed Checks,Failed Checks,Factual Errors
+Accenture plc,VERIFIED,100.0,0.0,5,0,
+Google LLC (Subsidiary of Alphabet Inc.),VERIFIED,100.0,0.0,5,0,
+Apple Inc.,VERIFIED,100.0,0.0,5,0,
+Tata Consultancy Services Limited,VERIFIED,100.0,0.0,5,0,
+Infosys Limited,VERIFIED,100.0,0.0,5,0,
+"Amazon.com, Inc.",VERIFIED,100.0,0.0,5,0,
+Microsoft Corporation,VERIFIED,100.0,0.0,5,0,

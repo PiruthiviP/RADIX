@@ -1,0 +1,37 @@
+Hallucination Detection (Plausible but False) Report for 4.2.csv
+==========================================================================================
+Company: Accenture plc
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Google LLC (Subsidiary of Alphabet Inc.)
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Apple Inc.
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Infosys Limited
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------

@@ -1,0 +1,823 @@
+Validation Report for companies_master.csv
+================================================================================
+Company: Accenture plc
+  Status: PASSED
+  Passed Parameters: 160 / 163
+  Failed/Missing Parameters: 3 / 163
+  Richness Score: 98.16%
+  Missing Optional (first 10): Website Rating, Company Phone Number, CAC:LTV Ratio...
+--------------------------------------------------
+Company: Fractal Analytics Private Limited
+  Status: PASSED
+  Passed Parameters: 162 / 163
+  Failed/Missing Parameters: 1 / 163
+  Richness Score: 99.39%
+  Missing Optional (first 10): Company Phone Number...
+--------------------------------------------------
+Company: Oracle India Private Limited
+  Status: PASSED
+  Passed Parameters: 158 / 163
+  Failed/Missing Parameters: 5 / 163
+  Richness Score: 96.93%
+  Missing Optional (first 10): Website Rating, Company Phone Number, Annual Profits, Company Valuation, Runway...
+--------------------------------------------------
+Company: Google LLC (Subsidiary of Alphabet Inc.)
+  Status: PASSED
+  Passed Parameters: 158 / 163
+  Failed/Missing Parameters: 5 / 163
+  Richness Score: 96.93%
+  Missing Optional (first 10): Website Rating, Company Contact Email, Company Phone Number, Primary Contact Person's Name, Runway...
+--------------------------------------------------
+Company: Apple Inc.
+  Status: PASSED
+  Passed Parameters: 160 / 163
+  Failed/Missing Parameters: 3 / 163
+  Richness Score: 98.16%
+  Missing Optional (first 10): Website Rating, Company Phone Number, Runway...
+--------------------------------------------------
+Company: Mitsubishi UFJ Financial Group, Inc.
+  Status: PASSED
+  Passed Parameters: 159 / 163
+  Failed/Missing Parameters: 4 / 163
+  Richness Score: 97.55%
+  Missing Optional (first 10): CEO LinkedIn URL, Company Phone Number, Total Capital Raised, Runway...
+--------------------------------------------------
+Company: Commonwealth Bank of Australia
+  Status: PASSED
+  Passed Parameters: 163 / 163
+  Failed/Missing Parameters: 0 / 163
+  Richness Score: 100.0%
+--------------------------------------------------
+Company: KALVI CAREER EDUCATION PRIVATE LIMITED
+  Status: PASSED
+  Passed Parameters: 162 / 163
+  Failed/Missing Parameters: 1 / 163
+  Richness Score: 99.39%
+  Missing Optional (first 10): Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Larsen & Toubro Infotech Limited
+  Status: PASSED
+  Passed Parameters: 155 / 163
+  Failed/Missing Parameters: 8 / 163
+  Richness Score: 95.09%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Email, Primary Contact Person's Phone Number, Total Capital Raised, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Status: PASSED
+  Passed Parameters: 152 / 163
+  Failed/Missing Parameters: 11 / 163
+  Richness Score: 93.25%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Customer Acquisition Cost (CAC), Burn Rate, Runway...
+--------------------------------------------------
+Company: Infosys Limited
+  Status: PASSED
+  Passed Parameters: 152 / 163
+  Failed/Missing Parameters: 11 / 163
+  Richness Score: 93.25%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Customer Acquisition Cost (CAC), Burn Rate, Runway...
+--------------------------------------------------
+Company: Cloudera Data Platform India Private Limited
+  Status: PASSED
+  Passed Parameters: 160 / 163
+  Failed/Missing Parameters: 3 / 163
+  Richness Score: 98.16%
+  Missing Optional (first 10): Indeed Rating, Primary Contact Person's Phone Number, Total Capital Raised...
+--------------------------------------------------
+Company: Guidewire Software, Inc.
+  Status: PASSED
+  Passed Parameters: 161 / 163
+  Failed/Missing Parameters: 2 / 163
+  Richness Score: 98.77%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Status: PASSED
+  Passed Parameters: 161 / 163
+  Failed/Missing Parameters: 2 / 163
+  Richness Score: 98.77%
+  Missing Optional (first 10): Company Phone Number, Burn Multiplier...
+--------------------------------------------------
+Company: Llama Logisol Private Limited
+  Status: PASSED
+  Passed Parameters: 158 / 163
+  Failed/Missing Parameters: 5 / 163
+  Richness Score: 96.93%
+  Missing Optional (first 10): Website Rating, Primary Contact Person's Phone Number, CAC:LTV Ratio, Customer testimonial, Serviceable Obtainable Market (SOM)...
+--------------------------------------------------
+Company: Swiggy Limited
+  Status: PASSED
+  Passed Parameters: 160 / 163
+  Failed/Missing Parameters: 3 / 163
+  Richness Score: 98.16%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Phone Number, CAC:LTV Ratio...
+--------------------------------------------------
+Company: Leap Finance Private Limited
+  Status: PASSED
+  Passed Parameters: 159 / 163
+  Failed/Missing Parameters: 4 / 163
+  Richness Score: 97.55%
+  Missing Optional (first 10): Employee Turnover, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies...
+--------------------------------------------------
+Company: Cisco Systems, Inc.
+  Status: PASSED
+  Passed Parameters: 151 / 163
+  Failed/Missing Parameters: 12 / 163
+  Richness Score: 92.64%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway...
+--------------------------------------------------
+Company: Volvo Group
+  Status: PASSED
+  Passed Parameters: 150 / 163
+  Failed/Missing Parameters: 13 / 163
+  Richness Score: 92.02%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway...
+--------------------------------------------------
+Company: Amadeus IT Group
+  Status: PASSED
+  Passed Parameters: 149 / 163
+  Failed/Missing Parameters: 14 / 163
+  Richness Score: 91.41%
+  Missing Optional (first 10): Indeed Rating, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Total Capital Raised, Burn Rate...
+--------------------------------------------------
+Company: NielsenIQ
+  Status: PASSED
+  Passed Parameters: 152 / 163
+  Failed/Missing Parameters: 11 / 163
+  Richness Score: 93.25%
+  Missing Optional (first 10): Indeed Rating, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: Snowflake Inc.
+  Status: PASSED
+  Passed Parameters: 155 / 163
+  Failed/Missing Parameters: 8 / 163
+  Richness Score: 95.09%
+  Missing Optional (first 10): Glassdoor Rating, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Burn Rate, Runway...
+--------------------------------------------------
+Company: Palantir Technologies
+  Status: PASSED
+  Passed Parameters: 154 / 163
+  Failed/Missing Parameters: 9 / 163
+  Richness Score: 94.48%
+  Missing Optional (first 10): CEO LinkedIn URL, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Burn Rate, Runway, Carbon Footprint/Environmental Impact...
+--------------------------------------------------
+Company: Oracle Financial Services Software Limited
+  Status: PASSED
+  Passed Parameters: 162 / 163
+  Failed/Missing Parameters: 1 / 163
+  Richness Score: 99.39%
+  Missing Optional (first 10): Total Capital Raised...
+--------------------------------------------------
+Company: International Business Machines Corporation 
+  Status: PASSED
+  Passed Parameters: 162 / 163
+  Failed/Missing Parameters: 1 / 163
+  Richness Score: 99.39%
+  Missing Optional (first 10): Total Capital Raised...
+--------------------------------------------------
+Company: Barclays PLC 
+  Status: PASSED
+  Passed Parameters: 162 / 163
+  Failed/Missing Parameters: 1 / 163
+  Richness Score: 99.39%
+  Missing Optional (first 10): Total Capital Raised...
+--------------------------------------------------
+Company: Schneider Electric
+  Status: PASSED
+  Passed Parameters: 162 / 163
+  Failed/Missing Parameters: 1 / 163
+  Richness Score: 99.39%
+  Missing Optional (first 10): Total Capital Raised...
+--------------------------------------------------
+Company: Blink Commerce Private Limited 
+  Status: PASSED
+  Passed Parameters: 162 / 163
+  Failed/Missing Parameters: 1 / 163
+  Richness Score: 99.39%
+  Missing Optional (first 10): Cab availability and company cab policy...
+--------------------------------------------------
+Company: Zerodha Broking Limited 
+  Status: PASSED
+  Passed Parameters: 161 / 163
+  Failed/Missing Parameters: 2 / 163
+  Richness Score: 98.77%
+  Missing Optional (first 10): Total Capital Raised, Cab availability and company cab policy...
+--------------------------------------------------
+Company: Myntra Designs Private Limited
+  Status: PASSED
+  Passed Parameters: 161 / 163
+  Failed/Missing Parameters: 2 / 163
+  Richness Score: 98.77%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Nurix Therapeutics, Inc.
+  Status: PASSED
+  Passed Parameters: 151 / 163
+  Failed/Missing Parameters: 12 / 163
+  Richness Score: 92.64%
+  Missing Optional (first 10): Facebook Page URL, Instagram Page URL, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV), CAC:LTV Ratio...
+--------------------------------------------------
+Company: Citigroup Inc.
+  Status: PASSED
+  Passed Parameters: 152 / 163
+  Failed/Missing Parameters: 11 / 163
+  Richness Score: 93.25%
+  Missing Optional (first 10): Website Rating, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, CAC:LTV Ratio, Burn Rate, Runway...
+--------------------------------------------------
+Company: ZS Associates, Inc.
+  Status: PASSED
+  Passed Parameters: 154 / 163
+  Failed/Missing Parameters: 9 / 163
+  Richness Score: 94.48%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Annual Profits, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway...
+--------------------------------------------------
+Company: FLAM Gaming Private Limited
+  Status: PASSED
+  Passed Parameters: 155 / 163
+  Failed/Missing Parameters: 8 / 163
+  Richness Score: 95.09%
+  Missing Optional (first 10): Website Rating, Indeed Rating, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Annual Profits...
+--------------------------------------------------
+Company: SAP Labs India Private Limited
+  Status: PASSED
+  Passed Parameters: 155 / 163
+  Failed/Missing Parameters: 8 / 163
+  Richness Score: 95.09%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Burn Rate, Runway, External recognition...
+--------------------------------------------------
+Company: Xperi Inc.
+  Status: PASSED
+  Passed Parameters: 155 / 163
+  Failed/Missing Parameters: 8 / 163
+  Richness Score: 95.09%
+  Missing Optional (first 10): Website Rating, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Total Capital Raised, Burn Rate, Runway...
+--------------------------------------------------
+Company: Consilio LLC
+  Status: FAILED
+  Passed Parameters: 144 / 163
+  Failed/Missing Parameters: 19 / 163
+  Richness Score: 88.34%
+  Missing Mandatory: Board of Directors / Advisors
+  Missing Optional (first 10): Website Traffic Rank, Instagram Page URL, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Annual Profits, Company Valuation, Recent Funding Rounds...
+--------------------------------------------------
+Company: BT Group plc
+  Status: PASSED
+  Passed Parameters: 150 / 163
+  Failed/Missing Parameters: 13 / 163
+  Richness Score: 92.02%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV), CAC:LTV Ratio, Burn Rate...
+--------------------------------------------------
+Company: Capgemini
+  Status: PASSED
+  Passed Parameters: 158 / 163
+  Failed/Missing Parameters: 5 / 163
+  Richness Score: 96.93%
+  Missing Optional (first 10): Primary Contact Person's Phone Number, Recent Funding Rounds, Runway, Burnout risk, Automation level...
+--------------------------------------------------
+Company: The Bank of New York Mellon Corporation
+  Status: PASSED
+  Passed Parameters: 153 / 163
+  Failed/Missing Parameters: 10 / 163
+  Richness Score: 93.87%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier, Exit Strategy/History...
+--------------------------------------------------
+Company: Fidelity Investments
+  Status: PASSED
+  Passed Parameters: 153 / 163
+  Failed/Missing Parameters: 10 / 163
+  Richness Score: 93.87%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier, Exit Strategy/History...
+--------------------------------------------------
+Company: JPMorgan Chase & Co.
+  Status: PASSED
+  Passed Parameters: 153 / 163
+  Failed/Missing Parameters: 10 / 163
+  Richness Score: 93.87%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier, Exit Strategy/History...
+--------------------------------------------------
+Company: Airbus SE
+  Status: PASSED
+  Passed Parameters: 153 / 163
+  Failed/Missing Parameters: 10 / 163
+  Richness Score: 93.87%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier, Exit Strategy/History...
+--------------------------------------------------
+Company: Wells Fargo & Company
+  Status: PASSED
+  Passed Parameters: 153 / 163
+  Failed/Missing Parameters: 10 / 163
+  Richness Score: 93.87%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier, Exit Strategy/History...
+--------------------------------------------------
+Company: Atlassian Corporation
+  Status: PASSED
+  Passed Parameters: 152 / 163
+  Failed/Missing Parameters: 11 / 163
+  Richness Score: 93.25%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Total Capital Raised, Burn Rate, Runway, Burn Multiplier, Exit Strategy/History, Sustainability and CSR...
+--------------------------------------------------
+Company: Nutanix, Inc.
+  Status: PASSED
+  Passed Parameters: 153 / 163
+  Failed/Missing Parameters: 10 / 163
+  Richness Score: 93.87%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Annual Profits, Total Capital Raised, Burn Rate, Runway, Burn Multiplier, Exit Strategy/History...
+--------------------------------------------------
+Company: DeepMind
+  Status: PASSED
+  Passed Parameters: 150 / 163
+  Failed/Missing Parameters: 13 / 163
+  Richness Score: 92.02%
+  Missing Optional (first 10): Facebook Page URL, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Annual Revenues, Annual Profits, Market Share (%), Recent Funding Rounds...
+--------------------------------------------------
+Company: Akamai Technologies India Pvt. Ltd.
+  Status: PASSED
+  Passed Parameters: 143 / 163
+  Failed/Missing Parameters: 20 / 163
+  Richness Score: 87.73%
+  Missing Optional (first 10): Indeed Rating, Google Reviews Rating, Instagram Page URL, CEO LinkedIn URL, Company Contact Email, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Adobe Inc.
+  Status: PASSED
+  Passed Parameters: 146 / 163
+  Failed/Missing Parameters: 17 / 163
+  Richness Score: 89.57%
+  Missing Optional (first 10): Indeed Rating, Google Reviews Rating, CEO LinkedIn URL, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Customer Acquisition Cost (CAC)...
+--------------------------------------------------
+Company: Genpact Ltd.
+  Status: PASSED
+  Passed Parameters: 156 / 163
+  Failed/Missing Parameters: 7 / 163
+  Richness Score: 95.71%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Runway...
+--------------------------------------------------
+Company: Uber Technologies, Inc.
+  Status: PASSED
+  Passed Parameters: 156 / 163
+  Failed/Missing Parameters: 7 / 163
+  Richness Score: 95.71%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Total Capital Raised, Runway...
+--------------------------------------------------
+Company: Dell Technologies Inc.
+  Status: PASSED
+  Passed Parameters: 160 / 163
+  Failed/Missing Parameters: 3 / 163
+  Richness Score: 98.16%
+  Missing Optional (first 10): Total Capital Raised, Burn Rate, Burn Multiplier...
+--------------------------------------------------
+Company: Even Healthcare Private Limited
+  Status: PASSED
+  Passed Parameters: 158 / 163
+  Failed/Missing Parameters: 5 / 163
+  Richness Score: 96.93%
+  Missing Optional (first 10): Facebook Page URL, Instagram Page URL, CEO LinkedIn URL, Primary Contact Person's Email, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Groww Invest Tech Pvt. Ltd.
+  Status: PASSED
+  Passed Parameters: 161 / 163
+  Failed/Missing Parameters: 2 / 163
+  Richness Score: 98.77%
+  Missing Optional (first 10): Primary Contact Person's Email, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: MintAir Corp
+  Status: FAILED
+  Passed Parameters: 156 / 163
+  Failed/Missing Parameters: 7 / 163
+  Richness Score: 95.71%
+  Missing Mandatory: Website URL
+  Missing Optional (first 10): Twitter (X) Handle, Facebook Page URL, Instagram Page URL, CEO LinkedIn URL, Company Phone Number, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: OpenAI, Inc.
+  Status: PASSED
+  Passed Parameters: 160 / 163
+  Failed/Missing Parameters: 3 / 163
+  Richness Score: 98.16%
+  Missing Optional (first 10): Website Rating, CEO LinkedIn URL, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Skyhigh Security
+  Status: PASSED
+  Passed Parameters: 155 / 163
+  Failed/Missing Parameters: 8 / 163
+  Richness Score: 95.09%
+  Missing Optional (first 10): Employee Turnover, Average Retention Tenure, Website Traffic Rank, Instagram Page URL, Company Phone Number, Primary Contact Person's Phone Number, Company Valuation, Market Share (%)...
+--------------------------------------------------
+Company: Space Exploration Technologies Corp.
+  Status: PASSED
+  Passed Parameters: 150 / 163
+  Failed/Missing Parameters: 13 / 163
+  Richness Score: 92.02%
+  Missing Optional (first 10): Website Rating, Website Traffic Rank, Facebook Page URL, Instagram Page URL, CEO LinkedIn URL, Company Contact Email, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email...
+--------------------------------------------------
+Company: Walmart Inc.
+  Status: PASSED
+  Passed Parameters: 158 / 163
+  Failed/Missing Parameters: 5 / 163
+  Richness Score: 96.93%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Phone Number, Total Capital Raised, Burn Rate, Burn Multiplier...
+--------------------------------------------------
+Company: Zepto Technologies Private Limited
+  Status: PASSED
+  Passed Parameters: 160 / 163
+  Failed/Missing Parameters: 3 / 163
+  Richness Score: 98.16%
+  Missing Optional (first 10): Primary Contact Person's Phone Number, Annual Profits, Fixed vs variable pay...
+--------------------------------------------------
+Company: DevRev Cloud India Private Limited
+  Status: PASSED
+  Passed Parameters: 161 / 163
+  Failed/Missing Parameters: 2 / 163
+  Richness Score: 98.77%
+  Missing Optional (first 10): Primary Contact Person's Phone Number, Annual Profits...
+--------------------------------------------------
+Company: Increff Technologies Private Limited
+  Status: PASSED
+  Passed Parameters: 161 / 163
+  Failed/Missing Parameters: 2 / 163
+  Richness Score: 98.77%
+  Missing Optional (first 10): Primary Contact Person's Phone Number, Fixed vs variable pay...
+--------------------------------------------------
+Company: MoveInSync Technologies Private Limited
+  Status: PASSED
+  Passed Parameters: 161 / 163
+  Failed/Missing Parameters: 2 / 163
+  Richness Score: 98.77%
+  Missing Optional (first 10): Primary Contact Person's Phone Number, Annual Profits...
+--------------------------------------------------
+Company: NVIDIA Corporation
+  Status: PASSED
+  Passed Parameters: 157 / 163
+  Failed/Missing Parameters: 6 / 163
+  Richness Score: 96.32%
+  Missing Optional (first 10): Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: ServiceNow, Inc.
+  Status: PASSED
+  Passed Parameters: 160 / 163
+  Failed/Missing Parameters: 3 / 163
+  Richness Score: 98.16%
+  Missing Optional (first 10): Primary Contact Person's Phone Number, Burn Rate, Runway...
+--------------------------------------------------
+Company: Tredence Inc.
+  Status: PASSED
+  Passed Parameters: 161 / 163
+  Failed/Missing Parameters: 2 / 163
+  Richness Score: 98.77%
+  Missing Optional (first 10): Primary Contact Person's Phone Number, Layoff history...
+--------------------------------------------------
+Company: CME Group Inc.
+  Status: PASSED
+  Passed Parameters: 154 / 163
+  Failed/Missing Parameters: 9 / 163
+  Richness Score: 94.48%
+  Missing Optional (first 10): Website Rating, Company Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Total Capital Raised, Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV), Burn Rate, Burn Multiplier...
+--------------------------------------------------
+Company: HCL Technologies Limited
+  Status: PASSED
+  Passed Parameters: 152 / 163
+  Failed/Missing Parameters: 11 / 163
+  Richness Score: 93.25%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Customer Acquisition Cost (CAC), Burn Rate, Runway...
+--------------------------------------------------
+Company: Freshworks Inc.
+  Status: PASSED
+  Passed Parameters: 145 / 163
+  Failed/Missing Parameters: 18 / 163
+  Richness Score: 88.96%
+  Missing Optional (first 10): Employee Turnover, Average Retention Tenure, Website Rating, Website Traffic Rank, Indeed Rating, Google Reviews Rating, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: HP Inc.
+  Status: PASSED
+  Passed Parameters: 148 / 163
+  Failed/Missing Parameters: 15 / 163
+  Richness Score: 90.8%
+  Missing Optional (first 10): Vision, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Customer Acquisition Cost (CAC), CAC:LTV Ratio, Net Promoter Score (NPS), Burn Rate, Burn Multiplier...
+--------------------------------------------------
+Company: Koninklijke Philips N.V.
+  Status: FAILED
+  Passed Parameters: 144 / 163
+  Failed/Missing Parameters: 19 / 163
+  Richness Score: 88.34%
+  Missing Mandatory: Social Media Followers – Combined
+  Missing Optional (first 10): Average Retention Tenure, Website Rating, Google Reviews Rating, Company Contact Email, Company Phone Number, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Customer Acquisition Cost (CAC)...
+--------------------------------------------------
+Company: Warner Bros. Discovery, Inc.
+  Status: PASSED
+  Passed Parameters: 142 / 163
+  Failed/Missing Parameters: 21 / 163
+  Richness Score: 87.12%
+  Missing Optional (first 10): Average Retention Tenure, Website Rating, Google Reviews Rating, Company Contact Email, Company Phone Number, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Customer Acquisition Cost (CAC)...
+--------------------------------------------------
+Company: HyperVerge Technologies Private Limited
+  Status: PASSED
+  Passed Parameters: 156 / 163
+  Failed/Missing Parameters: 7 / 163
+  Richness Score: 95.71%
+  Missing Optional (first 10): Google Reviews Rating, Facebook Page URL, Instagram Page URL, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Layoff history...
+--------------------------------------------------
+Company: Motorq Technologies Private Limited
+  Status: PASSED
+  Passed Parameters: 156 / 163
+  Failed/Missing Parameters: 7 / 163
+  Richness Score: 95.71%
+  Missing Optional (first 10): Google Reviews Rating, Facebook Page URL, Instagram Page URL, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Layoff history...
+--------------------------------------------------
+Company: Autodesk
+  Status: PASSED
+  Passed Parameters: 152 / 163
+  Failed/Missing Parameters: 11 / 163
+  Richness Score: 93.25%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: Electronic Arts
+  Status: PASSED
+  Passed Parameters: 153 / 163
+  Failed/Missing Parameters: 10 / 163
+  Richness Score: 93.87%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier, Exit Strategy/History...
+--------------------------------------------------
+Company: Morgan Stanley
+  Status: PASSED
+  Passed Parameters: 158 / 163
+  Failed/Missing Parameters: 5 / 163
+  Richness Score: 96.93%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Email, Primary Contact Person's Phone Number, Burn Rate, Burn Multiplier...
+--------------------------------------------------
+Company: Microsoft Corporation
+  Status: PASSED
+  Passed Parameters: 157 / 163
+  Failed/Missing Parameters: 6 / 163
+  Richness Score: 96.32%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Burn Rate, Burn Multiplier...
+--------------------------------------------------
+Company: Darwinbox Digital Solutions Private Limited
+  Status: FAILED
+  Passed Parameters: 156 / 163
+  Failed/Missing Parameters: 7 / 163
+  Richness Score: 95.71%
+  Missing Mandatory: Profitability Status
+  Missing Optional (first 10): Website Rating, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Epifi Technologies Private Limited
+  Status: FAILED
+  Passed Parameters: 156 / 163
+  Failed/Missing Parameters: 7 / 163
+  Richness Score: 95.71%
+  Missing Mandatory: Profitability Status
+  Missing Optional (first 10): Website Rating, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Juspay Technologies Private Limited
+  Status: PASSED
+  Passed Parameters: 161 / 163
+  Failed/Missing Parameters: 2 / 163
+  Richness Score: 98.77%
+  Missing Optional (first 10): Number of Offices (beyond HQ), Company Phone Number...
+--------------------------------------------------
+Company: Flipkart Internet Private Limited
+  Status: PASSED
+  Passed Parameters: 162 / 163
+  Failed/Missing Parameters: 1 / 163
+  Richness Score: 99.39%
+  Missing Optional (first 10): Company Phone Number...
+--------------------------------------------------
+Company: Optum
+  Status: PASSED
+  Passed Parameters: 142 / 163
+  Failed/Missing Parameters: 21 / 163
+  Richness Score: 87.12%
+  Missing Optional (first 10): Company Contact Email, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Annual Revenues, Annual Profits, Company Valuation, Market Share (%), Recent Funding Rounds...
+--------------------------------------------------
+Company: PayPal Holdings, Inc.
+  Status: PASSED
+  Passed Parameters: 138 / 163
+  Failed/Missing Parameters: 25 / 163
+  Richness Score: 84.66%
+  Missing Optional (first 10): Employee Turnover, Average Retention Tenure, Google Reviews Rating, Company Contact Email, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Company Valuation...
+--------------------------------------------------
+Company: Bajaj Finserv Health Ltd.
+  Status: PASSED
+  Passed Parameters: 163 / 163
+  Failed/Missing Parameters: 0 / 163
+  Richness Score: 100.0%
+--------------------------------------------------
+Company: Bain Capability Network
+  Status: PASSED
+  Passed Parameters: 163 / 163
+  Failed/Missing Parameters: 0 / 163
+  Richness Score: 100.0%
+--------------------------------------------------
+Company: Proactively Inc.
+  Status: PASSED
+  Passed Parameters: 155 / 163
+  Failed/Missing Parameters: 8 / 163
+  Richness Score: 95.09%
+  Missing Optional (first 10): Facebook Page URL, Instagram Page URL, CEO LinkedIn URL, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Phone Number, Cab availability and company cab policy...
+--------------------------------------------------
+Company: Samsung PRISM
+  Status: PASSED
+  Passed Parameters: 143 / 163
+  Failed/Missing Parameters: 20 / 163
+  Richness Score: 87.73%
+  Missing Optional (first 10): Employee Turnover, CEO LinkedIn URL, Company Phone Number, Primary Contact Person's Phone Number, Annual Revenues, Annual Profits, Company Valuation, Year-over-Year Growth Rate, Recent Funding Rounds, Total Capital Raised...
+--------------------------------------------------
+Company: Acko General Insurance Limited
+  Status: PASSED
+  Passed Parameters: 159 / 163
+  Failed/Missing Parameters: 4 / 163
+  Richness Score: 97.55%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Robert Bosch GmbH
+  Status: PASSED
+  Passed Parameters: 156 / 163
+  Failed/Missing Parameters: 7 / 163
+  Richness Score: 95.71%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: Concentrix Corporation
+  Status: PASSED
+  Passed Parameters: 152 / 163
+  Failed/Missing Parameters: 11 / 163
+  Richness Score: 93.25%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: Dunzo Digital Private Limited
+  Status: FAILED
+  Passed Parameters: 124 / 163
+  Failed/Missing Parameters: 39 / 163
+  Richness Score: 76.07%
+  Missing Mandatory: Remote Work Policy
+  Missing Optional (first 10): Number of Offices (beyond HQ), Hiring Velocity, Vision, Mission, Quality of Website, Website Rating, Website Traffic Rank, Indeed Rating, Company Contact Email, Company Phone Number...
+--------------------------------------------------
+Company: Byju’s
+  Status: PASSED
+  Passed Parameters: 159 / 163
+  Failed/Missing Parameters: 4 / 163
+  Richness Score: 97.55%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Cleartrip
+  Status: PASSED
+  Passed Parameters: 159 / 163
+  Failed/Missing Parameters: 4 / 163
+  Richness Score: 97.55%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Cognizant Technology Solutions Corporation
+  Status: PASSED
+  Passed Parameters: 152 / 163
+  Failed/Missing Parameters: 11 / 163
+  Richness Score: 93.25%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: DXC Technology Company
+  Status: PASSED
+  Passed Parameters: 152 / 163
+  Failed/Missing Parameters: 11 / 163
+  Richness Score: 93.25%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: PhysicsWallah Private Limited
+  Status: PASSED
+  Passed Parameters: 153 / 163
+  Failed/Missing Parameters: 10 / 163
+  Richness Score: 93.87%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV), CAC:LTV Ratio, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: Udemy, Inc.
+  Status: PASSED
+  Passed Parameters: 152 / 163
+  Failed/Missing Parameters: 11 / 163
+  Richness Score: 93.25%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV), CAC:LTV Ratio, Burn Rate, Runway...
+--------------------------------------------------
+Company: NTT DATA
+  Status: PASSED
+  Passed Parameters: 137 / 163
+  Failed/Missing Parameters: 26 / 163
+  Richness Score: 84.05%
+  Missing Optional (first 10): Website Traffic Rank, CEO LinkedIn URL, Company Contact Email, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Annual Profits...
+--------------------------------------------------
+Company: Virtusa Corporation
+  Status: PASSED
+  Passed Parameters: 153 / 163
+  Failed/Missing Parameters: 10 / 163
+  Richness Score: 93.87%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV), CAC:LTV Ratio, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: upGrad Education Private Limited
+  Status: PASSED
+  Passed Parameters: 153 / 163
+  Failed/Missing Parameters: 10 / 163
+  Richness Score: 93.87%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Phone Number, Legal Issues / Controversies, Recent Funding Rounds, Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV), CAC:LTV Ratio, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: ZS Associates, Inc.
+  Status: PASSED
+  Passed Parameters: 154 / 163
+  Failed/Missing Parameters: 9 / 163
+  Richness Score: 94.48%
+  Missing Optional (first 10): Website Rating, Twitter (X) Handle, Company Phone Number, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: Wipro Limited
+  Status: PASSED
+  Passed Parameters: 155 / 163
+  Failed/Missing Parameters: 8 / 163
+  Richness Score: 95.09%
+  Missing Optional (first 10): Twitter (X) Handle, Company Phone Number, Primary Contact Person's Phone Number, Recent Funding Rounds, Total Capital Raised, Burn Rate, Runway, Burn Multiplier...
+--------------------------------------------------
+Company: Paytm Money
+  Status: FAILED
+  Passed Parameters: 85 / 163
+  Failed/Missing Parameters: 78 / 163
+  Richness Score: 52.15%
+  Missing Mandatory: Social Media Followers – Combined, Key Business Leaders, Profitability Status, Board of Directors / Advisors
+  Missing Optional (first 10): Number of Offices (beyond HQ), Employee Turnover, Average Retention Tenure, Technology Partners, Website Rating, Website Traffic Rank, Indeed Rating, Google Reviews Rating, Company Phone Number, Primary Contact Person's Name...
+--------------------------------------------------
+Company: Hexagon Capability Center India
+  Status: FAILED
+  Passed Parameters: 127 / 163
+  Failed/Missing Parameters: 36 / 163
+  Richness Score: 77.91%
+  Missing Mandatory: Logo, Social Media Followers – Combined, Board of Directors / Advisors
+  Missing Optional (first 10): CEO LinkedIn URL, Company Contact Email, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Awards & Recognitions, Legal Issues / Controversies, Annual Revenues...
+--------------------------------------------------
+Company: INDmoney Private Limited
+  Status: FAILED
+  Passed Parameters: 144 / 163
+  Failed/Missing Parameters: 19 / 163
+  Richness Score: 88.34%
+  Missing Mandatory: Logo
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Annual Revenues, Annual Profits, ESG Practices or Ratings, R&D Investment...
+--------------------------------------------------
+Company: Tech Mahindra Limited
+  Status: PASSED
+  Passed Parameters: 146 / 163
+  Failed/Missing Parameters: 17 / 163
+  Richness Score: 89.57%
+  Missing Optional (first 10): Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Legal Issues / Controversies, Market Share (%), Recent Funding Rounds, Total Capital Raised, Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV)...
+--------------------------------------------------
+Company: Simplilearn
+  Status: FAILED
+  Passed Parameters: 54 / 163
+  Failed/Missing Parameters: 109 / 163
+  Richness Score: 33.13%
+  Missing Mandatory: Logo, Sales Motion, Remote Work Policy, Go-to-Market Strategy, Board of Directors / Advisors, Remote / hybrid / on-site flexibility
+  Missing Optional (first 10): Number of Offices (beyond HQ), Hiring Velocity, Employee Turnover, Average Retention Tenure, Vision, Values, Weaknesses / Gaps in Offering, Quality of Website, Website Rating, Website Traffic Rank...
+--------------------------------------------------
+Company: BigBasket
+  Status: PASSED
+  Passed Parameters: 159 / 163
+  Failed/Missing Parameters: 4 / 163
+  Richness Score: 97.55%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Ecom Express
+  Status: PASSED
+  Passed Parameters: 159 / 163
+  Failed/Missing Parameters: 4 / 163
+  Richness Score: 97.55%
+  Missing Optional (first 10): Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Phone Number...
+--------------------------------------------------
+Company: Kyndryl Holdings Inc.
+  Status: PASSED
+  Passed Parameters: 141 / 163
+  Failed/Missing Parameters: 22 / 163
+  Richness Score: 86.5%
+  Missing Optional (first 10): Google Reviews Rating, Company Phone Number, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, Annual Profits, Company Valuation, Market Share (%), Recent Funding Rounds...
+--------------------------------------------------
+Company: One MobiKwik Systems Limited
+  Status: PASSED
+  Passed Parameters: 115 / 163
+  Failed/Missing Parameters: 48 / 163
+  Richness Score: 70.55%
+  Missing Optional (first 10): Number of Offices (beyond HQ), Google Reviews Rating, CEO LinkedIn URL, Primary Contact Person's Name, Primary Contact Person's Title, Primary Contact Person's Email, Primary Contact Person's Phone Number, CAC:LTV Ratio, Churn Rate, Net Promoter Score (NPS)...
+--------------------------------------------------
+Company: Shadowfax
+  Status: FAILED
+  Passed Parameters: 38 / 163
+  Failed/Missing Parameters: 125 / 163
+  Richness Score: 23.31%
+  Missing Mandatory: Social Media Followers – Combined, Key Business Leaders, Profitability Status, Remote Work Policy, Board of Directors / Advisors, Remote / hybrid / on-site flexibility
+  Missing Optional (first 10): Number of Offices (beyond HQ), Hiring Velocity, Employee Turnover, Average Retention Tenure, Vision, Mission, Values, Technology Partners, Recent News, Website Rating...
+--------------------------------------------------
+Company: Rupeek
+  Status: FAILED
+  Passed Parameters: 88 / 163
+  Failed/Missing Parameters: 75 / 163
+  Richness Score: 53.99%
+  Missing Mandatory: Social Media Followers – Combined, Key Business Leaders, Profitability Status, Board of Directors / Advisors
+  Missing Optional (first 10): Number of Offices (beyond HQ), Employee Turnover, Average Retention Tenure, Technology Partners, Recent News, Website Rating, Website Traffic Rank, Indeed Rating, Google Reviews Rating, Company Phone Number...
+--------------------------------------------------
+Company: 3i Infotech Ltd.
+  Status: PASSED
+  Passed Parameters: 162 / 163
+  Failed/Missing Parameters: 1 / 163
+  Richness Score: 99.39%
+  Missing Optional (first 10): Company Phone Number...
+--------------------------------------------------
+Company: BharatPe
+  Status: PASSED
+  Passed Parameters: 162 / 163
+  Failed/Missing Parameters: 1 / 163
+  Richness Score: 99.39%
+  Missing Optional (first 10): Company Phone Number...
+--------------------------------------------------

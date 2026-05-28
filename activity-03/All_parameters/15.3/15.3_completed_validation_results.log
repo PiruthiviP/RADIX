@@ -1,0 +1,32 @@
+================================================================================================
+15.3 Quality Thresholds: Recency Scoring Verification Report (Ref: May 2026)
+================================================================================================
+Company: Apple Inc.
+   - Raw Latest News:  '2024,Launched Vision Pro spatial computing headset; 2023,Introduced M3 chip seri...'
+   - Parsed Date:      Jan 2024
+   - Data Age:         28 months
+   - Recency Category: OUTDATED
+   - Recency Score:    30.0/100
+--------------------------------------------------
+Company: Nova Tech Solutions
+   - Raw Latest News:  'Announced a new AI chips launch in February 2026. Executive board restructured i...'
+   - Parsed Date:      Apr 2026
+   - Data Age:         1 months
+   - Recency Category: RECENT
+   - Recency Score:    100.0/100
+--------------------------------------------------
+Company: Midway Systems Ltd
+   - Raw Latest News:  'Acquired a cloud security firm in August 2025. Annual financials for FY2025 publ...'
+   - Parsed Date:      Sep 2025
+   - Data Age:         8 months
+   - Recency Category: ACCEPTABLE
+   - Recency Score:    70.0/100
+--------------------------------------------------
+Company: Legacy Manufacturing Corp
+   - Raw Latest News:  'Rebranded in early 2024. Launched their latest product line in October 2024....'
+   - Parsed Date:      Oct 2024
+   - Data Age:         19 months
+   - Recency Category: OUTDATED
+   - Recency Score:    30.0/100
+--------------------------------------------------
+================================================================================================

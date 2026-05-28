@@ -1,0 +1,8 @@
+Company Name,Validation Status,Lineage Score (%),Passed Checks,Failed Checks,Attribution Errors
+Accenture plc,VERIFIED,100.0,6,0,
+Google LLC (Subsidiary of Alphabet Inc.),VERIFIED,100.0,6,0,
+Apple Inc.,VERIFIED,100.0,6,0,
+Tata Consultancy Services Limited,VERIFIED,100.0,6,0,
+Infosys Limited,VERIFIED,100.0,6,0,
+"Amazon.com, Inc.",VERIFIED,100.0,6,0,
+Microsoft Corporation,VERIFIED,100.0,6,0,

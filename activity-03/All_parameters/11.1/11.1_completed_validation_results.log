@@ -1,0 +1,67 @@
+Entity Disambiguation Report (Context-Aware Disambiguation Engine) for 11.1.csv
+================================================================================================
+Company: Apple Inc.
+  Matched Entity: Apple Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Matched Entity: Microsoft Corporation
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Google LLC (Subsidiary of Alphabet Inc.)
+  Matched Entity: Google LLC (Subsidiary of Alphabet Inc.)
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Accenture plc
+  Matched Entity: Accenture plc
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Matched Entity: Amazon.com, Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Matched Entity: Tata Consultancy Services Limited
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Infosys Limited
+  Matched Entity: Infosys Limited
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Delta Air Lines, Inc.
+  Matched Entity: Delta Air Lines, Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Delta Controls Ltd.
+  Matched Entity: Delta Controls Ltd.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Delta Dental Agency
+  Matched Entity: Delta Dental Agency
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Delta Energy Corp
+  Matched Entity: Delta Energy Corp
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Target Corporation
+  Matched Entity: Target Corporation
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Target Brand Agency
+  Matched Entity: Target Brand Agency
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------

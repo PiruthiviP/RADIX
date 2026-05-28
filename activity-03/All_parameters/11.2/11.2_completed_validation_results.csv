@@ -1,0 +1,12 @@
+Company Name,Matched Entity,Validation Status,Match Score (%),Issues
+Apple Inc.,Apple Inc.,PASSED,100.0,
+Microsoft Corporation,Microsoft Corporation,PASSED,100.0,
+Google LLC (Subsidiary of Alphabet Inc.),Google LLC (Subsidiary of Alphabet Inc.),PASSED,100.0,
+Accenture plc,Accenture plc,PASSED,100.0,
+"Amazon.com, Inc.","Amazon.com, Inc.",PASSED,100.0,
+Tata Consultancy Services Limited,Tata Consultancy Services Limited,PASSED,100.0,
+Infosys Limited,Infosys Limited,PASSED,100.0,
+Alphabet Inc.,Alphabet Inc.,PASSED,100.0,
+"YouTube, LLC","YouTube, LLC",PASSED,100.0,
+"Meta Platforms, Inc.","Meta Platforms, Inc.",PASSED,100.0,
+"Instagram, LLC","Instagram, LLC",PASSED,100.0,

@@ -1,0 +1,8 @@
+Company Name,Validation Status,Type Validity Score (%),Type Error Rate (%),Passed Checks,Failed Checks,Type Errors
+Accenture plc,VALID,100.0,0.0,164,0,
+Google LLC (Subsidiary of Alphabet Inc.),VALID,100.0,0.0,164,0,
+Apple Inc.,VALID,100.0,0.0,164,0,
+Tata Consultancy Services Limited,VALID,100.0,0.0,164,0,
+Infosys Limited,VALID,100.0,0.0,164,0,
+"Amazon.com, Inc.",VALID,100.0,0.0,164,0,
+Microsoft Corporation,VALID,100.0,0.0,164,0,

@@ -1,0 +1,24 @@
+================================================================================================
+14.2 Null/NA Handling: Not Applicable Fields Verification Report
+================================================================================================
+Company: Apple Inc. (Public)
+   - Naive Validator:   PASSED
+   - Context-Aware:     PASSED
+--------------------------------------------------
+Company: Alpha Venture Capital (Venture Capital Firm)
+   - Naive Validator:   FAILED
+     * Field [offerings_description] is missing or invalid: got 'N/A (Investment Services Only)'.
+   - Context-Aware:     PASSED
+--------------------------------------------------
+Company: Bootstrapped SaaS Corp (Private Bootstrapped Company)
+   - Naive Validator:   FAILED
+     * Field [key_investors] is missing or invalid: got 'N/A (Bootstrapped)'.
+   - Context-Aware:     PASSED
+--------------------------------------------------
+Company: Cloud Distributed LLC (Privately Held (Fully Remote))
+   - Naive Validator:   FAILED
+     * Field [office_locations] is missing or invalid: got 'N/A (Fully Remote / Distributed)'.
+     * Field [cab_policy] is missing or invalid: got 'N/A'.
+   - Context-Aware:     PASSED
+--------------------------------------------------
+================================================================================================

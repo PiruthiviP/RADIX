@@ -1,0 +1,8 @@
+Company Name,Validation Status,Accuracy Score (%),Passed Checks,Failed Checks,Inaccuracy Logs
+Accenture plc,ACCURATE,100.0,6,0,
+Google LLC (Subsidiary of Alphabet Inc.),ACCURATE,100.0,6,0,
+Apple Inc.,ACCURATE,100.0,6,0,
+Tata Consultancy Services Limited,ACCURATE,100.0,6,0,
+Infosys Limited,ACCURATE,100.0,6,0,
+"Amazon.com, Inc.",ACCURATE,100.0,6,0,
+Microsoft Corporation,ACCURATE,100.0,6,0,

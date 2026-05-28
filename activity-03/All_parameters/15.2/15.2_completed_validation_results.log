@@ -1,0 +1,29 @@
+================================================================================================
+15.2 Quality Thresholds: Source Quality Tiers Verification Report
+================================================================================================
+Company: Apple Inc.
+   - Tiers Found:  Tier 1, Tier 2
+   - Primary Tier: Tier 1 (High Quality)
+   - Quality Score: 85.0/100
+   - Citations:
+     * Tier 1: Official company website provided.
+     * Tier 2: Official LinkedIn company profile provided.
+     * Tier 2: Standard corporate press releases or Crunchbase data found.
+--------------------------------------------------
+Company: Alpha Corporate Holdings
+   - Tiers Found:  Tier 1, Tier 2
+   - Primary Tier: Tier 1 (High Quality)
+   - Quality Score: 85.0/100
+   - Citations:
+     * Tier 1: Official company website provided.
+     * Tier 1: SEC filings or audited corporate filings detected in news.
+     * Tier 2: Official LinkedIn company profile provided.
+--------------------------------------------------
+Company: Beta Tech Speculations
+   - Tiers Found:  Tier 3
+   - Primary Tier: Tier 3 (Speculative / Tertiary)
+   - Quality Score: 40.0/100
+   - Citations:
+     * Tier 3: Unconfirmed blog posts, news rumors, or forum discussions detected.
+--------------------------------------------------
+================================================================================================

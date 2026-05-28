@@ -1,0 +1,9 @@
+Company Name,Matched Entity,Validation Status,Match Score (%),Issues
+Apple Inc.,Apple Inc.,PASSED,100.0,
+Microsoft Corporation,Microsoft Corporation,PASSED,100.0,
+International Business Machines Corporation,International Business Machines Corporation ,PASSED,100.0,
+IBM,International Business Machines Corporation ,PASSED,100.0,
+AT&T Inc.,AT&T Inc.,PASSED,100.0,
+American Telephone & Telegraph Company,AT&T Inc.,PASSED,100.0,
+3M Company,3M Company,PASSED,100.0,
+Minnesota Mining and Manufacturing Company,3M Company,PASSED,100.0,

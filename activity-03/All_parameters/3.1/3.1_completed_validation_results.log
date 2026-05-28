@@ -1,0 +1,44 @@
+Factual Accuracy Report for 3.1.csv
+================================================================================
+Company: Accenture plc
+  Status: ACCURATE
+  Passed Parameters: 6 / 6
+  Failed/Mismatched Parameters: 0 / 6
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Google LLC (Subsidiary of Alphabet Inc.)
+  Status: ACCURATE
+  Passed Parameters: 6 / 6
+  Failed/Mismatched Parameters: 0 / 6
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Apple Inc.
+  Status: ACCURATE
+  Passed Parameters: 6 / 6
+  Failed/Mismatched Parameters: 0 / 6
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Status: ACCURATE
+  Passed Parameters: 6 / 6
+  Failed/Mismatched Parameters: 0 / 6
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Infosys Limited
+  Status: ACCURATE
+  Passed Parameters: 6 / 6
+  Failed/Mismatched Parameters: 0 / 6
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Status: ACCURATE
+  Passed Parameters: 6 / 6
+  Failed/Mismatched Parameters: 0 / 6
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Status: ACCURATE
+  Passed Parameters: 6 / 6
+  Failed/Mismatched Parameters: 0 / 6
+  Accuracy Score: 100.0%
+--------------------------------------------------

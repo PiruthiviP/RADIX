@@ -1,0 +1,800 @@
+Hallucination Detection (Confident Incorrectness) Report for companies_master.csv
+==========================================================================================
+Company: Accenture plc
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Fractal Analytics Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Fractal Analytics Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Oracle India Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Oracle India Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Google LLC (Subsidiary of Alphabet Inc.)
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Apple Inc.
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Mitsubishi UFJ Financial Group, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Mitsubishi UFJ Financial Group, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Commonwealth Bank of Australia
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Commonwealth Bank of Australia' is not present in the verified registry.
+--------------------------------------------------
+Company: KALVI CAREER EDUCATION PRIVATE LIMITED
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'KALVI CAREER EDUCATION PRIVATE LIMITED' is not present in the verified registry.
+--------------------------------------------------
+Company: Larsen & Toubro Infotech Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Larsen & Toubro Infotech Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Infosys Limited
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Cloudera Data Platform India Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Cloudera Data Platform India Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Guidewire Software, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Guidewire Software, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Llama Logisol Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Llama Logisol Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Swiggy Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Swiggy Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Leap Finance Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Leap Finance Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Cisco Systems, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Cisco Systems, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Volvo Group
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Volvo Group' is not present in the verified registry.
+--------------------------------------------------
+Company: Amadeus IT Group
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Amadeus IT Group' is not present in the verified registry.
+--------------------------------------------------
+Company: NielsenIQ
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'NielsenIQ' is not present in the verified registry.
+--------------------------------------------------
+Company: Snowflake Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Snowflake Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Palantir Technologies
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Palantir Technologies' is not present in the verified registry.
+--------------------------------------------------
+Company: Oracle Financial Services Software Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Oracle Financial Services Software Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: International Business Machines Corporation 
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'International Business Machines Corporation' is not present in the verified registry.
+--------------------------------------------------
+Company: Barclays PLC 
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Barclays PLC' is not present in the verified registry.
+--------------------------------------------------
+Company: Schneider Electric
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Schneider Electric' is not present in the verified registry.
+--------------------------------------------------
+Company: Blink Commerce Private Limited 
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Blink Commerce Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Zerodha Broking Limited 
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Zerodha Broking Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Myntra Designs Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Myntra Designs Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Nurix Therapeutics, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Nurix Therapeutics, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Citigroup Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Citigroup Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: ZS Associates, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'ZS Associates, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: FLAM Gaming Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'FLAM Gaming Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: SAP Labs India Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'SAP Labs India Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Xperi Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Xperi Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Consilio LLC
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Consilio LLC' is not present in the verified registry.
+--------------------------------------------------
+Company: BT Group plc
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'BT Group plc' is not present in the verified registry.
+--------------------------------------------------
+Company: Capgemini
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Capgemini' is not present in the verified registry.
+--------------------------------------------------
+Company: The Bank of New York Mellon Corporation
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'The Bank of New York Mellon Corporation' is not present in the verified registry.
+--------------------------------------------------
+Company: Fidelity Investments
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Fidelity Investments' is not present in the verified registry.
+--------------------------------------------------
+Company: JPMorgan Chase & Co.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'JPMorgan Chase & Co.' is not present in the verified registry.
+--------------------------------------------------
+Company: Airbus SE
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Airbus SE' is not present in the verified registry.
+--------------------------------------------------
+Company: Wells Fargo & Company
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Wells Fargo & Company' is not present in the verified registry.
+--------------------------------------------------
+Company: Atlassian Corporation
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Atlassian Corporation' is not present in the verified registry.
+--------------------------------------------------
+Company: Nutanix, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Nutanix, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: DeepMind
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'DeepMind' is not present in the verified registry.
+--------------------------------------------------
+Company: Akamai Technologies India Pvt. Ltd.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Akamai Technologies India Pvt. Ltd.' is not present in the verified registry.
+--------------------------------------------------
+Company: Adobe Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Adobe Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Genpact Ltd.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Genpact Ltd.' is not present in the verified registry.
+--------------------------------------------------
+Company: Uber Technologies, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Uber Technologies, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Dell Technologies Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Dell Technologies Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Even Healthcare Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Even Healthcare Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Groww Invest Tech Pvt. Ltd.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Groww Invest Tech Pvt. Ltd.' is not present in the verified registry.
+--------------------------------------------------
+Company: MintAir Corp
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'MintAir Corp' is not present in the verified registry.
+--------------------------------------------------
+Company: OpenAI, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'OpenAI, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Skyhigh Security
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Skyhigh Security' is not present in the verified registry.
+--------------------------------------------------
+Company: Space Exploration Technologies Corp.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Space Exploration Technologies Corp.' is not present in the verified registry.
+--------------------------------------------------
+Company: Walmart Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Walmart Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Zepto Technologies Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Zepto Technologies Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: DevRev Cloud India Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'DevRev Cloud India Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Increff Technologies Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Increff Technologies Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: MoveInSync Technologies Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'MoveInSync Technologies Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: NVIDIA Corporation
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'NVIDIA Corporation' is not present in the verified registry.
+--------------------------------------------------
+Company: ServiceNow, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'ServiceNow, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Tredence Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Tredence Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: CME Group Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'CME Group Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: HCL Technologies Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'HCL Technologies Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Freshworks Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Freshworks Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: HP Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'HP Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Koninklijke Philips N.V.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Koninklijke Philips N.V.' is not present in the verified registry.
+--------------------------------------------------
+Company: Warner Bros. Discovery, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Warner Bros. Discovery, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: HyperVerge Technologies Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'HyperVerge Technologies Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Motorq Technologies Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Motorq Technologies Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Autodesk
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Autodesk' is not present in the verified registry.
+--------------------------------------------------
+Company: Electronic Arts
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Electronic Arts' is not present in the verified registry.
+--------------------------------------------------
+Company: Morgan Stanley
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Morgan Stanley' is not present in the verified registry.
+--------------------------------------------------
+Company: Microsoft Corporation
+  Status: VERIFIED
+  Validity Score: 100.0%
+  Hallucination Risk Score: 0.0%
+--------------------------------------------------
+Company: Darwinbox Digital Solutions Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Darwinbox Digital Solutions Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Epifi Technologies Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Epifi Technologies Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Juspay Technologies Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Juspay Technologies Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Flipkart Internet Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Flipkart Internet Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Optum
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Optum' is not present in the verified registry.
+--------------------------------------------------
+Company: PayPal Holdings, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'PayPal Holdings, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Bajaj Finserv Health Ltd.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Bajaj Finserv Health Ltd.' is not present in the verified registry.
+--------------------------------------------------
+Company: Bain Capability Network
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Bain Capability Network' is not present in the verified registry.
+--------------------------------------------------
+Company: Proactively Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Proactively Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Samsung PRISM
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Samsung PRISM' is not present in the verified registry.
+--------------------------------------------------
+Company: Acko General Insurance Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Acko General Insurance Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Robert Bosch GmbH
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Robert Bosch GmbH' is not present in the verified registry.
+--------------------------------------------------
+Company: Concentrix Corporation
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Concentrix Corporation' is not present in the verified registry.
+--------------------------------------------------
+Company: Dunzo Digital Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Dunzo Digital Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Byju’s
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Byju’s' is not present in the verified registry.
+--------------------------------------------------
+Company: Cleartrip
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Cleartrip' is not present in the verified registry.
+--------------------------------------------------
+Company: Cognizant Technology Solutions Corporation
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Cognizant Technology Solutions Corporation' is not present in the verified registry.
+--------------------------------------------------
+Company: DXC Technology Company
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'DXC Technology Company' is not present in the verified registry.
+--------------------------------------------------
+Company: PhysicsWallah Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'PhysicsWallah Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Udemy, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Udemy, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: NTT DATA
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'NTT DATA' is not present in the verified registry.
+--------------------------------------------------
+Company: Virtusa Corporation
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Virtusa Corporation' is not present in the verified registry.
+--------------------------------------------------
+Company: upGrad Education Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'upGrad Education Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: ZS Associates, Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'ZS Associates, Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: Wipro Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Wipro Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Paytm Money
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Paytm Money' is not present in the verified registry.
+--------------------------------------------------
+Company: Hexagon Capability Center India
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Hexagon Capability Center India' is not present in the verified registry.
+--------------------------------------------------
+Company: INDmoney Private Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'INDmoney Private Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Tech Mahindra Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Tech Mahindra Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Simplilearn
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Simplilearn' is not present in the verified registry.
+--------------------------------------------------
+Company: BigBasket
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'BigBasket' is not present in the verified registry.
+--------------------------------------------------
+Company: Ecom Express
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Ecom Express' is not present in the verified registry.
+--------------------------------------------------
+Company: Kyndryl Holdings Inc.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Kyndryl Holdings Inc.' is not present in the verified registry.
+--------------------------------------------------
+Company: One MobiKwik Systems Limited
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'One MobiKwik Systems Limited' is not present in the verified registry.
+--------------------------------------------------
+Company: Shadowfax
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Shadowfax' is not present in the verified registry.
+--------------------------------------------------
+Company: Rupeek
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'Rupeek' is not present in the verified registry.
+--------------------------------------------------
+Company: 3i Infotech Ltd.
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company '3i Infotech Ltd.' is not present in the verified registry.
+--------------------------------------------------
+Company: BharatPe
+  Status: FLAGGED
+  Validity Score: 0.0%
+  Hallucination Risk Score: 100.0%
+  Fabrication Errors:
+    - Company 'BharatPe' is not present in the verified registry.
+--------------------------------------------------

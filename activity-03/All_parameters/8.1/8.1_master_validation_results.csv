@@ -1,0 +1,117 @@
+Company Name,Validation Status,Type Validity Score (%),Type Error Rate (%),Passed Checks,Failed Checks,Type Errors
+Accenture plc,VALID,100.0,0.0,164,0,
+Fractal Analytics Private Limited,VALID,100.0,0.0,164,0,
+Oracle India Private Limited,VALID,100.0,0.0,164,0,
+Google LLC (Subsidiary of Alphabet Inc.),VALID,100.0,0.0,164,0,
+Apple Inc.,VALID,100.0,0.0,164,0,
+"Mitsubishi UFJ Financial Group, Inc.",VALID,100.0,0.0,164,0,
+Commonwealth Bank of Australia,INVALID,98.78,1.22,162,2,"Type Error [customer_concentration_risk]: Value 'Low,>18M customers; Retail focus limits concentration' is not a valid BOOLEAN.; Type Error [contact_person_email]: Value 'cbainvestorrelations@cba.com.au (Investor Relations)' is not a valid EMAIL."
+KALVI CAREER EDUCATION PRIVATE LIMITED,VALID,100.0,0.0,164,0,
+Larsen & Toubro Infotech Limited,INVALID,99.39,0.61,163,1,Type Error [marketing_video_url]: Value 'YouTube corporate channel' is not a valid URL.
+Tata Consultancy Services Limited,VALID,100.0,0.0,164,0,
+Infosys Limited,VALID,100.0,0.0,164,0,
+Cloudera Data Platform India Private Limited,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+"Guidewire Software, Inc.",VALID,100.0,0.0,164,0,
+"Amazon.com, Inc.",VALID,100.0,0.0,164,0,
+Llama Logisol Private Limited,VALID,100.0,0.0,164,0,
+Swiggy Limited,VALID,100.0,0.0,164,0,
+Leap Finance Private Limited,VALID,100.0,0.0,164,0,
+"Cisco Systems, Inc.",VALID,100.0,0.0,164,0,
+Volvo Group,VALID,100.0,0.0,164,0,
+Amadeus IT Group,VALID,100.0,0.0,164,0,
+NielsenIQ,VALID,100.0,0.0,164,0,
+Snowflake Inc.,VALID,100.0,0.0,164,0,
+Palantir Technologies,VALID,100.0,0.0,164,0,
+Oracle Financial Services Software Limited,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+International Business Machines Corporation ,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Barclays PLC ,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Schneider Electric,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Blink Commerce Private Limited ,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+Zerodha Broking Limited ,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Myntra Designs Private Limited,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+"Nurix Therapeutics, Inc.",INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'High' is not a valid BOOLEAN.
+Citigroup Inc.,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+"ZS Associates, Inc.",INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+FLAM Gaming Private Limited,VALID,100.0,0.0,164,0,
+SAP Labs India Private Limited,VALID,100.0,0.0,164,0,
+Xperi Inc.,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Medium ' is not a valid BOOLEAN.
+Consilio LLC,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Moderate' is not a valid BOOLEAN.
+BT Group plc,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Capgemini,INVALID,98.17,1.83,161,3,"Type Error [marketing_video_url]: Value 'Polished, global brand storytelling' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Medium ' is not a valid BOOLEAN.; Type Error [contact_person_email]: Value 'https://www.capgemini.com/contact-us' is not a valid EMAIL."
+The Bank of New York Mellon Corporation,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'BNY Mellon YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Fidelity Investments,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Fidelity YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+JPMorgan Chase & Co.,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'JPMorgan YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Airbus SE,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'YouTube Airbus Channel' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Wells Fargo & Company,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Wells Fargo YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+Atlassian Corporation,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Atlassian YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+"Nutanix, Inc.",INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Nutanix YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+DeepMind,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'DeepMind YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Akamai Technologies India Pvt. Ltd.,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Moderate; Diverse segments but reliance on media/entertainment during events' is not a valid BOOLEAN.
+Adobe Inc.,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Moderate; Diverse segments but reliance on media/entertainment during events' is not a valid BOOLEAN.
+Genpact Ltd.,VALID,100.0,0.0,164,0,
+"Uber Technologies, Inc.",VALID,100.0,0.0,164,0,
+Dell Technologies Inc.,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Dell Technologies World' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Even Healthcare Private Limited,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Even Healthcare YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Groww Invest Tech Pvt. Ltd.,INVALID,98.78,1.22,162,2,"Type Error [marketing_video_url]: Value 'YouTube,Groww' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN."
+MintAir Corp,INVALID,98.17,1.83,161,3,Type Error [linkedin_url]: Value 'Company-listed LinkedIn business page' is not a valid URL.; Type Error [marketing_video_url]: Value 'Short corporate overview videos' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+"OpenAI, Inc.",INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'OpenAI DevDay and product launch videos' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Medium ' is not a valid BOOLEAN.
+Skyhigh Security,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+Space Exploration Technologies Corp.,INVALID,98.17,1.83,161,3,Type Error [marketing_video_url]: Value 'SpaceX launch videos ' is not a valid URL.; Type Error [social_media_followers]: Value 'Very high; millions across platforms' is not a valid NUMBER.; Type Error [customer_concentration_risk]: Value 'Medium ' is not a valid BOOLEAN.
+Walmart Inc.,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Zepto Technologies Private Limited,VALID,100.0,0.0,164,0,
+DevRev Cloud India Private Limited,VALID,100.0,0.0,164,0,
+Increff Technologies Private Limited,VALID,100.0,0.0,164,0,
+MoveInSync Technologies Private Limited,VALID,100.0,0.0,164,0,
+NVIDIA Corporation,VALID,100.0,0.0,164,0,
+"ServiceNow, Inc.",VALID,100.0,0.0,164,0,
+Tredence Inc.,VALID,100.0,0.0,164,0,
+CME Group Inc.,VALID,100.0,0.0,164,0,
+HCL Technologies Limited,VALID,100.0,0.0,164,0,
+Freshworks Inc.,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on Freshworks Official YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low ' is not a valid BOOLEAN.
+HP Inc.,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on HP Official YouTube.' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Koninklijke Philips N.V.,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on Official Philips YouTube.' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+"Warner Bros. Discovery, Inc.",INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available via WBD official YouTube and channels.' is not a valid URL.; Type Error [social_media_followers]: Value 'Hundreds of millions across all sub-brands ' is not a valid NUMBER.
+HyperVerge Technologies Private Limited,VALID,100.0,0.0,164,0,
+Motorq Technologies Private Limited,VALID,100.0,0.0,164,0,
+Autodesk,VALID,100.0,0.0,164,0,
+Electronic Arts,INVALID,99.39,0.61,163,1,Type Error [social_media_followers]: Value '###############################################################################################################################################################################################################################################################' is not a valid NUMBER.
+Morgan Stanley,VALID,100.0,0.0,164,0,
+Microsoft Corporation,VALID,100.0,0.0,164,0,
+Darwinbox Digital Solutions Private Limited,VALID,100.0,0.0,164,0,
+Epifi Technologies Private Limited,VALID,100.0,0.0,164,0,
+Juspay Technologies Private Limited,INVALID,97.56,2.44,160,4,Type Error [marketing_video_url]: Value 'Available on YouTube (Juspay channel)' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Moderate' is not a valid BOOLEAN.; Type Error [contact_person_email]: Value 'Not publicly specified' is not a valid EMAIL.; Type Error [contact_person_phone]: Value 'Not publicly specified' is not a valid PHONE.
+Flipkart Internet Private Limited,INVALID,97.56,2.44,160,4,Type Error [marketing_video_url]: Value 'Available on YouTube (Flipkart channel)' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low ' is not a valid BOOLEAN.; Type Error [contact_person_email]: Value 'Not publicly specified' is not a valid EMAIL.; Type Error [contact_person_phone]: Value 'Not publicly specified' is not a valid PHONE.
+Optum,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on official website and YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Medium ' is not a valid BOOLEAN.
+"PayPal Holdings, Inc.",INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on website' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Bajaj Finserv Health Ltd.,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Health services board' is not a valid URL.; Type Error [customer_concentration_risk]: Value '~10%' is not a valid BOOLEAN.
+Bain Capability Network,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Bain YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Proactively Inc.,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+Samsung PRISM,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Acko General Insurance Limited,INVALID,99.39,0.61,163,1,Type Error [primary_phone_number]: Value 'Not Found' is not a valid PHONE.
+Robert Bosch GmbH,VALID,100.0,0.0,164,0,
+Concentrix Corporation,VALID,100.0,0.0,164,0,
+Dunzo Digital Private Limited,VALID,100.0,0.0,164,0,
+Byju’s,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+Cleartrip,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Cognizant Technology Solutions Corporation,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on official YouTube channel' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Top 10 clients contribute ~30% revenue' is not a valid BOOLEAN.
+DXC Technology Company,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on official YouTube channel' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Top 10 clients contribute ~35% revenue' is not a valid BOOLEAN.
+PhysicsWallah Private Limited,VALID,100.0,0.0,164,0,
+"Udemy, Inc.",VALID,100.0,0.0,164,0,
+NTT DATA,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on official website and YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Virtusa Corporation,INVALID,99.39,0.61,163,1,Type Error [primary_phone_number]: Value '5273' is not a valid PHONE.
+upGrad Education Private Limited,VALID,100.0,0.0,164,0,
+"ZS Associates, Inc.",INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Moderate' is not a valid BOOLEAN.
+Wipro Limited,VALID,100.0,0.0,164,0,
+Paytm Money,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on Paytm Money website & YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Hexagon Capability Center India,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on Hexagon corporate channels' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Single parent company dependency 100%' is not a valid BOOLEAN.
+INDmoney Private Limited,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on official YouTube channel' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low diversified retail base' is not a valid BOOLEAN.
+Tech Mahindra Limited,INVALID,98.17,1.83,161,3,Type Error [primary_phone_number]: Value '4154' is not a valid PHONE.; Type Error [marketing_video_url]: Value 'Available on website' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+Simplilearn,VALID,100.0,0.0,164,0,
+BigBasket,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+Ecom Express,INVALID,99.39,0.61,163,1,Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+Kyndryl Holdings Inc.,VALID,100.0,0.0,164,0,
+One MobiKwik Systems Limited,VALID,100.0,0.0,164,0,
+Shadowfax,VALID,100.0,0.0,164,0,
+Rupeek,INVALID,98.78,1.22,162,2,Type Error [marketing_video_url]: Value 'Available on official website and YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+3i Infotech Ltd.,INVALID,97.56,2.44,160,4,Type Error [marketing_video_url]: Value 'Available on YouTube' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Moderate (BFSI heavy)' is not a valid BOOLEAN.; Type Error [contact_person_email]: Value 'Not publicly specified' is not a valid EMAIL.; Type Error [contact_person_phone]: Value 'Not publicly specified' is not a valid PHONE.
+BharatPe,INVALID,97.56,2.44,160,4,Type Error [marketing_video_url]: Value 'Available on YouTube/BharatPe channel' is not a valid URL.; Type Error [customer_concentration_risk]: Value 'Moderate; SMB-focused' is not a valid BOOLEAN.; Type Error [contact_person_email]: Value 'Not publicly specified' is not a valid EMAIL.; Type Error [contact_person_phone]: Value 'Not publicly specified' is not a valid PHONE.

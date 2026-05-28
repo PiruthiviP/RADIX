@@ -1,0 +1,12 @@
+Company Name,Matched Entity,Validation Status,Match Score (%),Issues
+Apple Inc.,Apple Inc.,PASSED,100.0,
+Microsoft Corporation,Microsoft Corporation,PASSED,100.0,
+Google LLC (Subsidiary of Alphabet Inc.),Alphabet Inc.,CONFLATED/FAILED,50.0,"Conflation Failure: Subsidiary record 'Google' was incorrectly matched to parent 'Alphabet Inc.'.; Mismatch [Website URL]: Ingested 'https://www.google.com', expected 'https://abc.xyz'; Mismatch [Year of Incorporation]: Ingested '1998', expected '2015'"
+Accenture plc,Accenture plc,PASSED,100.0,
+"Amazon.com, Inc.","Amazon.com, Inc.",PASSED,100.0,
+Tata Consultancy Services Limited,Tata Consultancy Services Limited,PASSED,100.0,
+Infosys Limited,Infosys Limited,PASSED,100.0,
+Alphabet Inc.,Google LLC (Subsidiary of Alphabet Inc.),CONFLATED/FAILED,50.0,"Mismatch [Website URL]: Ingested 'https://abc.xyz', expected 'https://www.google.com'; Mismatch [Year of Incorporation]: Ingested '2015', expected '1998'"
+"YouTube, LLC",Alphabet Inc.,CONFLATED/FAILED,0.0,"Conflation Failure: Subsidiary record 'YouTube' was incorrectly matched to parent 'Alphabet Inc.'.; Mismatch [CEO Name]: Ingested 'Neal Mohan', expected 'Sundar Pichai'; Mismatch [Headquarters Address]: Ingested '901 Cherry Ave, San Bruno, California, USA', expected '1600 Amphitheatre Parkway, Mountain View, California, USA'; Mismatch [Website URL]: Ingested 'https://www.youtube.com', expected 'https://abc.xyz'; Mismatch [Year of Incorporation]: Ingested '2005', expected '2015'"
+"Meta Platforms, Inc.","Meta Platforms, Inc.",PASSED,100.0,
+"Instagram, LLC","Meta Platforms, Inc.",CONFLATED/FAILED,0.0,"Conflation Failure: Subsidiary record 'Instagram' was incorrectly matched to parent 'Meta Platforms, Inc.'.; Mismatch [CEO Name]: Ingested 'Adam Mosseri', expected 'Mark Zuckerberg'; Mismatch [Headquarters Address]: Ingested '1601 Willow Road, Menlo Park, California, USA', expected '1 Hacker Way, Menlo Park, California, USA'; Mismatch [Website URL]: Ingested 'https://www.instagram.com', expected 'https://about.meta.com'; Mismatch [Year of Incorporation]: Ingested '2010', expected '2004'"

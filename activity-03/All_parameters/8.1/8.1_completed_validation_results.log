@@ -1,0 +1,37 @@
+Data Type Validation Report for 8.1.csv
+==========================================================================================
+Company: Accenture plc
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Google LLC (Subsidiary of Alphabet Inc.)
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Apple Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Infosys Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------

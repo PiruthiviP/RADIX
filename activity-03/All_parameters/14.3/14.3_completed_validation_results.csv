@@ -1,0 +1,4 @@
+Company Name,Field,Raw Ingested Value,Availability Status,Status
+Nova Tech Systems,yoy_growth_rate,Not Generated (New Company),NOT_GENERATED,PASSED
+SecureFlow Cyber Ltd,annual_revenue,Restricted (Non-Public),NOT_PUBLIC,PASSED
+Legacy Brands Inc.,exit_strategy_history,Archived (Acquired by Amazon),REMOVED,PASSED

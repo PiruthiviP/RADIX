@@ -1,0 +1,28 @@
+================================================================================================
+15.1 Quality Thresholds: Confidence Levels Verification Report
+================================================================================================
+Company: Apple Inc.
+   - Field [employee_size  ]: Raw='161000' -> CONFIRMED | PUBLIC_DISCLOSED (Score: 100.0)
+   - Field [annual_revenue ]: Raw='$383B (FY2023)' -> CONFIRMED | PUBLIC_DISCLOSED (Score: 100.0)
+   - Field [valuation      ]: Raw='$3T market capitalization' -> CONFIRMED | PUBLIC_DISCLOSED (Score: 100.0)
+   => Overall Confidence Score: 100.0/100
+--------------------------------------------------
+Company: Schneider Electric
+   - Field [employee_size  ]: Raw='150,000–160,000' -> ESTIMATED | PUBLIC_DISCLOSED (Score: 80.0)
+   - Field [annual_revenue ]: Raw='€35.9 billion' -> CONFIRMED | PUBLIC_DISCLOSED (Score: 100.0)
+   - Field [valuation      ]: Raw='€115+ billion ' -> CONFIRMED | PUBLIC_DISCLOSED (Score: 100.0)
+   => Overall Confidence Score: 93.33/100
+--------------------------------------------------
+Company: Llama Logisol Private Limited
+   - Field [employee_size  ]: Raw='331-350' -> ESTIMATED | PUBLIC_DISCLOSED (Score: 80.0)
+   - Field [annual_revenue ]: Raw='$27.1M' -> CONFIRMED | PUBLIC_DISCLOSED (Score: 100.0)
+   - Field [valuation      ]: Raw='$122M' -> CONFIRMED | PUBLIC_DISCLOSED (Score: 100.0)
+   => Overall Confidence Score: 93.33/100
+--------------------------------------------------
+Company: Speculative AI Labs
+   - Field [employee_size  ]: Raw='15-25 (estimated based on LinkedIn)' -> ESTIMATED | INFERRED (Score: 40.0)
+   - Field [annual_revenue ]: Raw='~$1.5M (inferred from employee size)' -> ESTIMATED | INFERRED (Score: 40.0)
+   - Field [valuation      ]: Raw='$10M (speculative Series A pitch)' -> CONFIRMED | INFERRED (Score: 60.0)
+   => Overall Confidence Score: 46.67/100
+--------------------------------------------------
+================================================================================================

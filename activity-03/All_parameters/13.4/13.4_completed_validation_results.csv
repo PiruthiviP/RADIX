@@ -1,0 +1,3 @@
+Pipeline Type,Total Profiles,Leaks Detected,Status
+Stateful Pipeline,4,Yes (Multiple),FAILED
+Stateless Pipeline,4,None (0),PASSED

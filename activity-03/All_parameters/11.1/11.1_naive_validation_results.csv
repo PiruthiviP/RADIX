@@ -1,0 +1,14 @@
+Company Name,Matched Entity,Validation Status,Match Score (%),Issues
+Apple Inc.,Apple Inc.,PASSED,100.0,
+Microsoft Corporation,Microsoft Corporation,PASSED,100.0,
+Google LLC (Subsidiary of Alphabet Inc.),Google LLC (Subsidiary of Alphabet Inc.),PASSED,100.0,
+Accenture plc,Accenture plc,PASSED,100.0,
+"Amazon.com, Inc.","Amazon.com, Inc.",PASSED,100.0,
+Tata Consultancy Services Limited,Tata Consultancy Services Limited,PASSED,100.0,
+Infosys Limited,Infosys Limited,PASSED,100.0,
+"Delta Air Lines, Inc.","Delta Air Lines, Inc.",PASSED,100.0,
+Delta Controls Ltd.,"Delta Air Lines, Inc.",CONFUSED/FAILED,0.0,"Disambiguation Failure: Ingested record 'Delta Controls Ltd.' was incorrectly matched to entity 'Delta Air Lines, Inc.'.; Mismatch [CEO Name]: Ingested 'Delta Controls Executive', expected 'Ed Bastian'; Mismatch [Headquarters Address]: Ingested 'Surrey, BC, Canada', expected 'Atlanta, Georgia, USA'; Mismatch [Website URL]: Ingested 'https://www.deltacontrols.com', expected 'https://www.delta.com'; Mismatch [Year of Incorporation]: Ingested '1980', expected '1924'"
+Delta Dental Agency,"Delta Air Lines, Inc.",CONFUSED/FAILED,0.0,"Disambiguation Failure: Ingested record 'Delta Dental Agency' was incorrectly matched to entity 'Delta Air Lines, Inc.'.; Mismatch [CEO Name]: Ingested 'Delta Dental Director', expected 'Ed Bastian'; Mismatch [Headquarters Address]: Ingested 'Oak Brook, Illinois, USA', expected 'Atlanta, Georgia, USA'; Mismatch [Website URL]: Ingested 'https://www.deltadental.com', expected 'https://www.delta.com'; Mismatch [Year of Incorporation]: Ingested '1954', expected '1924'"
+Delta Energy Corp,"Delta Air Lines, Inc.",CONFUSED/FAILED,0.0,"Disambiguation Failure: Ingested record 'Delta Energy Corp' was incorrectly matched to entity 'Delta Air Lines, Inc.'.; Mismatch [CEO Name]: Ingested 'Delta Energy Chief', expected 'Ed Bastian'; Mismatch [Headquarters Address]: Ingested 'Houston, Texas, USA', expected 'Atlanta, Georgia, USA'; Mismatch [Website URL]: Ingested 'https://www.deltaenergy.com', expected 'https://www.delta.com'; Mismatch [Year of Incorporation]: Ingested '2005', expected '1924'"
+Target Corporation,Target Corporation,PASSED,100.0,
+Target Brand Agency,Target Corporation,CONFUSED/FAILED,0.0,"Disambiguation Failure: Ingested record 'Target Brand Agency' was incorrectly matched to entity 'Target Corporation'.; Mismatch [CEO Name]: Ingested 'Target Agency Director', expected 'Brian Cornell'; Mismatch [Headquarters Address]: Ingested 'Portland, Oregon, USA', expected 'Minneapolis, Minnesota, USA'; Mismatch [Website URL]: Ingested 'https://www.targetagency.com', expected 'https://www.target.com'; Mismatch [Year of Incorporation]: Ingested '2015', expected '1902'"

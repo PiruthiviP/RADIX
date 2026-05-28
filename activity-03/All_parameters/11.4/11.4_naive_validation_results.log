@@ -1,0 +1,48 @@
+Abbreviation Handling Disambiguation Report (Naïve Resolver) for 11.4.csv
+=========================================================================
+Company: Apple Inc.
+  Matched Entity: Apple Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Matched Entity: Microsoft Corporation
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: International Business Machines Corporation
+  Matched Entity: International Business Machines Corporation 
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: IBM
+  Matched Entity: None
+  Status: FAILED
+  Match Score: 0.0%
+  Abbreviation Validation Issues:
+    - Resolution Error: Could not resolve 'IBM' to any registered entity.
+--------------------------------------------------
+Company: AT&T Inc.
+  Matched Entity: AT&T Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: American Telephone & Telegraph Company
+  Matched Entity: None
+  Status: FAILED
+  Match Score: 0.0%
+  Abbreviation Validation Issues:
+    - Resolution Error: Could not resolve 'American Telephone & Telegraph Company' to any registered entity.
+--------------------------------------------------
+Company: 3M Company
+  Matched Entity: 3M Company
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Minnesota Mining and Manufacturing Company
+  Matched Entity: None
+  Status: FAILED
+  Match Score: 0.0%
+  Abbreviation Validation Issues:
+    - Resolution Error: Could not resolve 'Minnesota Mining and Manufacturing Company' to any registered entity.
+--------------------------------------------------

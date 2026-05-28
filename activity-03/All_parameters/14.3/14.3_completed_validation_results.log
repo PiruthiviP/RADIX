@@ -1,0 +1,24 @@
+================================================================================================
+14.3 Null/NA Handling: Ambiguous Availability Verification Report
+================================================================================================
+Company: Apple Inc.
+   - Field [yoy_growth_rate       ]: Raw='2%' -> Status=DISCLOSED
+   - Field [annual_revenue        ]: Raw='$383B (FY2023)' -> Status=DISCLOSED
+   - Field [exit_strategy_history ]: Raw='Strategic acquisitions and product ecosystem expansion' -> Status=DISCLOSED
+--------------------------------------------------
+Company: Nova Tech Systems
+   - Field [yoy_growth_rate       ]: Raw='Not Generated (New Company)' -> Status=NOT_GENERATED
+   - Field [annual_revenue        ]: Raw='NA' -> Status=UNKNOWN
+   - Field [exit_strategy_history ]: Raw='Not Generated Yet' -> Status=NOT_GENERATED
+--------------------------------------------------
+Company: SecureFlow Cyber Ltd
+   - Field [yoy_growth_rate       ]: Raw='NA' -> Status=UNKNOWN
+   - Field [annual_revenue        ]: Raw='Restricted (Non-Public)' -> Status=NOT_PUBLIC
+   - Field [exit_strategy_history ]: Raw='NA' -> Status=UNKNOWN
+--------------------------------------------------
+Company: Legacy Brands Inc.
+   - Field [yoy_growth_rate       ]: Raw='NA' -> Status=UNKNOWN
+   - Field [annual_revenue        ]: Raw='NA' -> Status=UNKNOWN
+   - Field [exit_strategy_history ]: Raw='Archived (Acquired by Amazon)' -> Status=REMOVED
+--------------------------------------------------
+================================================================================================

@@ -1,0 +1,72 @@
+Context Confusion Validation Report (Robust Context-Isolated Engine) for 9.3.csv
+================================================================================================
+Company: Apple Inc.
+  Matched Registry: Apple Inc.
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Apple Bank
+  Matched Registry: Apple Bank
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Matched Registry: Microsoft Corporation
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Microsoft Ireland Operations
+  Matched Registry: Microsoft Ireland Operations
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Microsoft India Private Limited
+  Matched Registry: Microsoft India Private Limited
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Google LLC (Subsidiary of Alphabet Inc.)
+  Matched Registry: Google LLC (Subsidiary of Alphabet Inc.)
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Accenture plc
+  Matched Registry: Accenture plc
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Matched Registry: Amazon.com, Inc.
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Matched Registry: Tata Consultancy Services Limited
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Infosys Limited
+  Matched Registry: Infosys Limited
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Delta Air Lines, Inc.
+  Matched Registry: Delta Air Lines, Inc.
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Delta Controls Ltd.
+  Matched Registry: Delta Controls Ltd.
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Delta Dental Agency
+  Matched Registry: Delta Dental Agency
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------
+Company: Delta Energy Corp
+  Matched Registry: Delta Energy Corp
+  Status: PASSED
+  Accuracy Score: 100.0%
+--------------------------------------------------

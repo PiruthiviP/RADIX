@@ -1,0 +1,12 @@
+Company Name,Validation Status,Crisis Validity Score (%),Stagnation Risk Score (%),Passed Checks,Failed Checks,Crisis Errors
+Accenture plc,CURRENT,100.0,0.0,0,0,
+Google LLC (Subsidiary of Alphabet Inc.),CURRENT,100.0,0.0,0,0,
+Apple Inc.,CURRENT,100.0,0.0,0,0,
+Commonwealth Bank of Australia,CURRENT,100.0,0.0,2,0,
+Tata Consultancy Services Limited,CURRENT,100.0,0.0,0,0,
+Infosys Limited,CURRENT,100.0,0.0,0,0,
+"Amazon.com, Inc.",CURRENT,100.0,0.0,1,0,
+Swiggy Limited,CURRENT,100.0,0.0,1,0,
+Morgan Stanley,CURRENT,100.0,0.0,1,0,
+Microsoft Corporation,CURRENT,100.0,0.0,1,0,
+Dunzo Digital Private Limited,CURRENT,100.0,0.0,1,0,

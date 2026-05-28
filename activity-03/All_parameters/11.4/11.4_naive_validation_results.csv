@@ -1,0 +1,9 @@
+Company Name,Matched Entity,Validation Status,Match Score (%),Issues
+Apple Inc.,Apple Inc.,PASSED,100.0,
+Microsoft Corporation,Microsoft Corporation,PASSED,100.0,
+International Business Machines Corporation,International Business Machines Corporation ,PASSED,100.0,
+IBM,,FAILED,0.0,Resolution Error: Could not resolve 'IBM' to any registered entity.
+AT&T Inc.,AT&T Inc.,PASSED,100.0,
+American Telephone & Telegraph Company,,FAILED,0.0,Resolution Error: Could not resolve 'American Telephone & Telegraph Company' to any registered entity.
+3M Company,3M Company,PASSED,100.0,
+Minnesota Mining and Manufacturing Company,,FAILED,0.0,Resolution Error: Could not resolve 'Minnesota Mining and Manufacturing Company' to any registered entity.

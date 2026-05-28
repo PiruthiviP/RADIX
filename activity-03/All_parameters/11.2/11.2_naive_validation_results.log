@@ -1,0 +1,76 @@
+Parent/Subsidiary Disambiguation Report (Naïve Parent-Subsidiary Resolver) for 11.2.csv
+================================================================================================
+Company: Apple Inc.
+  Matched Entity: Apple Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Matched Entity: Microsoft Corporation
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Google LLC (Subsidiary of Alphabet Inc.)
+  Matched Entity: Alphabet Inc.
+  Status: CONFLATED/FAILED
+  Match Score: 50.0%
+  Parent/Subsidiary Validation Issues:
+    - Conflation Failure: Subsidiary record 'Google' was incorrectly matched to parent 'Alphabet Inc.'.
+    - Mismatch [Website URL]: Ingested 'https://www.google.com', expected 'https://abc.xyz'
+    - Mismatch [Year of Incorporation]: Ingested '1998', expected '2015'
+--------------------------------------------------
+Company: Accenture plc
+  Matched Entity: Accenture plc
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Matched Entity: Amazon.com, Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Matched Entity: Tata Consultancy Services Limited
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Infosys Limited
+  Matched Entity: Infosys Limited
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Alphabet Inc.
+  Matched Entity: Google LLC (Subsidiary of Alphabet Inc.)
+  Status: CONFLATED/FAILED
+  Match Score: 50.0%
+  Parent/Subsidiary Validation Issues:
+    - Mismatch [Website URL]: Ingested 'https://abc.xyz', expected 'https://www.google.com'
+    - Mismatch [Year of Incorporation]: Ingested '2015', expected '1998'
+--------------------------------------------------
+Company: YouTube, LLC
+  Matched Entity: Alphabet Inc.
+  Status: CONFLATED/FAILED
+  Match Score: 0.0%
+  Parent/Subsidiary Validation Issues:
+    - Conflation Failure: Subsidiary record 'YouTube' was incorrectly matched to parent 'Alphabet Inc.'.
+    - Mismatch [CEO Name]: Ingested 'Neal Mohan', expected 'Sundar Pichai'
+    - Mismatch [Headquarters Address]: Ingested '901 Cherry Ave, San Bruno, California, USA', expected '1600 Amphitheatre Parkway, Mountain View, California, USA'
+    - Mismatch [Website URL]: Ingested 'https://www.youtube.com', expected 'https://abc.xyz'
+    - Mismatch [Year of Incorporation]: Ingested '2005', expected '2015'
+--------------------------------------------------
+Company: Meta Platforms, Inc.
+  Matched Entity: Meta Platforms, Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Instagram, LLC
+  Matched Entity: Meta Platforms, Inc.
+  Status: CONFLATED/FAILED
+  Match Score: 0.0%
+  Parent/Subsidiary Validation Issues:
+    - Conflation Failure: Subsidiary record 'Instagram' was incorrectly matched to parent 'Meta Platforms, Inc.'.
+    - Mismatch [CEO Name]: Ingested 'Adam Mosseri', expected 'Mark Zuckerberg'
+    - Mismatch [Headquarters Address]: Ingested '1601 Willow Road, Menlo Park, California, USA', expected '1 Hacker Way, Menlo Park, California, USA'
+    - Mismatch [Website URL]: Ingested 'https://www.instagram.com', expected 'https://about.meta.com'
+    - Mismatch [Year of Incorporation]: Ingested '2010', expected '2004'
+--------------------------------------------------

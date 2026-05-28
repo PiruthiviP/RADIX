@@ -1,0 +1,55 @@
+Geographic Variant Disambiguation Report — Engine: Strict Geo-Variant Resolver
+==============================================================================================================
+[01] Company       : Unilever PLC
+     Geo Region     : UK
+     Matched Entity : Unilever PLC
+     Status         : PASS
+     Score          : 100.0%
+------------------------------------------------------------
+[02] Company       : Unilever N.V. (legacy)
+     Geo Region     : Netherlands
+     Matched Entity : Unilever N.V. (legacy)
+     Status         : PASS
+     Score          : 100.0%
+------------------------------------------------------------
+[03] Company       : Shell plc
+     Geo Region     : UK
+     Matched Entity : Shell plc
+     Status         : PASS
+     Score          : 100.0%
+------------------------------------------------------------
+[04] Company       : Royal Dutch Shell N.V. (legacy)
+     Geo Region     : Netherlands
+     Matched Entity : Royal Dutch Shell N.V. (legacy)
+     Status         : PASS
+     Score          : 100.0%
+------------------------------------------------------------
+[05] Company       : HSBC Holdings plc
+     Geo Region     : UK
+     Matched Entity : HSBC Holdings plc
+     Status         : PASS
+     Score          : 100.0%
+------------------------------------------------------------
+[06] Company       : The Hongkong and Shanghai Banking Corporation Limited
+     Geo Region     : Hong Kong
+     Matched Entity : The Hongkong and Shanghai Banking Corporation Limited
+     Status         : PASS
+     Score          : 100.0%
+------------------------------------------------------------
+[07] Company       : ABB Ltd
+     Geo Region     : Switzerland
+     Matched Entity : ABB Ltd
+     Status         : PASS
+     Score          : 100.0%
+------------------------------------------------------------
+[08] Company       : ABB AB
+     Geo Region     : Sweden
+     Matched Entity : ABB AB
+     Status         : PASS
+     Score          : 100.0%
+------------------------------------------------------------
+
+  SUMMARY [Strict Geo-Variant Resolver]
+  Total   : 8
+  PASSED  : 8  (100.0%)
+  FAILED  : 0  (0.0%)

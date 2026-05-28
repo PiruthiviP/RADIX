@@ -1,0 +1,40 @@
+================================================================================================
+14.4 Null/NA Handling: Default Value Handling Verification Report
+================================================================================================
+Company: Apple Inc. (Public)
+   - [Naive Parser Output]:
+     * Revenue:         1.0
+     * Remote Policy:   Hybrid
+     * Relocation:      Housing; Visa support; Travel reimbursement
+     * Reg Status:      GDPR Compliance; SOC 2; ISO 27001; CCPA Compliance
+   - [Smart Parser Output]:
+     * Revenue:         1.0
+     * Remote Policy:   Hybrid
+     * Relocation:      Housing; Visa support; Travel reimbursement
+     * Reg Status:      GDPR Compliance; SOC 2; ISO 27001; CCPA Compliance
+--------------------------------------------------
+Company: Dynamic Startup Inc. (Private Company)
+   - [Naive Parser Output]:
+     * Revenue:         0.0
+     * Remote Policy:   NA
+     * Relocation:      NA
+     * Reg Status:      NA
+   - [Smart Parser Output]:
+     * Revenue:         None
+     * Remote Policy:   Unknown
+     * Relocation:      No
+     * Reg Status:      NA
+--------------------------------------------------
+Company: Standard Corp plc (Public Company)
+   - [Naive Parser Output]:
+     * Revenue:         0.0
+     * Remote Policy:   NA
+     * Relocation:      NA
+     * Reg Status:      NA
+   - [Smart Parser Output]:
+     * Revenue:         None
+     * Remote Policy:   Unknown
+     * Relocation:      No
+     * Reg Status:      SEC Regulated / Public Audit Status Required
+--------------------------------------------------
+================================================================================================

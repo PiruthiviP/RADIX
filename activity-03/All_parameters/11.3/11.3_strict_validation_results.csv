@@ -1,0 +1,9 @@
+Seq,Company Name,Geo Group,Geo Region,Matched Entity,Validation Status,Score (%),Issues
+1,Unilever PLC,Unilever,UK,Unilever PLC,PASS,100.0,
+2,Unilever N.V. (legacy),Unilever,Netherlands,Unilever N.V. (legacy),PASS,100.0,
+3,Shell plc,Shell,UK,Shell plc,PASS,100.0,
+4,Royal Dutch Shell N.V. (legacy),Shell,Netherlands,Royal Dutch Shell N.V. (legacy),PASS,100.0,
+5,HSBC Holdings plc,HSBC,UK,HSBC Holdings plc,PASS,100.0,
+6,The Hongkong and Shanghai Banking Corporation Limited,HSBC,Hong Kong,The Hongkong and Shanghai Banking Corporation Limited,PASS,100.0,
+7,ABB Ltd,ABB,Switzerland,ABB Ltd,PASS,100.0,
+8,ABB AB,ABB,Sweden,ABB AB,PASS,100.0,

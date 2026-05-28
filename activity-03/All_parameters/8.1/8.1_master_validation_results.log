@@ -1,0 +1,762 @@
+Data Type Validation Report for companies_master.csv
+==========================================================================================
+Company: Accenture plc
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Fractal Analytics Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Oracle India Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Google LLC (Subsidiary of Alphabet Inc.)
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Apple Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Mitsubishi UFJ Financial Group, Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Commonwealth Bank of Australia
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low,>18M customers; Retail focus limits concentration' is not a valid BOOLEAN.
+    - Type Error [contact_person_email]: Value 'cbainvestorrelations@cba.com.au (Investor Relations)' is not a valid EMAIL.
+--------------------------------------------------
+Company: KALVI CAREER EDUCATION PRIVATE LIMITED
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Larsen & Toubro Infotech Limited
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'YouTube corporate channel' is not a valid URL.
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Infosys Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Cloudera Data Platform India Private Limited
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Guidewire Software, Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Llama Logisol Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Swiggy Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Leap Finance Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Cisco Systems, Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Volvo Group
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Amadeus IT Group
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: NielsenIQ
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Snowflake Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Palantir Technologies
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Oracle Financial Services Software Limited
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: International Business Machines Corporation 
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Barclays PLC 
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Schneider Electric
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Blink Commerce Private Limited 
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Zerodha Broking Limited 
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Myntra Designs Private Limited
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Nurix Therapeutics, Inc.
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'High' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Citigroup Inc.
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: ZS Associates, Inc.
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: FLAM Gaming Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: SAP Labs India Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Xperi Inc.
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Medium ' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Consilio LLC
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Moderate' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: BT Group plc
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Capgemini
+  Status: INVALID
+  Type Validity Score: 98.17%
+  Type Error Rate: 1.83%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Polished, global brand storytelling' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Medium ' is not a valid BOOLEAN.
+    - Type Error [contact_person_email]: Value 'https://www.capgemini.com/contact-us' is not a valid EMAIL.
+--------------------------------------------------
+Company: The Bank of New York Mellon Corporation
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'BNY Mellon YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Fidelity Investments
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Fidelity YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: JPMorgan Chase & Co.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'JPMorgan YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Airbus SE
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'YouTube Airbus Channel' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Wells Fargo & Company
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Wells Fargo YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Atlassian Corporation
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Atlassian YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Nutanix, Inc.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Nutanix YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: DeepMind
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'DeepMind YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Akamai Technologies India Pvt. Ltd.
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Moderate; Diverse segments but reliance on media/entertainment during events' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Adobe Inc.
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Moderate; Diverse segments but reliance on media/entertainment during events' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Genpact Ltd.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Uber Technologies, Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Dell Technologies Inc.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Dell Technologies World' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Even Healthcare Private Limited
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Even Healthcare YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Groww Invest Tech Pvt. Ltd.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'YouTube,Groww' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: MintAir Corp
+  Status: INVALID
+  Type Validity Score: 98.17%
+  Type Error Rate: 1.83%
+  Type Mismatches:
+    - Type Error [linkedin_url]: Value 'Company-listed LinkedIn business page' is not a valid URL.
+    - Type Error [marketing_video_url]: Value 'Short corporate overview videos' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: OpenAI, Inc.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'OpenAI DevDay and product launch videos' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Medium ' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Skyhigh Security
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Space Exploration Technologies Corp.
+  Status: INVALID
+  Type Validity Score: 98.17%
+  Type Error Rate: 1.83%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'SpaceX launch videos ' is not a valid URL.
+    - Type Error [social_media_followers]: Value 'Very high; millions across platforms' is not a valid NUMBER.
+    - Type Error [customer_concentration_risk]: Value 'Medium ' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Walmart Inc.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Zepto Technologies Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: DevRev Cloud India Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Increff Technologies Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: MoveInSync Technologies Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: NVIDIA Corporation
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: ServiceNow, Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Tredence Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: CME Group Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: HCL Technologies Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Freshworks Inc.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on Freshworks Official YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low ' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: HP Inc.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on HP Official YouTube.' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Koninklijke Philips N.V.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on Official Philips YouTube.' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Warner Bros. Discovery, Inc.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available via WBD official YouTube and channels.' is not a valid URL.
+    - Type Error [social_media_followers]: Value 'Hundreds of millions across all sub-brands ' is not a valid NUMBER.
+--------------------------------------------------
+Company: HyperVerge Technologies Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Motorq Technologies Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Autodesk
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Electronic Arts
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [social_media_followers]: Value '###############################################################################################################################################################################################################################################################' is not a valid NUMBER.
+--------------------------------------------------
+Company: Morgan Stanley
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Darwinbox Digital Solutions Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Epifi Technologies Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Juspay Technologies Private Limited
+  Status: INVALID
+  Type Validity Score: 97.56%
+  Type Error Rate: 2.44%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on YouTube (Juspay channel)' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Moderate' is not a valid BOOLEAN.
+    - Type Error [contact_person_email]: Value 'Not publicly specified' is not a valid EMAIL.
+    - Type Error [contact_person_phone]: Value 'Not publicly specified' is not a valid PHONE.
+--------------------------------------------------
+Company: Flipkart Internet Private Limited
+  Status: INVALID
+  Type Validity Score: 97.56%
+  Type Error Rate: 2.44%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on YouTube (Flipkart channel)' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low ' is not a valid BOOLEAN.
+    - Type Error [contact_person_email]: Value 'Not publicly specified' is not a valid EMAIL.
+    - Type Error [contact_person_phone]: Value 'Not publicly specified' is not a valid PHONE.
+--------------------------------------------------
+Company: Optum
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on official website and YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Medium ' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: PayPal Holdings, Inc.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on website' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Bajaj Finserv Health Ltd.
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Health services board' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value '~10%' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Bain Capability Network
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Bain YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Proactively Inc.
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Samsung PRISM
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Acko General Insurance Limited
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [primary_phone_number]: Value 'Not Found' is not a valid PHONE.
+--------------------------------------------------
+Company: Robert Bosch GmbH
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Concentrix Corporation
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Dunzo Digital Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Byju’s
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Cleartrip
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Cognizant Technology Solutions Corporation
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on official YouTube channel' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Top 10 clients contribute ~30% revenue' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: DXC Technology Company
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on official YouTube channel' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Top 10 clients contribute ~35% revenue' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: PhysicsWallah Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Udemy, Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: NTT DATA
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on official website and YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Virtusa Corporation
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [primary_phone_number]: Value '5273' is not a valid PHONE.
+--------------------------------------------------
+Company: upGrad Education Private Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: ZS Associates, Inc.
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Moderate' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Wipro Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Paytm Money
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on Paytm Money website & YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Hexagon Capability Center India
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on Hexagon corporate channels' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Single parent company dependency 100%' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: INDmoney Private Limited
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on official YouTube channel' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low diversified retail base' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Tech Mahindra Limited
+  Status: INVALID
+  Type Validity Score: 98.17%
+  Type Error Rate: 1.83%
+  Type Mismatches:
+    - Type Error [primary_phone_number]: Value '4154' is not a valid PHONE.
+    - Type Error [marketing_video_url]: Value 'Available on website' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Simplilearn
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: BigBasket
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Ecom Express
+  Status: INVALID
+  Type Validity Score: 99.39%
+  Type Error Rate: 0.61%
+  Type Mismatches:
+    - Type Error [customer_concentration_risk]: Value 'Medium' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: Kyndryl Holdings Inc.
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: One MobiKwik Systems Limited
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Shadowfax
+  Status: VALID
+  Type Validity Score: 100.0%
+  Type Error Rate: 0.0%
+--------------------------------------------------
+Company: Rupeek
+  Status: INVALID
+  Type Validity Score: 98.78%
+  Type Error Rate: 1.22%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on official website and YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Low' is not a valid BOOLEAN.
+--------------------------------------------------
+Company: 3i Infotech Ltd.
+  Status: INVALID
+  Type Validity Score: 97.56%
+  Type Error Rate: 2.44%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on YouTube' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Moderate (BFSI heavy)' is not a valid BOOLEAN.
+    - Type Error [contact_person_email]: Value 'Not publicly specified' is not a valid EMAIL.
+    - Type Error [contact_person_phone]: Value 'Not publicly specified' is not a valid PHONE.
+--------------------------------------------------
+Company: BharatPe
+  Status: INVALID
+  Type Validity Score: 97.56%
+  Type Error Rate: 2.44%
+  Type Mismatches:
+    - Type Error [marketing_video_url]: Value 'Available on YouTube/BharatPe channel' is not a valid URL.
+    - Type Error [customer_concentration_risk]: Value 'Moderate; SMB-focused' is not a valid BOOLEAN.
+    - Type Error [contact_person_email]: Value 'Not publicly specified' is not a valid EMAIL.
+    - Type Error [contact_person_phone]: Value 'Not publicly specified' is not a valid PHONE.
+--------------------------------------------------

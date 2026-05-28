@@ -1,0 +1,56 @@
+================================================================================================
+14.1 Null/NA Handling: Unavailable Data Verification Report
+================================================================================================
+Company: Apple Inc. (Public)
+   - Raw Ingested Revenue:   $383B (FY2023)
+   - Raw Ingested Valuation: $3T market capitalization
+   - Raw Ingested Funding:   $100M (IPO historical; equity markets thereafter)
+   - [Naive Parser Output]:
+     * Revenue:   $3832023.0000 B
+     * Valuation: $3.0000 B
+     * Funding:   $100.0000 B
+   - [Graceful Parser Output]:
+     * Revenue:   $383.0000 B
+     * Valuation: $0.0030 B
+     * Funding:   $0.1000 B
+--------------------------------------------------
+Company: Microsoft Corporation (Public Company)
+   - Raw Ingested Revenue:   $281.7 billion (FY2025 full year);Trailing twelve months ~$293.8 billion (as of late 2025)
+   - Raw Ingested Valuation: $3.6 trillion market cap (early 2026)
+   - Raw Ingested Funding:   $10 billion
+   - [Naive Parser Output]:
+     * Revenue:   $0.0000 B
+     * Valuation: $3.6203 B
+     * Funding:   $10.0000 B
+   - [Graceful Parser Output]:
+     * Revenue:   $0.2817 B
+     * Valuation: $0.0036 B
+     * Funding:   $10.0000 B
+--------------------------------------------------
+Company: Secretive Private Startup Ltd (Privately Held Company)
+   - Raw Ingested Revenue:   Undisclosed
+   - Raw Ingested Valuation: ?
+   - Raw Ingested Funding:   Undisclosed
+   - [Naive Parser Output]:
+     * Revenue:   $0.0000 B
+     * Valuation: $0.0000 B
+     * Funding:   $0.0000 B
+   - [Graceful Parser Output]:
+     * Revenue:   None (Undisclosed / NA)
+     * Valuation: None (Undisclosed / NA)
+     * Funding:   None (Undisclosed / NA)
+--------------------------------------------------
+Company: Bootstrapped Tech Co. (Private Company (Family-owned))
+   - Raw Ingested Revenue:   $1.2M
+   - Raw Ingested Valuation: NA
+   - Raw Ingested Funding:   0
+   - [Naive Parser Output]:
+     * Revenue:   $1.2000 B
+     * Valuation: $0.0000 B
+     * Funding:   $0.0000 B
+   - [Graceful Parser Output]:
+     * Revenue:   $0.0012 B
+     * Valuation: None (Undisclosed / NA)
+     * Funding:   $0.00 (Disclosed Zero / Bootstrapped)
+--------------------------------------------------
+================================================================================================

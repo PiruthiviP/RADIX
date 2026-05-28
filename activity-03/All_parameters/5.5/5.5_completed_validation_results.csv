@@ -1,0 +1,8 @@
+Company Name,Validation Status,Consistency Score (%),Consistency Risk Score (%),Passed Checks,Failed Checks,Consistency Errors
+Accenture plc,CONSISTENT,100.0,0.0,3,0,
+Google LLC (Subsidiary of Alphabet Inc.),CONSISTENT,100.0,0.0,3,0,
+Apple Inc.,CONSISTENT,100.0,0.0,3,0,
+Tata Consultancy Services Limited,CONSISTENT,100.0,0.0,3,0,
+Infosys Limited,CONSISTENT,100.0,0.0,3,0,
+"Amazon.com, Inc.",CONSISTENT,100.0,0.0,3,0,
+Microsoft Corporation,CONSISTENT,100.0,0.0,3,0,

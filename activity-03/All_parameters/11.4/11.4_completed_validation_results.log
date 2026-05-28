@@ -1,0 +1,42 @@
+Abbreviation Handling Disambiguation Report (Abbreviation-Aware Resolver) for 11.4.csv
+======================================================================================
+Company: Apple Inc.
+  Matched Entity: Apple Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Matched Entity: Microsoft Corporation
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: International Business Machines Corporation
+  Matched Entity: International Business Machines Corporation 
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: IBM
+  Matched Entity: International Business Machines Corporation 
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: AT&T Inc.
+  Matched Entity: AT&T Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: American Telephone & Telegraph Company
+  Matched Entity: AT&T Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: 3M Company
+  Matched Entity: 3M Company
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Minnesota Mining and Manufacturing Company
+  Matched Entity: 3M Company
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------

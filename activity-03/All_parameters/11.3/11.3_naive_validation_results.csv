@@ -1,0 +1,12 @@
+Company Name,Matched Entity,Validation Status,Match Score (%),Issues
+Apple Inc.,Apple Inc.,PASSED,100.0,
+Microsoft Corporation,Microsoft Corporation,PASSED,100.0,
+Barclays PLC,Barclays PLC ,PASSED,100.0,
+Koninklijke Philips N.V.,Koninklijke Philips N.V.,PASSED,100.0,
+Citigroup Inc.,Citigroup Inc.,PASSED,100.0,
+Unilever PLC,Unilever PLC,PASSED,100.0,
+Unilever N.V.,Unilever PLC,CONFLATED/FAILED,50.0,"Geographic Conflation: 'Unilever N.V.' (region: Netherlands) was incorrectly resolved to 'Unilever PLC' (region: United Kingdom).; Mismatch [HQ Address]: Ingested 'Rotterdam, Netherlands', expected 'Port Sunlight, Wirral, England, United Kingdom'; Mismatch [Incorporation Year]: Ingested '1927', expected '1894'"
+Shell plc,Shell plc,PASSED,100.0,
+Shell Nederland B.V.,Shell plc,CONFLATED/FAILED,25.0,"Geographic Conflation: 'Shell Nederland B.V.' (region: Netherlands) was incorrectly resolved to 'Shell plc' (region: United Kingdom).; Mismatch [CEO Name]: Ingested 'Marjan van Loon', expected 'Wael Sawan'; Mismatch [HQ Address]: Ingested 'Carel van Bylandtlaan 30, 2596 HR The Hague, Netherlands', expected 'Shell Centre, York Road, London, SE1 7NA, United Kingdom'; Mismatch [Website URL]: Ingested 'https://www.shell.nl', expected 'https://www.shell.com'"
+HSBC Holdings plc,HSBC Holdings plc,PASSED,100.0,
+"HSBC Bank USA, N.A.",HSBC Holdings plc,CONFLATED/FAILED,25.0,"Geographic Conflation: 'HSBC Bank USA, N.A.' (region: United States) was incorrectly resolved to 'HSBC Holdings plc' (region: United Kingdom).; Mismatch [CEO Name]: Ingested 'Michael Roberts', expected 'Georges Elhedery'; Mismatch [HQ Address]: Ingested '452 Fifth Avenue, New York, NY 10018, United States', expected '8 Canada Square, Canary Wharf, London, E14 5HQ, United Kingdom'; Mismatch [Incorporation Year]: Ingested '1850', expected '1991'"

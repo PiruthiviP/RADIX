@@ -1,0 +1,71 @@
+Geographic Variant Disambiguation Report (Naïve Geographic Resolver) for 11.3.csv
+=================================================================================
+Company: Apple Inc.
+  Matched Entity: Apple Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Matched Entity: Microsoft Corporation
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Barclays PLC
+  Matched Entity: Barclays PLC 
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Koninklijke Philips N.V.
+  Matched Entity: Koninklijke Philips N.V.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Citigroup Inc.
+  Matched Entity: Citigroup Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Unilever PLC
+  Matched Entity: Unilever PLC
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Unilever N.V.
+  Matched Entity: Unilever PLC
+  Status: CONFLATED/FAILED
+  Match Score: 50.0%
+  Geographic Variant Validation Issues:
+    - Geographic Conflation: 'Unilever N.V.' (region: Netherlands) was incorrectly resolved to 'Unilever PLC' (region: United Kingdom).
+    - Mismatch [HQ Address]: Ingested 'Rotterdam, Netherlands', expected 'Port Sunlight, Wirral, England, United Kingdom'
+    - Mismatch [Incorporation Year]: Ingested '1927', expected '1894'
+--------------------------------------------------
+Company: Shell plc
+  Matched Entity: Shell plc
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Shell Nederland B.V.
+  Matched Entity: Shell plc
+  Status: CONFLATED/FAILED
+  Match Score: 25.0%
+  Geographic Variant Validation Issues:
+    - Geographic Conflation: 'Shell Nederland B.V.' (region: Netherlands) was incorrectly resolved to 'Shell plc' (region: United Kingdom).
+    - Mismatch [CEO Name]: Ingested 'Marjan van Loon', expected 'Wael Sawan'
+    - Mismatch [HQ Address]: Ingested 'Carel van Bylandtlaan 30, 2596 HR The Hague, Netherlands', expected 'Shell Centre, York Road, London, SE1 7NA, United Kingdom'
+    - Mismatch [Website URL]: Ingested 'https://www.shell.nl', expected 'https://www.shell.com'
+--------------------------------------------------
+Company: HSBC Holdings plc
+  Matched Entity: HSBC Holdings plc
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: HSBC Bank USA, N.A.
+  Matched Entity: HSBC Holdings plc
+  Status: CONFLATED/FAILED
+  Match Score: 25.0%
+  Geographic Variant Validation Issues:
+    - Geographic Conflation: 'HSBC Bank USA, N.A.' (region: United States) was incorrectly resolved to 'HSBC Holdings plc' (region: United Kingdom).
+    - Mismatch [CEO Name]: Ingested 'Michael Roberts', expected 'Georges Elhedery'
+    - Mismatch [HQ Address]: Ingested '452 Fifth Avenue, New York, NY 10018, United States', expected '8 Canada Square, Canary Wharf, London, E14 5HQ, United Kingdom'
+    - Mismatch [Incorporation Year]: Ingested '1850', expected '1991'
+--------------------------------------------------

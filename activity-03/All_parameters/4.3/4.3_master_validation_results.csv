@@ -1,0 +1,117 @@
+Company Name,Validation Status,Validity Score (%),Hallucination Risk Score (%),Passed Checks,Failed Checks,Factual Errors
+Accenture plc,VERIFIED,100.0,0.0,5,0,
+Fractal Analytics Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Fractal Analytics Private Limited' is not present in the verified registry.
+Oracle India Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Oracle India Private Limited' is not present in the verified registry.
+Google LLC (Subsidiary of Alphabet Inc.),VERIFIED,100.0,0.0,5,0,
+Apple Inc.,VERIFIED,100.0,0.0,5,0,
+"Mitsubishi UFJ Financial Group, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'Mitsubishi UFJ Financial Group, Inc.' is not present in the verified registry."
+Commonwealth Bank of Australia,FLAGGED,0.0,100.0,4,1,Company 'Commonwealth Bank of Australia' is not present in the verified registry.
+KALVI CAREER EDUCATION PRIVATE LIMITED,FLAGGED,0.0,100.0,4,1,Company 'KALVI CAREER EDUCATION PRIVATE LIMITED' is not present in the verified registry.
+Larsen & Toubro Infotech Limited,FLAGGED,0.0,100.0,4,1,Company 'Larsen & Toubro Infotech Limited' is not present in the verified registry.
+Tata Consultancy Services Limited,VERIFIED,100.0,0.0,5,0,
+Infosys Limited,VERIFIED,100.0,0.0,5,0,
+Cloudera Data Platform India Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Cloudera Data Platform India Private Limited' is not present in the verified registry.
+"Guidewire Software, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'Guidewire Software, Inc.' is not present in the verified registry."
+"Amazon.com, Inc.",VERIFIED,100.0,0.0,5,0,
+Llama Logisol Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Llama Logisol Private Limited' is not present in the verified registry.
+Swiggy Limited,FLAGGED,0.0,100.0,4,1,Company 'Swiggy Limited' is not present in the verified registry.
+Leap Finance Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Leap Finance Private Limited' is not present in the verified registry.
+"Cisco Systems, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'Cisco Systems, Inc.' is not present in the verified registry."
+Volvo Group,FLAGGED,0.0,100.0,4,1,Company 'Volvo Group' is not present in the verified registry.
+Amadeus IT Group,FLAGGED,0.0,100.0,4,1,Company 'Amadeus IT Group' is not present in the verified registry.
+NielsenIQ,FLAGGED,0.0,100.0,4,1,Company 'NielsenIQ' is not present in the verified registry.
+Snowflake Inc.,FLAGGED,0.0,100.0,4,1,Company 'Snowflake Inc.' is not present in the verified registry.
+Palantir Technologies,FLAGGED,0.0,100.0,4,1,Company 'Palantir Technologies' is not present in the verified registry.
+Oracle Financial Services Software Limited,FLAGGED,0.0,100.0,4,1,Company 'Oracle Financial Services Software Limited' is not present in the verified registry.
+International Business Machines Corporation ,FLAGGED,0.0,100.0,4,1,Company 'International Business Machines Corporation' is not present in the verified registry.
+Barclays PLC ,FLAGGED,0.0,100.0,4,1,Company 'Barclays PLC' is not present in the verified registry.
+Schneider Electric,FLAGGED,0.0,100.0,4,1,Company 'Schneider Electric' is not present in the verified registry.
+Blink Commerce Private Limited ,FLAGGED,0.0,100.0,4,1,Company 'Blink Commerce Private Limited' is not present in the verified registry.
+Zerodha Broking Limited ,FLAGGED,0.0,100.0,4,1,Company 'Zerodha Broking Limited' is not present in the verified registry.
+Myntra Designs Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Myntra Designs Private Limited' is not present in the verified registry.
+"Nurix Therapeutics, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'Nurix Therapeutics, Inc.' is not present in the verified registry."
+Citigroup Inc.,FLAGGED,0.0,100.0,4,1,Company 'Citigroup Inc.' is not present in the verified registry.
+"ZS Associates, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'ZS Associates, Inc.' is not present in the verified registry."
+FLAM Gaming Private Limited,FLAGGED,0.0,100.0,4,1,Company 'FLAM Gaming Private Limited' is not present in the verified registry.
+SAP Labs India Private Limited,FLAGGED,0.0,100.0,4,1,Company 'SAP Labs India Private Limited' is not present in the verified registry.
+Xperi Inc.,FLAGGED,0.0,100.0,4,1,Company 'Xperi Inc.' is not present in the verified registry.
+Consilio LLC,FLAGGED,0.0,100.0,4,1,Company 'Consilio LLC' is not present in the verified registry.
+BT Group plc,FLAGGED,0.0,100.0,4,1,Company 'BT Group plc' is not present in the verified registry.
+Capgemini,FLAGGED,0.0,100.0,4,1,Company 'Capgemini' is not present in the verified registry.
+The Bank of New York Mellon Corporation,FLAGGED,0.0,100.0,4,1,Company 'The Bank of New York Mellon Corporation' is not present in the verified registry.
+Fidelity Investments,FLAGGED,0.0,100.0,4,1,Company 'Fidelity Investments' is not present in the verified registry.
+JPMorgan Chase & Co.,FLAGGED,0.0,100.0,4,1,Company 'JPMorgan Chase & Co.' is not present in the verified registry.
+Airbus SE,FLAGGED,0.0,100.0,4,1,Company 'Airbus SE' is not present in the verified registry.
+Wells Fargo & Company,FLAGGED,0.0,100.0,4,1,Company 'Wells Fargo & Company' is not present in the verified registry.
+Atlassian Corporation,FLAGGED,0.0,100.0,4,1,Company 'Atlassian Corporation' is not present in the verified registry.
+"Nutanix, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'Nutanix, Inc.' is not present in the verified registry."
+DeepMind,FLAGGED,0.0,100.0,4,1,Company 'DeepMind' is not present in the verified registry.
+Akamai Technologies India Pvt. Ltd.,FLAGGED,0.0,100.0,4,1,Company 'Akamai Technologies India Pvt. Ltd.' is not present in the verified registry.
+Adobe Inc.,FLAGGED,0.0,100.0,4,1,Company 'Adobe Inc.' is not present in the verified registry.
+Genpact Ltd.,FLAGGED,0.0,100.0,4,1,Company 'Genpact Ltd.' is not present in the verified registry.
+"Uber Technologies, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'Uber Technologies, Inc.' is not present in the verified registry."
+Dell Technologies Inc.,FLAGGED,0.0,100.0,4,1,Company 'Dell Technologies Inc.' is not present in the verified registry.
+Even Healthcare Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Even Healthcare Private Limited' is not present in the verified registry.
+Groww Invest Tech Pvt. Ltd.,FLAGGED,0.0,100.0,4,1,Company 'Groww Invest Tech Pvt. Ltd.' is not present in the verified registry.
+MintAir Corp,FLAGGED,0.0,100.0,4,1,Company 'MintAir Corp' is not present in the verified registry.
+"OpenAI, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'OpenAI, Inc.' is not present in the verified registry."
+Skyhigh Security,FLAGGED,0.0,100.0,4,1,Company 'Skyhigh Security' is not present in the verified registry.
+Space Exploration Technologies Corp.,FLAGGED,0.0,100.0,4,1,Company 'Space Exploration Technologies Corp.' is not present in the verified registry.
+Walmart Inc.,FLAGGED,0.0,100.0,4,1,Company 'Walmart Inc.' is not present in the verified registry.
+Zepto Technologies Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Zepto Technologies Private Limited' is not present in the verified registry.
+DevRev Cloud India Private Limited,FLAGGED,0.0,100.0,4,1,Company 'DevRev Cloud India Private Limited' is not present in the verified registry.
+Increff Technologies Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Increff Technologies Private Limited' is not present in the verified registry.
+MoveInSync Technologies Private Limited,FLAGGED,0.0,100.0,4,1,Company 'MoveInSync Technologies Private Limited' is not present in the verified registry.
+NVIDIA Corporation,FLAGGED,0.0,100.0,4,1,Company 'NVIDIA Corporation' is not present in the verified registry.
+"ServiceNow, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'ServiceNow, Inc.' is not present in the verified registry."
+Tredence Inc.,FLAGGED,0.0,100.0,4,1,Company 'Tredence Inc.' is not present in the verified registry.
+CME Group Inc.,FLAGGED,0.0,100.0,4,1,Company 'CME Group Inc.' is not present in the verified registry.
+HCL Technologies Limited,FLAGGED,0.0,100.0,4,1,Company 'HCL Technologies Limited' is not present in the verified registry.
+Freshworks Inc.,FLAGGED,0.0,100.0,4,1,Company 'Freshworks Inc.' is not present in the verified registry.
+HP Inc.,FLAGGED,0.0,100.0,4,1,Company 'HP Inc.' is not present in the verified registry.
+Koninklijke Philips N.V.,FLAGGED,0.0,100.0,4,1,Company 'Koninklijke Philips N.V.' is not present in the verified registry.
+"Warner Bros. Discovery, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'Warner Bros. Discovery, Inc.' is not present in the verified registry."
+HyperVerge Technologies Private Limited,FLAGGED,0.0,100.0,4,1,Company 'HyperVerge Technologies Private Limited' is not present in the verified registry.
+Motorq Technologies Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Motorq Technologies Private Limited' is not present in the verified registry.
+Autodesk,FLAGGED,0.0,100.0,4,1,Company 'Autodesk' is not present in the verified registry.
+Electronic Arts,FLAGGED,0.0,100.0,4,1,Company 'Electronic Arts' is not present in the verified registry.
+Morgan Stanley,FLAGGED,0.0,100.0,4,1,Company 'Morgan Stanley' is not present in the verified registry.
+Microsoft Corporation,VERIFIED,100.0,0.0,5,0,
+Darwinbox Digital Solutions Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Darwinbox Digital Solutions Private Limited' is not present in the verified registry.
+Epifi Technologies Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Epifi Technologies Private Limited' is not present in the verified registry.
+Juspay Technologies Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Juspay Technologies Private Limited' is not present in the verified registry.
+Flipkart Internet Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Flipkart Internet Private Limited' is not present in the verified registry.
+Optum,FLAGGED,0.0,100.0,4,1,Company 'Optum' is not present in the verified registry.
+"PayPal Holdings, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'PayPal Holdings, Inc.' is not present in the verified registry."
+Bajaj Finserv Health Ltd.,FLAGGED,0.0,100.0,4,1,Company 'Bajaj Finserv Health Ltd.' is not present in the verified registry.
+Bain Capability Network,FLAGGED,0.0,100.0,4,1,Company 'Bain Capability Network' is not present in the verified registry.
+Proactively Inc.,FLAGGED,0.0,100.0,4,1,Company 'Proactively Inc.' is not present in the verified registry.
+Samsung PRISM,FLAGGED,0.0,100.0,4,1,Company 'Samsung PRISM' is not present in the verified registry.
+Acko General Insurance Limited,FLAGGED,0.0,100.0,4,1,Company 'Acko General Insurance Limited' is not present in the verified registry.
+Robert Bosch GmbH,FLAGGED,0.0,100.0,4,1,Company 'Robert Bosch GmbH' is not present in the verified registry.
+Concentrix Corporation,FLAGGED,0.0,100.0,4,1,Company 'Concentrix Corporation' is not present in the verified registry.
+Dunzo Digital Private Limited,FLAGGED,0.0,100.0,4,1,Company 'Dunzo Digital Private Limited' is not present in the verified registry.
+Byju’s,FLAGGED,0.0,100.0,4,1,Company 'Byju’s' is not present in the verified registry.
+Cleartrip,FLAGGED,0.0,100.0,4,1,Company 'Cleartrip' is not present in the verified registry.
+Cognizant Technology Solutions Corporation,FLAGGED,0.0,100.0,4,1,Company 'Cognizant Technology Solutions Corporation' is not present in the verified registry.
+DXC Technology Company,FLAGGED,0.0,100.0,4,1,Company 'DXC Technology Company' is not present in the verified registry.
+PhysicsWallah Private Limited,FLAGGED,0.0,100.0,4,1,Company 'PhysicsWallah Private Limited' is not present in the verified registry.
+"Udemy, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'Udemy, Inc.' is not present in the verified registry."
+NTT DATA,FLAGGED,0.0,100.0,4,1,Company 'NTT DATA' is not present in the verified registry.
+Virtusa Corporation,FLAGGED,0.0,100.0,4,1,Company 'Virtusa Corporation' is not present in the verified registry.
+upGrad Education Private Limited,FLAGGED,0.0,100.0,4,1,Company 'upGrad Education Private Limited' is not present in the verified registry.
+"ZS Associates, Inc.",FLAGGED,0.0,100.0,4,1,"Company 'ZS Associates, Inc.' is not present in the verified registry."
+Wipro Limited,FLAGGED,0.0,100.0,4,1,Company 'Wipro Limited' is not present in the verified registry.
+Paytm Money,FLAGGED,0.0,100.0,4,1,Company 'Paytm Money' is not present in the verified registry.
+Hexagon Capability Center India,FLAGGED,0.0,100.0,4,1,Company 'Hexagon Capability Center India' is not present in the verified registry.
+INDmoney Private Limited,FLAGGED,0.0,100.0,4,1,Company 'INDmoney Private Limited' is not present in the verified registry.
+Tech Mahindra Limited,FLAGGED,0.0,100.0,4,1,Company 'Tech Mahindra Limited' is not present in the verified registry.
+Simplilearn,FLAGGED,0.0,100.0,4,1,Company 'Simplilearn' is not present in the verified registry.
+BigBasket,FLAGGED,0.0,100.0,4,1,Company 'BigBasket' is not present in the verified registry.
+Ecom Express,FLAGGED,0.0,100.0,4,1,Company 'Ecom Express' is not present in the verified registry.
+Kyndryl Holdings Inc.,FLAGGED,0.0,100.0,4,1,Company 'Kyndryl Holdings Inc.' is not present in the verified registry.
+One MobiKwik Systems Limited,FLAGGED,0.0,100.0,4,1,Company 'One MobiKwik Systems Limited' is not present in the verified registry.
+Shadowfax,FLAGGED,0.0,100.0,4,1,Company 'Shadowfax' is not present in the verified registry.
+Rupeek,FLAGGED,0.0,100.0,4,1,Company 'Rupeek' is not present in the verified registry.
+3i Infotech Ltd.,FLAGGED,0.0,100.0,4,1,Company '3i Infotech Ltd.' is not present in the verified registry.
+BharatPe,FLAGGED,0.0,100.0,4,1,Company 'BharatPe' is not present in the verified registry.

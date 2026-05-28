@@ -1,0 +1,610 @@
+Internal Consistency Report for companies_master.csv
+==========================================================================================
+Company: Accenture plc
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Fractal Analytics Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Oracle India Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Google LLC (Subsidiary of Alphabet Inc.)
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Apple Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Mitsubishi UFJ Financial Group, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Commonwealth Bank of Australia
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: KALVI CAREER EDUCATION PRIVATE LIMITED
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Larsen & Toubro Infotech Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Infosys Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Cloudera Data Platform India Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Guidewire Software, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Llama Logisol Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Swiggy Limited
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Customer Satisfaction]: High NPS (60) indicates high client satisfaction, but churn rate is extremely high (25.0%).
+--------------------------------------------------
+Company: Leap Finance Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Cisco Systems, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Volvo Group
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Amadeus IT Group
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: NielsenIQ
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Snowflake Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Palantir Technologies
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Oracle Financial Services Software Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: International Business Machines Corporation 
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Barclays PLC 
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Schneider Electric
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Blink Commerce Private Limited 
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Zerodha Broking Limited 
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Myntra Designs Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Nurix Therapeutics, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Citigroup Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: ZS Associates, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: FLAM Gaming Private Limited
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Customer Satisfaction]: High NPS (48) indicates high client satisfaction, but churn rate is extremely high (30.0%).
+--------------------------------------------------
+Company: SAP Labs India Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Xperi Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Consilio LLC
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: BT Group plc
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Capgemini
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: The Bank of New York Mellon Corporation
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Fidelity Investments
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: JPMorgan Chase & Co.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Airbus SE
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Wells Fargo & Company
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Atlassian Corporation
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Nutanix, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: DeepMind
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Akamai Technologies India Pvt. Ltd.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Adobe Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Genpact Ltd.
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Scale]: Large employee size (140000 employees) but has only 1 offices reported.
+--------------------------------------------------
+Company: Uber Technologies, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Dell Technologies Inc.
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Growth]: High hiring velocity and low turnover (12%) are reported, but YoY growth rate is negative (-1%).
+--------------------------------------------------
+Company: Even Healthcare Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Groww Invest Tech Pvt. Ltd.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: MintAir Corp
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: OpenAI, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Skyhigh Security
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Space Exploration Technologies Corp.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Walmart Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Zepto Technologies Private Limited
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Customer Satisfaction]: High NPS (62) indicates high client satisfaction, but churn rate is extremely high (2200.0%).
+--------------------------------------------------
+Company: DevRev Cloud India Private Limited
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Customer Satisfaction]: High NPS (61) indicates high client satisfaction, but churn rate is extremely high (700.0%).
+--------------------------------------------------
+Company: Increff Technologies Private Limited
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Customer Satisfaction]: High NPS (48) indicates high client satisfaction, but churn rate is extremely high (600.0%).
+--------------------------------------------------
+Company: MoveInSync Technologies Private Limited
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Customer Satisfaction]: High NPS (62) indicates high client satisfaction, but churn rate is extremely high (500.0%).
+--------------------------------------------------
+Company: NVIDIA Corporation
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: ServiceNow, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Tredence Inc.
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Customer Satisfaction]: High NPS (72) indicates high client satisfaction, but churn rate is extremely high (500.0%).
+--------------------------------------------------
+Company: CME Group Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: HCL Technologies Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Freshworks Inc.
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Customer Satisfaction]: High NPS (50) indicates high client satisfaction, but churn rate is extremely high (105.0%).
+--------------------------------------------------
+Company: HP Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Koninklijke Philips N.V.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Warner Bros. Discovery, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: HyperVerge Technologies Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Motorq Technologies Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Autodesk
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Customer Satisfaction]: High NPS (64) indicates high client satisfaction, but churn rate is extremely high (500.0%).
+--------------------------------------------------
+Company: Electronic Arts
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Customer Satisfaction]: High NPS (62) indicates high client satisfaction, but churn rate is extremely high (800.0%).
+--------------------------------------------------
+Company: Morgan Stanley
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Darwinbox Digital Solutions Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Epifi Technologies Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Juspay Technologies Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Flipkart Internet Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Optum
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: PayPal Holdings, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Bajaj Finserv Health Ltd.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Bain Capability Network
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Proactively Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Samsung PRISM
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Acko General Insurance Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Robert Bosch GmbH
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Concentrix Corporation
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Dunzo Digital Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Byju’s
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Cleartrip
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Cognizant Technology Solutions Corporation
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: DXC Technology Company
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: PhysicsWallah Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Udemy, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: NTT DATA
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Virtusa Corporation
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: upGrad Education Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: ZS Associates, Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Wipro Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Paytm Money
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Hexagon Capability Center India
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: INDmoney Private Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Tech Mahindra Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Simplilearn
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: BigBasket
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Ecom Express
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Kyndryl Holdings Inc.
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: One MobiKwik Systems Limited
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Shadowfax
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: Rupeek
+  Status: CONSISTENT
+  Consistency Score: 100.0%
+  Consistency Risk Score: 0.0%
+--------------------------------------------------
+Company: 3i Infotech Ltd.
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Growth]: High hiring velocity and low turnover (20%) are reported, but YoY growth rate is negative (-12% (FY2025)).
+--------------------------------------------------
+Company: BharatPe
+  Status: INCONSISTENT
+  Consistency Score: 66.67%
+  Consistency Risk Score: 33.33%
+  Consistency Contradictions:
+    - Internal Consistency Error [Growth]: High hiring velocity and low turnover (20%) are reported, but YoY growth rate is negative (54% CAGR (FY22-25)).
+--------------------------------------------------

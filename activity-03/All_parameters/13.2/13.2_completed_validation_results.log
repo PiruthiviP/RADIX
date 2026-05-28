@@ -1,0 +1,74 @@
+================================================================================================
+13.2 Scale & Performance: Ingestion Response Time Benchmark Report
+================================================================================================
+1. Company Type Breakdown:
+   - Fortune 500 Profiles (N=5):
+     * Average Time: 0.0303 ms
+     * Min Time:     0.0245 ms
+     * Max Time:     0.0412 ms
+     * Avg Payload:  7437.2 characters
+   - Startup Profiles (N=5):
+     * Average Time: 0.0271 ms
+     * Min Time:     0.0225 ms
+     * Max Time:     0.0325 ms
+     * Avg Payload:  4956.6 characters
+   - Comparison: Fortune 500 profiles take 1.12x longer to validate
+------------------------------------------------------------------------------------------------
+2. Ownership Structure Comparison:
+   - Public Company Profiles Average Time:  0.0303 ms
+   - Private Company Profiles Average Time: 0.0271 ms
+   - Comparison: Public profiles take 1.12x longer to validate
+================================================================================================
+
+Detailed Profile Measurements:
+--------------------------------------------------
+Company: Apple Inc.
+  Type: Fortune 500 | Ownership: Public
+  Payload Size: 6664 chars
+  Average Processing Time: 0.0269 ms
+--------------------------------------------------
+Company: Microsoft Corporation
+  Type: Fortune 500 | Ownership: Public
+  Payload Size: 10641 chars
+  Average Processing Time: 0.0412 ms
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Type: Fortune 500 | Ownership: Public
+  Payload Size: 8744 chars
+  Average Processing Time: 0.0300 ms
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Type: Fortune 500 | Ownership: Public
+  Payload Size: 4365 chars
+  Average Processing Time: 0.0245 ms
+--------------------------------------------------
+Company: Accenture plc
+  Type: Fortune 500 | Ownership: Public
+  Payload Size: 6772 chars
+  Average Processing Time: 0.0292 ms
+--------------------------------------------------
+Company: KALVI CAREER EDUCATION PRIVATE LIMITED
+  Type: Startup | Ownership: Private
+  Payload Size: 6812 chars
+  Average Processing Time: 0.0325 ms
+--------------------------------------------------
+Company: FLAM Gaming Private Limited
+  Type: Startup | Ownership: Private
+  Payload Size: 3776 chars
+  Average Processing Time: 0.0263 ms
+--------------------------------------------------
+Company: MintAir Corp
+  Type: Startup | Ownership: Private
+  Payload Size: 3982 chars
+  Average Processing Time: 0.0232 ms
+--------------------------------------------------
+Company: Dunzo Digital Private Limited
+  Type: Startup | Ownership: Private
+  Payload Size: 3494 chars
+  Average Processing Time: 0.0225 ms
+--------------------------------------------------
+Company: Fractal Analytics Private Limited
+  Type: Startup | Ownership: Private
+  Payload Size: 6719 chars
+  Average Processing Time: 0.0312 ms
+--------------------------------------------------

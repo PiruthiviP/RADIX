@@ -1,0 +1,57 @@
+Parent/Subsidiary Disambiguation Report (Strict Parent-Subsidiary Resolver) for 11.2.csv
+================================================================================================
+Company: Apple Inc.
+  Matched Entity: Apple Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Microsoft Corporation
+  Matched Entity: Microsoft Corporation
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Google LLC (Subsidiary of Alphabet Inc.)
+  Matched Entity: Google LLC (Subsidiary of Alphabet Inc.)
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Accenture plc
+  Matched Entity: Accenture plc
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Amazon.com, Inc.
+  Matched Entity: Amazon.com, Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Tata Consultancy Services Limited
+  Matched Entity: Tata Consultancy Services Limited
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Infosys Limited
+  Matched Entity: Infosys Limited
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Alphabet Inc.
+  Matched Entity: Alphabet Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: YouTube, LLC
+  Matched Entity: YouTube, LLC
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Meta Platforms, Inc.
+  Matched Entity: Meta Platforms, Inc.
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------
+Company: Instagram, LLC
+  Matched Entity: Instagram, LLC
+  Status: PASSED
+  Match Score: 100.0%
+--------------------------------------------------

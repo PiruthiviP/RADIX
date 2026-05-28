@@ -1,0 +1,12 @@
+Company Name,Matched Entity,Validation Status,Match Score (%),Issues
+Apple Inc.,Apple Inc.,PASSED,100.0,
+Microsoft Corporation,Microsoft Corporation,PASSED,100.0,
+Barclays PLC,Barclays PLC ,PASSED,100.0,
+Koninklijke Philips N.V.,Koninklijke Philips N.V.,PASSED,100.0,
+Citigroup Inc.,Citigroup Inc.,PASSED,100.0,
+Unilever PLC,Unilever PLC,PASSED,100.0,
+Unilever N.V.,Unilever N.V.,PASSED,100.0,
+Shell plc,Shell plc,PASSED,100.0,
+Shell Nederland B.V.,Shell Nederland B.V.,PASSED,100.0,
+HSBC Holdings plc,HSBC Holdings plc,PASSED,100.0,
+"HSBC Bank USA, N.A.","HSBC Bank USA, N.A.",PASSED,100.0,
