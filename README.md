@@ -62,3 +62,25 @@ An end-to-end framework managing placement statistics, corporate profiles, hirin
 #### 4. Pre-built UI Application
 - **[remix-of-the-dream-weaver-main](file:///Users/Piruthivi'sMacbook/Desktop/RADIX-/activity-02/Milestone%202/Session%202/Pre%20built%20UI/remix-of-the-dream-weaver-main/)**: React/Remix frontend web application including core asset packages and configurations.
 - **[SRMPlacement- Companies Research and Analytics Portal.zip](file:///Users/Piruthivi'sMacbook/Desktop/RADIX-/activity-02/Milestone%202/Session%202/Pre%20built%20UI/SRMPlacement-%20Companies%20Research%20and%20Analytics%20Portal.zip)**: Archive containing the full export of the frontend portal.
+
+---
+
+## 🧪 Activity 3 — Data Quality Testing & Validation Framework
+
+A robust validation engine designed to test, verify, and monitor the completeness, structural integrity, and business logic conformance of company profile datasets.
+
+### 📁 Validation Configurations & Prompts
+- **[Conceptual meta data setting.txt](file:///Users/Piruthivi'sMacbook/Desktop/RADIX-/activity-03/Conceptual%20meta%20data%20setting.txt)**: A master data dictionary mapping the 163 fields to metadata parameters (granularity, data volatility, data rules, nullability, regex patterns, business logic rules).
+- **[unmodified prompt.txt](file:///Users/Piruthivi'sMacbook/Desktop/RADIX-/activity-03/unmodified%20prompt.txt)**: System prompt template configuring a Lead QA Engineer agent to build python testing suites based on the metadata rules.
+
+### 📁 Reference Data & Matrices
+- **[companies_master.csv](file:///Users/Piruthivi'sMacbook/Desktop/RADIX-/activity-03/companies_master.csv)**: Reference company dataset used for testing ingestions.
+- **[table.xlsx / test_Cases.xlsx](file:///Users/Piruthivi'sMacbook/Desktop/RADIX-/activity-03/table.xlsx)**: Validation worksheets, parameter templates, and testing status matrices.
+
+### 📁 Programmatic QA Testing Suites
+- **[pythontestcases](file:///Users/Piruthivi'sMacbook/Desktop/RADIX-/activity-03/pythontestcases/)**: Over 60 individual python script units (e.g., `tc_1.1.py` through `tc_15.5.py`) testing constraints (negative bounds, email formatting, phone country codes, string limits) for specific fields.
+- **[each_merged](file:///Users/Piruthivi'sMacbook/Desktop/RADIX-/activity-03/each_merged/)**: Consolidated validation scripts grouping the test cases by domain area (e.g., `tc_1.py` for Company Basics, `tc_2.py` for Geographic Presence, etc.).
+- **[combined_tests/test_combined.py](file:///Users/Piruthivi'sMacbook/Desktop/RADIX-/activity-03/combined_tests/test_combined.py)**: Unified master test execution script running all tests and generating diagnostic logs.
+
+### 📁 Parameter Workspaces (All_parameters/)
+- **[All_parameters](file:///Users/Piruthivi'sMacbook/Desktop/RADIX-/activity-03/All_parameters/)**: Parameter-isolated workspaces (e.g., `2.1/`, `2.2/`, `10.2/`) containing custom mockup data generation scripts (`generate_data.py`), validation csv files, local validation scripts, and validation log files.
