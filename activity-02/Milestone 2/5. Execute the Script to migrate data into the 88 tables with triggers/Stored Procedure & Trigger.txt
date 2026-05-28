@@ -1,0 +1,1167 @@
+-- ============================================================================
+-- STAGING TO NORMALIZED MIGRATION (SP & Trigger)
+-- ============================================================================
+-- Purpose: Automatically normalize data when inserted into staging_company
+-- Approach: AFTER INSERT trigger calling main migration stored procedure
+-- Justification: Trigger approach chosen for automatic processing without
+--                manual invocation. Ensures every staging insert is processed.
+-- ============================================================================
+
+-- Activate migration
+UPDATE staging_company 
+SET processing_status = 'pending',
+    processed_at = NULL
+WHERE processing_status = 'pending' 
+  AND processed_at IS NULL;  
+
+-- ============================================================================
+-- HELPER FUNCTION: Split semicolon-separated values
+-- ============================================================================
+
+CREATE OR REPLACE FUNCTION split_semicolon(input_text TEXT)
+RETURNS TEXT[] AS $$
+BEGIN
+    -- Return empty array if input is NULL or empty
+    IF input_text IS NULL OR TRIM(input_text) = '' THEN
+        RETURN ARRAY[]::TEXT[];
+    END IF;
+    
+    -- Split on semicolon and trim each element
+    RETURN ARRAY(
+        SELECT TRIM(unnest(string_to_array(input_text, ';')))
+    );
+END;
+$$ LANGUAGE plpgsql IMMUTABLE;
+
+-- ============================================================================
+-- HELPER FUNCTION: Lookup country by name
+-- ============================================================================
+
+CREATE OR REPLACE FUNCTION get_country_id(country_name TEXT)
+RETURNS INTEGER AS $$
+DECLARE
+    v_country_id INTEGER;
+BEGIN
+    IF country_name IS NULL OR TRIM(country_name) = '' THEN
+        RETURN NULL;
+    END IF;
+    
+    SELECT countries_id INTO v_country_id
+    FROM countries
+    WHERE LOWER(TRIM(country)) = LOWER(TRIM(country_name));
+    
+    RETURN v_country_id;
+END;
+$$ LANGUAGE plpgsql STABLE;
+
+-- ============================================================================
+-- HELPER FUNCTION: Lookup city by city and country name
+-- ============================================================================
+
+CREATE OR REPLACE FUNCTION get_city_id(city_country_text TEXT)
+RETURNS INTEGER AS $$
+DECLARE
+    v_city_name TEXT;
+    v_country_name TEXT;
+    v_country_id INTEGER;
+    v_city_id INTEGER;
+    v_parts TEXT[];
+BEGIN
+    IF city_country_text IS NULL OR TRIM(city_country_text) = '' THEN
+        RETURN NULL;
+    END IF;
+    
+    -- Split "City, Country" format
+    v_parts := string_to_array(city_country_text, ',');
+    
+    IF array_length(v_parts, 1) != 2 THEN
+        RETURN NULL; -- Invalid format
+    END IF;
+    
+    v_city_name := TRIM(v_parts[1]);
+    v_country_name := TRIM(v_parts[2]);
+    
+    -- First get country_id
+    v_country_id := get_country_id(v_country_name);
+    
+    IF v_country_id IS NULL THEN
+        RETURN NULL; -- Country not found
+    END IF;
+    
+    -- Then get city_id for that country
+    SELECT city_id INTO v_city_id
+    FROM cities
+    WHERE LOWER(TRIM(city)) = LOWER(v_city_name)
+      AND countries_id = v_country_id;
+    
+    RETURN v_city_id;
+END;
+$$ LANGUAGE plpgsql STABLE;
+
+-- ============================================================================
+-- MAIN MIGRATION STORED PROCEDURE
+-- ============================================================================
+
+CREATE OR REPLACE FUNCTION migrate_staging_to_normalized()
+RETURNS TRIGGER AS $$
+DECLARE
+    v_error_msg TEXT;
+    v_company_exists BOOLEAN;
+    
+    -- Variables to hold parent table IDs
+    v_brand_reputation_id INTEGER;
+    v_business_id INTEGER;
+    v_compensation_id INTEGER;
+    v_culture_id INTEGER;
+    v_financials_id INTEGER;
+    v_logistics_id INTEGER;
+    v_people_id INTEGER;
+    v_talent_growth_id INTEGER;
+    v_technologies_id INTEGER;
+
+    -- Variables for composite field processing
+    v_values TEXT[];
+    v_value TEXT;
+    v_country_id INTEGER;
+    v_city_id INTEGER;
+BEGIN
+    -- ====================================================================
+    -- *** STATUS CONTROL - START ***
+    -- Only process rows with status = 'pending'
+    -- ====================================================================
+    IF NEW.processing_status != 'pending' THEN
+        RETURN NEW;
+    END IF;
+    -- ====================================================================
+    -- *** STATUS CONTROL - END ***
+    -- ====================================================================
+    
+    -- Check if company_id already exists in normalized schema
+    SELECT EXISTS(SELECT 1 FROM companies WHERE company_id = NEW.company_id) INTO v_company_exists;
+    
+    IF v_company_exists THEN
+        UPDATE staging_company
+        SET processing_status = 'error',
+            error_message = 'Company ID already exists in normalized schema',
+            processed_at = NOW()
+        WHERE staging_id = NEW.staging_id;
+        RETURN NEW;
+    END IF;
+    
+    BEGIN
+        -- ====================================================================
+        -- INSERT INTO companies (atomic fields only)
+        -- ====================================================================
+        INSERT INTO companies (
+            company_id, name, short_name, category, incorporation_year,
+            nature_of_company, headquarters_address, office_count, employee_size,
+            website_url, linkedin_url, twitter_handle, facebook_url, instagram_url,
+            primary_contact_email, primary_phone_number, overview_text,
+            vision_statement, mission_statement, legal_issues, carbon_footprint
+        ) VALUES (
+            NEW.company_id, NEW.name, NEW.short_name, NEW.category, NEW.incorporation_year,
+            NEW.nature_of_company, NEW.headquarters_address, NEW.office_count, NEW.employee_size,
+            NEW.website_url, NEW.linkedin_url, NEW.twitter_handle, NEW.facebook_url, NEW.instagram_url,
+            NEW.primary_contact_email, NEW.primary_phone_number, NEW.overview_text,
+            NEW.vision_statement, NEW.mission_statement, NEW.legal_issues, NEW.carbon_footprint
+        );
+        
+        -- ====================================================================
+        -- INSERT company_logo (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.logo_url);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_logo (company_id, logo_url)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_operating_countries_map (requires country lookup)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.operating_countries);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                v_country_id := get_country_id(v_value);
+                IF v_country_id IS NULL THEN
+                    RAISE EXCEPTION 'Country not found: %', v_value;
+                END IF;
+                INSERT INTO company_operating_countries_map (company_id, countries_id)
+                VALUES (NEW.company_id, v_country_id)
+                ON CONFLICT DO NOTHING;
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_office_locations_map (requires city/country lookup)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.office_locations);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                v_city_id := get_city_id(v_value);
+                IF v_city_id IS NULL THEN
+                    RAISE EXCEPTION 'City not found or invalid format: %', v_value;
+                END IF;
+                INSERT INTO company_office_locations_map (company_id, city_id)
+                VALUES (NEW.company_id, v_city_id)
+                ON CONFLICT DO NOTHING;
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_core_values (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.core_values);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_core_values (company_id, core_values)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_history (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.history_timeline);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_history (company_id, history_timeline)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_marketing_videos (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.marketing_video_url);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_marketing_videos (company_id, marketing_video_url)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_recent_news (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.recent_news);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_recent_news (company_id, recent_news)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_customer_testimonials (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.customer_testimonials);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_customer_testimonials (company_id, customer_testimonials)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_regulatory_status (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.regulatory_status);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_regulatory_status (company_id, regulatory_status)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_esg_ratings (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.esg_ratings);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_esg_ratings (company_id, esg_ratings)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_geopolitical_risks (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.geopolitical_risks);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_geopolitical_risks (company_id, geopolitical_risks)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_macro_risks (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.macro_risks);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_macro_risks (company_id, macro_risks)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_ethical_sourcing (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.ethical_sourcing);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_ethical_sourcing (company_id, ethical_sourcing)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_supply_chain_dependencies (composite)
+        -- ====================================================================
+        v_values := split_semicolon(NEW.supply_chain_dependencies);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_supply_chain_dependencies (company_id, supply_chain_dependencies)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_brand_reputation (parent) + children
+        -- ====================================================================
+        INSERT INTO company_brand_reputation (
+            company_id, brand_sentiment_score, website_quality, website_rating,
+            social_media_followers, glassdoor_rating, indeed_rating, google_rating
+        ) VALUES (
+            NEW.company_id, NEW.brand_sentiment_score, NEW.website_quality, NEW.website_rating,
+            NEW.social_media_followers, NEW.glassdoor_rating, NEW.indeed_rating, NEW.google_rating
+        ) RETURNING brand_reputation_id INTO v_brand_reputation_id;
+        
+        -- company_awards_recognitions (composite)
+        v_values := split_semicolon(NEW.awards_recognitions);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_awards_recognitions (brand_reputation_id, awards_recognitions)
+                VALUES (v_brand_reputation_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_event_participation (composite)
+        v_values := split_semicolon(NEW.event_participation);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_event_participation (brand_reputation_id, event_participation)
+                VALUES (v_brand_reputation_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_website_traffic_rank (composite)
+        v_values := split_semicolon(NEW.website_traffic_rank);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_website_traffic_rank (brand_reputation_id, website_traffic_rank)
+                VALUES (v_brand_reputation_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_business (parent) + children
+        -- ====================================================================
+        INSERT INTO company_business (
+            company_id, sales_motion, innovation_roadmap, future_projections,
+            market_share_percentage, tam, sam, som, customer_concentration_risk
+        ) VALUES (
+            NEW.company_id, NEW.sales_motion, NEW.innovation_roadmap, NEW.future_projections,
+            NEW.market_share_percentage, NEW.tam, NEW.sam, NEW.som, NEW.customer_concentration_risk
+        ) RETURNING company_business_id INTO v_business_id;
+        
+        -- company_core_value_proposition (composite)
+        v_values := split_semicolon(NEW.core_value_proposition);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_core_value_proposition (company_business_id, core_value_proposition)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_pain_points_addressed (composite)
+        v_values := split_semicolon(NEW.pain_points_addressed);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_pain_points_addressed (company_business_id, pain_points_addressed)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_unique_differentiators (composite)
+        v_values := split_semicolon(NEW.unique_differentiators);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_unique_differentiators (company_business_id, unique_differentiators)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_competitive_advantages (composite)
+        v_values := split_semicolon(NEW.competitive_advantages);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_competitive_advantages (company_business_id, competitive_advantages)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_weaknesses_gaps (composite)
+        v_values := split_semicolon(NEW.weaknesses_gaps);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_weaknesses_gaps (company_business_id, weaknesses_gaps)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_key_challenges_needs (composite)
+        v_values := split_semicolon(NEW.key_challenges_needs);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_key_challenges_needs (company_business_id, key_challenges_needs)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_focus_sectors (composite)
+        v_values := split_semicolon(NEW.focus_sectors);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_focus_sectors (company_business_id, focus_sectors)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_offerings_description (composite)
+        v_values := split_semicolon(NEW.offerings_description);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_offerings_description (company_business_id, offerings_description)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_go_to_market_strategy (composite)
+        v_values := split_semicolon(NEW.go_to_market_strategy);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_go_to_market_strategy (company_business_id, go_to_market_strategy)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_innovation_roadmap (composite)
+        v_values := split_semicolon(NEW.innovation_roadmap);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_innovation_roadmap (company_business_id, innovation_roadmap)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_product_pipeline (composite)
+        v_values := split_semicolon(NEW.product_pipeline);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_product_pipeline (company_business_id, product_pipeline)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_strategic_priorities (composite)
+        v_values := split_semicolon(NEW.strategic_priorities);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_strategic_priorities (company_business_id, strategic_priorities)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_exit_strategy_history (composite)
+        v_values := split_semicolon(NEW.exit_strategy_history);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_exit_strategy_history (company_business_id, exit_strategy_history)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_top_customers (composite)
+        v_values := split_semicolon(NEW.top_customers);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_top_customers (company_business_id, top_customers)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_key_competitors (composite)
+        v_values := split_semicolon(NEW.key_competitors);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_key_competitors (company_business_id, key_competitors)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_benchmark_vs_peers (composite)
+        v_values := split_semicolon(NEW.benchmark_vs_peers);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_benchmark_vs_peers (company_business_id, benchmark_vs_peers)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_industry_associations (composite)
+        v_values := split_semicolon(NEW.industry_associations);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_industry_associations (company_business_id, industry_associations)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_case_studies (composite)
+        v_values := split_semicolon(NEW.case_studies);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_case_studies (company_business_id, case_studies)
+                VALUES (v_business_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_compensation (parent) + children
+        -- ====================================================================
+        INSERT INTO company_compensation (
+            company_id, fixed_vs_variable_pay, bonus_predictability
+        ) VALUES (
+            NEW.company_id, NEW.fixed_vs_variable_pay, NEW.bonus_predictability
+        ) RETURNING company_compensation_id INTO v_compensation_id;
+        
+        -- company_relocation_support (composite)
+        v_values := split_semicolon(NEW.relocation_support);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_relocation_support (company_compensation_id, relocation_support)
+                VALUES (v_compensation_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_leave_policy (composite)
+        v_values := split_semicolon(NEW.leave_policy);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_leave_policy (company_compensation_id, leave_policy)
+                VALUES (v_compensation_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_health_support (composite)
+        v_values := split_semicolon(NEW.health_support);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_health_support (company_compensation_id, health_support)
+                VALUES (v_compensation_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_family_health_insurance (composite)
+        v_values := split_semicolon(NEW.family_health_insurance);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_family_health_insurance (company_compensation_id, family_health_insurance)
+                VALUES (v_compensation_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_lifestyle_benefits (composite)
+        v_values := split_semicolon(NEW.lifestyle_benefits);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_lifestyle_benefits (company_compensation_id, lifestyle_benefits)
+                VALUES (v_compensation_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_esops_incentives (composite)
+        v_values := split_semicolon(NEW.esops_incentives);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_esops_incentives (company_compensation_id, esops_incentives)
+                VALUES (v_compensation_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_culture (parent) + children
+        -- ====================================================================
+        INSERT INTO company_culture (
+            company_id, employee_turnover, avg_retention_tenure, layoff_history,
+            manager_quality, psychological_safety, mission_clarity, crisis_behavior, burnout_risk
+        ) VALUES (
+            NEW.company_id, NEW.employee_turnover, NEW.avg_retention_tenure, NEW.layoff_history,
+            NEW.manager_quality, NEW.psychological_safety, NEW.mission_clarity, NEW.crisis_behavior, NEW.burnout_risk
+        ) RETURNING company_culture_id INTO v_culture_id;
+        
+        -- company_hiring_velocity (composite)
+        v_values := split_semicolon(NEW.hiring_velocity);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_hiring_velocity (company_culture_id, hiring_velocity)
+                VALUES (v_culture_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_diversity_metrics (composite)
+        v_values := split_semicolon(NEW.diversity_metrics);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_diversity_metrics (company_culture_id, diversity_metrics)
+                VALUES (v_culture_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_work_culture_summary (composite)
+        v_values := split_semicolon(NEW.work_culture_summary);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_work_culture_summary (company_culture_id, work_culture_summary)
+                VALUES (v_culture_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_feedback_culture (composite)
+        v_values := split_semicolon(NEW.feedback_culture);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_feedback_culture (company_culture_id, feedback_culture)
+                VALUES (v_culture_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_diversity_inclusion_score (composite)
+        v_values := split_semicolon(NEW.diversity_inclusion_score);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_diversity_inclusion_score (company_culture_id, diversity_inclusion_score)
+                VALUES (v_culture_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_ethical_standards (composite)
+        v_values := split_semicolon(NEW.ethical_standards);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_ethical_standards (company_culture_id, ethical_standards)
+                VALUES (v_culture_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_sustainability_csr (composite)
+        v_values := split_semicolon(NEW.sustainability_csr);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_sustainability_csr (company_culture_id, sustainability_csr)
+                VALUES (v_culture_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_financials (parent) + children
+        -- ====================================================================
+        INSERT INTO company_financials (
+            company_id, annual_revenue, annual_profit, valuation, yoy_growth_rate,
+            profitability_status, total_capital_raised, customer_acquisition_cost,
+            customer_lifetime_value, cac_ltv_ratio, churn_rate, net_promoter_score,
+            burn_rate, runway_months, burn_multiplier
+        ) VALUES (
+            NEW.company_id, NEW.annual_revenue, NEW.annual_profit, NEW.valuation, NEW.yoy_growth_rate,
+            NEW.profitability_status, NEW.total_capital_raised, NEW.customer_acquisition_cost,
+            NEW.customer_lifetime_value, NEW.cac_ltv_ratio, NEW.churn_rate, NEW.net_promoter_score,
+            NEW.burn_rate, NEW.runway_months, NEW.burn_multiplier
+        ) RETURNING company_financials_id INTO v_financials_id;
+        
+        -- company_revenue_mix (composite)
+        v_values := split_semicolon(NEW.revenue_mix);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_revenue_mix (company_financials_id, revenue_mix)
+                VALUES (v_financials_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_key_investors (composite)
+        v_values := split_semicolon(NEW.key_investors);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_key_investors (company_financials_id, key_investors)
+                VALUES (v_financials_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_recent_funding_rounds (composite)
+        v_values := split_semicolon(NEW.recent_funding_rounds);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_recent_funding_rounds (company_financials_id, recent_funding_rounds)
+                VALUES (v_financials_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_logistics (parent) + children
+        -- ====================================================================
+        INSERT INTO company_logistics (
+            company_id, typical_hours, overtime_expectations, weekend_work,
+            remote_policy_details, location_centrality, airport_commute_time, office_zone_type
+        ) VALUES (
+            NEW.company_id, NEW.typical_hours, NEW.overtime_expectations, NEW.weekend_work,
+            NEW.remote_policy_details, NEW.location_centrality, NEW.airport_commute_time, NEW.office_zone_type
+        ) RETURNING company_logistics_id INTO v_logistics_id;
+        
+        -- company_flexibility_level (composite) - Note: references companies directly
+        v_values := split_semicolon(NEW.flexibility_level);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_flexibility_level (company_id, flexibility_level)
+                VALUES (NEW.company_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_public_transport_access (composite)
+        v_values := split_semicolon(NEW.public_transport_access);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_public_transport_access (company_logistics_id, public_transport_access)
+                VALUES (v_logistics_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_cab_policy (composite)
+        v_values := split_semicolon(NEW.cab_policy);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_cab_policy (company_logistics_id, cab_policy)
+                VALUES (v_logistics_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_area_safety (composite)
+        v_values := split_semicolon(NEW.area_safety);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_area_safety (company_logistics_id, area_safety)
+                VALUES (v_logistics_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_safety_policies (composite)
+        v_values := split_semicolon(NEW.safety_policies);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_safety_policies (company_logistics_id, safety_policies)
+                VALUES (v_logistics_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_infrastructure_safety (composite)
+        v_values := split_semicolon(NEW.infrastructure_safety);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_infrastructure_safety (company_logistics_id, infrastructure_safety)
+                VALUES (v_logistics_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_emergency_preparedness (composite)
+        v_values := split_semicolon(NEW.emergency_preparedness);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_emergency_preparedness (company_logistics_id, emergency_preparedness)
+                VALUES (v_logistics_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_people (parent) + children
+        -- ====================================================================
+        INSERT INTO company_people (
+            company_id, ceo_linkedin_url, contact_person_name, contact_person_title,
+            contact_person_email, contact_person_phone, decision_maker_access, ceo_name
+        ) VALUES (
+            NEW.company_id, NEW.ceo_linkedin_url, NEW.contact_person_name, NEW.contact_person_title,
+            NEW.contact_person_email, NEW.contact_person_phone, NEW.decision_maker_access, NEW.ceo_name
+        ) RETURNING company_people_id INTO v_people_id;
+        
+        -- company_key_leaders (composite)
+        v_values := split_semicolon(NEW.key_leaders);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_key_leaders (company_people_id, key_leaders)
+                VALUES (v_people_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_board_members (composite)
+        v_values := split_semicolon(NEW.board_members);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_board_members (company_people_id, board_members)
+                VALUES (v_people_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_warm_intro_pathways (composite)
+        v_values := split_semicolon(NEW.warm_intro_pathways);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_warm_intro_pathways (company_people_id, warm_intro_pathways)
+                VALUES (v_people_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_talent_growth (parent) + children
+        -- ====================================================================
+        INSERT INTO company_talent_growth (
+            company_id, training_spend, onboarding_quality, internal_mobility,
+            role_clarity, early_ownership, execution_thinking_balance, automation_level,
+            company_maturity, brand_value, skill_relevance, exposure_quality, external_recognition
+        ) VALUES (
+            NEW.company_id, NEW.training_spend, NEW.onboarding_quality, NEW.internal_mobility,
+            NEW.role_clarity, NEW.early_ownership, NEW.execution_thinking_balance, NEW.automation_level,
+            NEW.company_maturity, NEW.brand_value, NEW.skill_relevance, NEW.exposure_quality, NEW.external_recognition
+        ) RETURNING company_talent_growth_id INTO v_talent_growth_id;
+        
+        -- company_learning_culture (composite)
+        v_values := split_semicolon(NEW.learning_culture);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_learning_culture (company_talent_growth_id, learning_culture)
+                VALUES (v_talent_growth_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_mentorship_availability (composite)
+        v_values := split_semicolon(NEW.mentorship_availability);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_mentorship_availability (company_talent_growth_id, mentorship_availability)
+                VALUES (v_talent_growth_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_promotion_clarity (composite)
+        v_values := split_semicolon(NEW.promotion_clarity);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_promotion_clarity (company_talent_growth_id, promotion_clarity)
+                VALUES (v_talent_growth_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_tools_access (composite)
+        v_values := split_semicolon(NEW.tools_access);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_tools_access (company_talent_growth_id, tools_access)
+                VALUES (v_talent_growth_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_work_impact (composite)
+        v_values := split_semicolon(NEW.work_impact);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_work_impact (company_talent_growth_id, work_impact)
+                VALUES (v_talent_growth_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_cross_functional_exposure (composite)
+        v_values := split_semicolon(NEW.cross_functional_exposure);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_cross_functional_exposure (company_talent_growth_id, cross_functional_exposure)
+                VALUES (v_talent_growth_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_client_quality (composite)
+        v_values := split_semicolon(NEW.client_quality);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_client_quality (company_talent_growth_id, client_quality)
+                VALUES (v_talent_growth_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_exit_opportunities (composite)
+        v_values := split_semicolon(NEW.exit_opportunities);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_exit_opportunities (company_talent_growth_id, exit_opportunities)
+                VALUES (v_talent_growth_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_network_strength (composite)
+        v_values := split_semicolon(NEW.network_strength);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_network_strength (company_talent_growth_id, network_strength)
+                VALUES (v_talent_growth_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_global_exposure (composite)
+        v_values := split_semicolon(NEW.global_exposure);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_global_exposure (company_talent_growth_id, global_exposure)
+                VALUES (v_talent_growth_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- ====================================================================
+        -- INSERT company_technologies (parent) + children
+        -- ====================================================================
+        INSERT INTO company_technologies (
+            company_id, r_and_d_investment, ai_ml_adoption_level
+        ) VALUES (
+            NEW.company_id, NEW.r_and_d_investment, NEW.ai_ml_adoption_level
+        ) RETURNING company_technologies_id INTO v_technologies_id;
+        
+        -- company_tech_stack (composite)
+        v_values := split_semicolon(NEW.tech_stack);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_tech_stack (company_technologies_id, tech_stack)
+                VALUES (v_technologies_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_technology_partners (composite)
+        v_values := split_semicolon(NEW.technology_partners);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_technology_partners (company_technologies_id, technology_partners)
+                VALUES (v_technologies_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_intellectual_property (composite)
+        v_values := split_semicolon(NEW.intellectual_property);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_intellectual_property (company_technologies_id, intellectual_property)
+                VALUES (v_technologies_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_tech_adoption_rating (composite)
+        v_values := split_semicolon(NEW.tech_adoption_rating);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_tech_adoption_rating (company_technologies_id, tech_adoption_rating)
+                VALUES (v_technologies_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_cybersecurity_posture (composite)
+        v_values := split_semicolon(NEW.cybersecurity_posture);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_cybersecurity_posture (company_technologies_id, cybersecurity_posture)
+                VALUES (v_technologies_id, v_value);
+            END IF;
+        END LOOP;
+        
+        -- company_partnership_ecosystem (composite)
+        v_values := split_semicolon(NEW.partnership_ecosystem);
+        FOREACH v_value IN ARRAY v_values
+        LOOP
+            IF v_value IS NOT NULL AND v_value != '' THEN
+                INSERT INTO company_partnership_ecosystem (company_technologies_id, partnership_ecosystem)
+                VALUES (v_technologies_id, v_value);
+            END IF;
+        END LOOP;
+
+        -- ====================================================================
+        -- *** NEW ADDITION - START ***
+        -- INSERT INTO company_json (short_json and full_json)
+        -- ====================================================================
+        
+        -- Build SHORT JSON with only the specified fields
+        -- Build FULL JSON by converting the entire NEW record
+        INSERT INTO company_json (company_id, short_json, full_json)
+        VALUES (
+            NEW.company_id,
+            
+            -- SHORT JSON: Only specific fields as per requirements
+            jsonb_build_object(
+                'company_id', NEW.company_id,
+                'name', NEW.name,
+                'short_name', NEW.short_name,
+                'logo_url', NEW.logo_url,
+                'category', NEW.category,
+                'operating_countries', NEW.operating_countries,
+                'office_locations', NEW.office_locations,
+                'employee_size', NEW.employee_size,
+                'yoy_growth_rate', NEW.yoy_growth_rate
+            ),
+            
+            -- FULL JSON: Convert entire staging row to JSON
+            -- This uses to_jsonb to convert the entire NEW record
+            -- Then we remove metadata fields that aren't part of company data
+            to_jsonb(NEW) - 'staging_id' - 'inserted_at' - 'processed_at' - 'processing_status' - 'error_message'
+        );
+        
+        -- ====================================================================
+        -- *** NEW ADDITION - END ***
+        -- ====================================================================
+        -- ====================================================================
+        -- SUCCESS: Mark as processed
+        -- ====================================================================
+        UPDATE staging_company
+        SET processing_status = 'processed',
+            processed_at = NOW()
+        WHERE staging_id = NEW.staging_id;
+        
+    EXCEPTION
+        WHEN OTHERS THEN
+            -- ================================================================
+            -- ERROR: Capture error and rollback
+            -- ================================================================
+            GET STACKED DIAGNOSTICS v_error_msg = MESSAGE_TEXT;
+            
+            UPDATE staging_company
+            SET processing_status = 'error',
+                error_message = v_error_msg,
+                processed_at = NOW()
+            WHERE staging_id = NEW.staging_id;
+            
+            -- Rollback is automatic for trigger
+            RAISE NOTICE 'Error processing company_id %: %', NEW.company_id, v_error_msg;
+    END;
+    
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Drop existing trigger if it exists
+DROP TRIGGER IF EXISTS trg_staging_company_insert ON staging_company;
+
+-- Create the trigger
+-- ====================================================================
+-- *** MODIFIED TRIGGER - START ***
+-- Fires on both INSERT and UPDATE to support bootstrap + incremental modes
+-- ====================================================================
+CREATE TRIGGER trg_staging_company_insert
+    AFTER INSERT OR UPDATE ON staging_company
+    FOR EACH ROW
+    EXECUTE FUNCTION migrate_staging_to_normalized();
+-- ====================================================================
+-- *** MODIFIED TRIGGER - END ***
+-- ====================================================================
+
+
+COMMENT ON FUNCTION migrate_staging_to_normalized() IS 
+'Main migration function that normalizes staging_company data into relational schema. 
+Handles composite fields, master data lookups, and error handling with rollback.';
+
+COMMENT ON TRIGGER trg_staging_company_insert ON staging_company IS
+'Automatically processes staging_company inserts and migrates to normalized tables.';
+
+-- ============================================================================
+-- END OF MIGRATION SETUP
+-- ============================================================================
+
