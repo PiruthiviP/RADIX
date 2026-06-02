@@ -8,3 +8,4 @@ requests>=2.31.0
 aiohttp>=3.9.0
 langgraph>=0.1.0
 grandalf>=0.8
+langgraph-cli[inmem]>=0.1.5
