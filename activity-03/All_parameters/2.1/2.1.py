@@ -1,7 +1,6 @@
 import csv
 import os
 from typing import Dict, Any, Tuple, List
-
 # Complete 163 schema parameters defined by nullability: False = Mandatory (Not Null), True = Optional (Nullable)
 METADATA_SCHEMA: Dict[str, bool] = {
     "Company Name": False, "Short Name": True, "Logo": False, "Category": False,
@@ -432,7 +431,7 @@ def test_master_dataset_fortune500_richness_boundaries():
     - Top-tier Fortune 500 companies have 150+ fields populated.
     - All mandatory fields in the schema are populated.
     """
-    csv_path = os.path.join(os.path.dirname(__file__), "../companies_master.csv")
+    csv_path = os.path.join(os.path.dirname(__file__), "../../companies_master.csv")
     dataset = load_csv_data(csv_path)
     
     assert len(dataset) > 0, f"Master dataset at {csv_path} is empty or missing."
@@ -506,7 +505,7 @@ if __name__ == "__main__":
     
     # Paths for files
     dir_path = os.path.dirname(os.path.abspath(__file__))
-    master_csv_path = os.path.join(dir_path, "../companies_master.csv")
+    master_csv_path = os.path.join(dir_path, "../../companies_master.csv")
     completed_csv_path = os.path.join(dir_path, "2.1.csv")
     
     master_out_csv = os.path.join(dir_path, "2.1_master_validation_results.csv")

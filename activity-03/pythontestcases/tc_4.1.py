@@ -1,7 +1,7 @@
 import re
 import pytest
 from typing import Dict, Any, List, Tuple
-
+#Hallucination Detection
 # Mock Authority Registries representing verified real-world entities
 VERIFIED_PEOPLE_REGISTRY = {
     "Satya Nadella", "Tim Cook", "Elon Musk", "Amy Hood", "Luca Maestri",

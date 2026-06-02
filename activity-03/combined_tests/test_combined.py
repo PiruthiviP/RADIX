@@ -14,7 +14,7 @@ import time
 from typing import Dict, Any, List
 import json
 from typing import List, Dict, Any, Set
-from datetime import datetime
+
 from typing import Dict, Any, Tuple, Optional
 from typing import Dict, Any, Tuple, List, Optional
 from typing import Any, Tuple, Optional
@@ -2232,9 +2232,9 @@ def test_tc_15_2_high_confidence_claimed_with_secondary_sources_fails():
     record = {'Company Name': 'Tesla Inc.', 'confidence_level': 'High', 'source_company_name': 'SEC Filings', 'source_year_founded': 'LinkedIn', 'source_hq': 'Company Website'}
     with pytest.raises(ValueError, match='relies on a non-primary Tier 2 source'):
         tc_15_2_validate_source_quality_tiers(record)
-tc_15_3_SYSTEM_BASELINE_DATE = datetime(2026, 5, 22)
+tc_15_3_SYSTEM_BASELINE_DATE = datetime.datetime(2026, 5, 22)
 
-def tc_15_3_extract_dates_from_string(text: str) -> List[datetime]:
+def tc_15_3_extract_dates_from_string(text: str) -> List[datetime.datetime]:
     """
     Extracts YYYY-MM-DD or YYYY-MM dates from a text string.
     """
@@ -2242,19 +2242,19 @@ def tc_15_3_extract_dates_from_string(text: str) -> List[datetime]:
     extracted = []
     for y, m, d in full_dates:
         try:
-            extracted.append(datetime(int(y), int(m), int(d)))
+            extracted.append(datetime.datetime(int(y), int(m), int(d)))
         except ValueError:
             pass
     month_dates = re.findall('\\b(\\d{4})-(\\d{2})\\b', text)
     for y, m in month_dates:
         if not any((d.year == int(y) and d.month == int(m) for d in extracted)):
             try:
-                extracted.append(datetime(int(y), int(m), 1))
+                extracted.append(datetime.datetime(int(y), int(m), 1))
             except ValueError:
                 pass
     return extracted
 
-def tc_15_3_calculate_months_difference(date_a: datetime, date_b: datetime) -> int:
+def tc_15_3_calculate_months_difference(date_a: datetime.datetime, date_b: datetime.datetime) -> int:
     """
     Calculates the absolute difference in months between two datetime objects.
     """

@@ -1,6 +1,7 @@
 import pytest
 from typing import Dict, Any, Tuple
 
+#Completeness & Dependency Rules
 # All 163 metadata schema parameters mapped with their nullability (False = Mandatory, True = Optional)
 METADATA_SCHEMA = {
     "Company Name": False, "Short Name": True, "Logo": False, "Category": False,
