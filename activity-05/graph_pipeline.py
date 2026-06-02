@@ -1,7 +1,7 @@
 import os
 import re
 import logging
-from typing import TypedDict, Dict, Any, List, Annotated
+from typing import TypedDict, Dict, Any, List, Annotated, NotRequired
 from langgraph.graph import StateGraph, END, START
 
 # Import components from active directory
@@ -36,18 +36,18 @@ consolidation_node_name = f"consolidation_{clean_node_name(MODEL_CONSOLIDATOR)}"
 
 class AgentState(TypedDict):
     company_name: str
-    dry_run: bool
-    raw_results: Annotated[Dict[str, Dict[str, Any]], merge_raw_results]
-    consolidated: Dict[str, Any]
-    errors: List[Dict[str, Any]]
-    attempts: int
-    db_status: str
-    log: List[str]
-    conflicts: Dict[str, Any]
-    resolved: Dict[str, Any]
-    pre_val_errors: List[Dict[str, Any]]
-    pre_healing_consolidated: Dict[str, Any]
-    regeneration_log: List[str]
+    dry_run: NotRequired[bool]
+    raw_results: NotRequired[Annotated[Dict[str, Dict[str, Any]], merge_raw_results]]
+    consolidated: NotRequired[Dict[str, Any]]
+    errors: NotRequired[List[Dict[str, Any]]]
+    attempts: NotRequired[int]
+    db_status: NotRequired[str]
+    log: NotRequired[List[str]]
+    conflicts: NotRequired[Dict[str, Any]]
+    resolved: NotRequired[Dict[str, Any]]
+    pre_val_errors: NotRequired[List[Dict[str, Any]]]
+    pre_healing_consolidated: NotRequired[Dict[str, Any]]
+    regeneration_log: NotRequired[List[str]]
 
 # --- Nodes ---
 
