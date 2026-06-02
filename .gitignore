@@ -24,3 +24,8 @@ __pycache__/
 ~$*.xlsx
 ~$*.docx
 ~$*.pptx
+
+# Environments
+venv/
+.pytest_cache/
+logs/
