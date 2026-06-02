@@ -1,23 +1,43 @@
 import os
+import re
 import logging
-from typing import TypedDict, Dict, Any, List
-from langgraph.graph import StateGraph, END
+from typing import TypedDict, Dict, Any, List, Annotated
+from langgraph.graph import StateGraph, END, START
 
 # Import components from active directory
-from research_agents import run_parallel_research
 from validator import PipelineValidator
 from consolidation_agent import ConsolidationAgent
 from regeneration_loop import RegenerationLoop
 from db_writer import DBWriter
+from config import MODEL_CLAUDE, MODEL_GEMINI, MODEL_LLAMA, MODEL_CONSOLIDATOR
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("LangGraphPipeline")
 
+# Reducer for raw_results dictionary to allow parallel merge
+def merge_raw_results(existing: Dict[str, Any], new_value: Dict[str, Any]) -> Dict[str, Any]:
+    merged = dict(existing or {})
+    merged.update(new_value)
+    return merged
+
+# Clean model name for node labeling in the graph visualization
+def clean_node_name(model_path: str) -> str:
+    parts = model_path.split("/")
+    name = parts[-1] if len(parts) > 1 else parts[0]
+    name = name.split(":")[0]  # Remove version/tag if any
+    clean = re.sub(r'[^a-zA-Z0-9_]', '_', name).lower()
+    return clean
+
+claude_node_name = f"research_{clean_node_name(MODEL_CLAUDE)}"
+gemini_node_name = f"research_{clean_node_name(MODEL_GEMINI)}"
+llama_node_name = f"research_{clean_node_name(MODEL_LLAMA)}"
+consolidation_node_name = f"consolidation_{clean_node_name(MODEL_CONSOLIDATOR)}"
+
 class AgentState(TypedDict):
     company_name: str
     dry_run: bool
-    raw_results: Dict[str, Dict[str, Any]]
+    raw_results: Annotated[Dict[str, Dict[str, Any]], merge_raw_results]
     consolidated: Dict[str, Any]
     errors: List[Dict[str, Any]]
     attempts: int
@@ -31,29 +51,60 @@ class AgentState(TypedDict):
 
 # --- Nodes ---
 
-async def research_node(state: AgentState) -> Dict[str, Any]:
+async def claude_researcher_node(state: AgentState) -> Dict[str, Any]:
+    from research_agents import ClaudeResearcher
     print("\n" + "="*60)
-    print(" [Node: research_node]")
+    print(f" [Node: {claude_node_name}]")
     print(f" -> Current Company: {state['company_name']}")
-    print(" -> Action: Running parallel researchers (LLM 1, LLM 2, LLM 3)...")
+    print(f" -> Action: Claude Researcher querying chunked parameters ({MODEL_CLAUDE})...")
     print("="*60)
     
-    results = await run_parallel_research(state["company_name"])
-    
+    agent = ClaudeResearcher()
+    results = await agent.research_company_async(state["company_name"])
     return {
-        "raw_results": results,
-        "log": state.get("log", []) + ["Executed research_node"]
+        "raw_results": {"claude": results},
+        "log": state.get("log", []) + [f"Executed {claude_node_name}"]
+    }
+
+async def gemini_researcher_node(state: AgentState) -> Dict[str, Any]:
+    from research_agents import GeminiResearcher
+    print("\n" + "="*60)
+    print(f" [Node: {gemini_node_name}]")
+    print(f" -> Current Company: {state['company_name']}")
+    print(f" -> Action: Gemini Researcher querying chunked parameters ({MODEL_GEMINI})...")
+    print("="*60)
+    
+    agent = GeminiResearcher()
+    results = await agent.research_company_async(state["company_name"])
+    return {
+        "raw_results": {"gemini": results},
+        "log": state.get("log", []) + [f"Executed {gemini_node_name}"]
+    }
+
+async def llama_researcher_node(state: AgentState) -> Dict[str, Any]:
+    from research_agents import LlamaResearcher
+    print("\n" + "="*60)
+    print(f" [Node: {llama_node_name}]")
+    print(f" -> Current Company: {state['company_name']}")
+    print(f" -> Action: Llama Researcher querying chunked parameters ({MODEL_LLAMA})...")
+    print("="*60)
+    
+    agent = LlamaResearcher()
+    results = await agent.research_company_async(state["company_name"])
+    return {
+        "raw_results": {"llama": results},
+        "log": state.get("log", []) + [f"Executed {llama_node_name}"]
     }
 
 def consolidation_node(state: AgentState) -> Dict[str, Any]:
     import copy
     print("\n" + "="*60)
-    print(" [Node: consolidation_node]")
+    print(f" [Node: {consolidation_node_name}]")
     print(" -> Action: Consolidating parallel research datasets...")
     print("="*60)
     
     consolidator = ConsolidationAgent()
-    consolidated, conflicts = consolidator.pre_consolidate(state["raw_results"])
+    consolidated, conflicts = consolidator.pre_consolidate(state.get("raw_results", {}))
     
     resolved = {}
     print(f"    * Conflicts found: {len(conflicts)}")
@@ -72,16 +123,16 @@ def consolidation_node(state: AgentState) -> Dict[str, Any]:
         "conflicts": conflicts,
         "resolved": resolved,
         "pre_healing_consolidated": pre_healing,
-        "log": state.get("log", []) + [f"Executed consolidation_node (resolved {len(conflicts)} conflicts)"]
+        "log": state.get("log", []) + [f"Executed {consolidation_node_name} (resolved {len(conflicts)} conflicts)"]
     }
 
 def validation_check_node(state: AgentState) -> Dict[str, Any]:
     print("\n" + "="*60)
-    print(" [Node: validation_check_node]")
+    print(" [Node: validation_check]")
     print(" -> Action: Validating consolidated Golden Record against schemas...")
     print("="*60)
     
-    errors = PipelineValidator.validate_company(state["consolidated"])
+    errors = PipelineValidator.validate_company(state.get("consolidated", {}))
     print(f"    * Validation Status: {'PASSED' if not errors else 'FAILED'}")
     print(f"    * Active Errors: {len(errors)}")
     for err in errors:
@@ -89,7 +140,7 @@ def validation_check_node(state: AgentState) -> Dict[str, Any]:
         
     update_dict = {
         "errors": errors,
-        "log": state.get("log", []) + [f"Executed validation_check_node (found {len(errors)} errors)"]
+        "log": state.get("log", []) + [f"Executed validation_check (found {len(errors)} errors)"]
     }
     if state.get("attempts", 0) == 0:
         update_dict["pre_val_errors"] = errors
@@ -99,19 +150,19 @@ def validation_check_node(state: AgentState) -> Dict[str, Any]:
 def regeneration_node(state: AgentState) -> Dict[str, Any]:
     attempts = state.get("attempts", 0) + 1
     print("\n" + "="*60)
-    print(f" [Node: regeneration_node] (Attempt {attempts}/3)")
-    print(f" -> Action: Repairing {len(state['errors'])} failed fields via self-healing...")
+    print(f" [Node: regeneration] (Attempt {attempts}/3)")
+    print(f" -> Action: Repairing {len(state.get('errors', []))} failed fields via self-healing...")
     print("="*60)
     
     regenerator = RegenerationLoop()
-    consolidated = dict(state["consolidated"])
+    consolidated = dict(state.get("consolidated", {}))
     
     regen_log = list(state.get("regeneration_log", []))
-    msg = f"[Attempt {attempts}/3] Consolidated record has {len(state['errors'])} validation errors."
+    msg = f"[Attempt {attempts}/3] Consolidated record has {len(state.get('errors', []))} validation errors."
     regen_log.append(msg)
     
     # Run one round of self-healing for each failed field
-    for err in state["errors"]:
+    for err in state.get("errors", []):
         field = err["field"]
         curr_val = err["value"]
         err_msg = err["error"]
@@ -125,19 +176,19 @@ def regeneration_node(state: AgentState) -> Dict[str, Any]:
         "consolidated": consolidated,
         "attempts": attempts,
         "regeneration_log": regen_log,
-        "log": state.get("log", []) + [f"Executed regeneration_node attempt {attempts}"]
+        "log": state.get("log", []) + [f"Executed regeneration attempt {attempts}"]
     }
 
 def supabase_write_node(state: AgentState) -> Dict[str, Any]:
     print("\n" + "="*60)
-    print(" [Node: supabase_write_node]")
+    print(" [Node: supabase_write]")
     print(" -> Action: Writing validated profile to Supabase...")
     print("="*60)
     
     db_status = "Skipped"
-    if not state["dry_run"]:
+    if not state.get("dry_run", True):
         db_writer = DBWriter()
-        success, db_msg = db_writer.write_company(state["consolidated"])
+        success, db_msg = db_writer.write_company(state.get("consolidated", {}))
         db_status = db_msg if success else f"DB Write Failed: {db_msg}"
         print(f"    * Supabase Write: {db_status}")
     else:
@@ -146,17 +197,17 @@ def supabase_write_node(state: AgentState) -> Dict[str, Any]:
         
     return {
         "db_status": db_status,
-        "log": state.get("log", []) + [f"Executed supabase_write_node: {db_status}"]
+        "log": state.get("log", []) + [f"Executed supabase_write: {db_status}"]
     }
 
 # --- Router ---
 
 def should_regenerate(state: AgentState) -> str:
-    if state["errors"] and state["attempts"] < 3:
-        print("\n -> Conditional Edge: State contains validation errors. Routing to 'regeneration_node'...")
+    if state.get("errors", []) and state.get("attempts", 0) < 3:
+        print("\n -> Conditional Edge: State contains validation errors. Routing to 'regeneration'...")
         return "regeneration"
     else:
-        print("\n -> Conditional Edge: Validation passed or max attempts reached. Routing to 'supabase_write_node'...")
+        print("\n -> Conditional Edge: Validation passed or max attempts reached. Routing to 'supabase_write'...")
         return "supabase_write"
 
 # --- Graph Assembly ---
@@ -164,16 +215,26 @@ def should_regenerate(state: AgentState) -> str:
 workflow = StateGraph(AgentState)
 
 # Add Nodes
-workflow.add_node("research", research_node)
-workflow.add_node("consolidation", consolidation_node)
+workflow.add_node(claude_node_name, claude_researcher_node)
+workflow.add_node(gemini_node_name, gemini_researcher_node)
+workflow.add_node(llama_node_name, llama_researcher_node)
+workflow.add_node(consolidation_node_name, consolidation_node)
 workflow.add_node("validation_check", validation_check_node)
 workflow.add_node("regeneration", regeneration_node)
 workflow.add_node("supabase_write", supabase_write_node)
 
-# Set Edges
-workflow.set_entry_point("research")
-workflow.add_edge("research", "consolidation")
-workflow.add_edge("consolidation", "validation_check")
+# Set Parallel Edges
+workflow.add_edge(START, claude_node_name)
+workflow.add_edge(START, gemini_node_name)
+workflow.add_edge(START, llama_node_name)
+
+# Fork-Join at Consolidation
+workflow.add_edge(claude_node_name, consolidation_node_name)
+workflow.add_edge(gemini_node_name, consolidation_node_name)
+workflow.add_edge(llama_node_name, consolidation_node_name)
+
+# Consolidation to validation
+workflow.add_edge(consolidation_node_name, "validation_check")
 
 # Add Conditional Transition
 workflow.add_conditional_edges(
@@ -218,21 +279,15 @@ def save_and_print_report(state: Dict[str, Any]):
     import json
     import re
     import os
-    from config import (
-        MODEL_CLAUDE,
-        MODEL_GEMINI,
-        MODEL_LLAMA,
-        MODEL_CONSOLIDATOR
-    )
     from schemas import CompanyFull
     
     company_name = state["company_name"]
-    dry_run = state["dry_run"]
-    raw_results = state["raw_results"]
-    consolidated = state["consolidated"]
-    errors = state["errors"]
-    attempts = state["attempts"]
-    db_status = state["db_status"]
+    dry_run = state.get("dry_run", True)
+    raw_results = state.get("raw_results", {})
+    consolidated = state.get("consolidated", {})
+    errors = state.get("errors", [])
+    attempts = state.get("attempts", 0)
+    db_status = state.get("db_status", "Skipped")
     conflicts = state.get("conflicts", {})
     resolved = state.get("resolved", {})
     pre_val_errors = state.get("pre_val_errors", [])

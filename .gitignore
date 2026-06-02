@@ -28,4 +28,5 @@ __pycache__/
 # Environments
 venv/
 .pytest_cache/
+.langgraph_api/
 
