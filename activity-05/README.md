@@ -45,7 +45,7 @@ Open your `.env` file in the `activity-05/` directory and append the following v
 LANGCHAIN_TRACING_V2=true
 LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
 LANGCHAIN_API_KEY="lsv2_pt_YOUR_API_KEY_HERE"
-LANGCHAIN_PROJECT="radix-company-intelligence"
+LANGCHAIN_PROJECT="RADIX"
 ```
 
 ---
@@ -56,7 +56,7 @@ Once you run the pipeline, LangSmith automatically starts capturing logs in real
 
 ### 1. View Your Projects
 - Open the LangSmith Dashboard.
-- Under **Projects**, click on **`radix-company-intelligence`**.
+- Under **Projects**, click on **`RADIX`**.
 
 ### 2. Inspect a Run
 - You will see a chronological list of runs. Click on any run (e.g., `run_graph_pipeline`).

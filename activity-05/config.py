@@ -7,7 +7,7 @@ load_dotenv()
 # LangSmith Tracing Configuration
 LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2", "false").lower() in ("true", "1", "yes")
 LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY", "")
-LANGCHAIN_PROJECT = os.getenv("LANGCHAIN_PROJECT", "radix-company-intelligence")
+LANGCHAIN_PROJECT = os.getenv("LANGCHAIN_PROJECT", "RADIX")
 LANGCHAIN_ENDPOINT = os.getenv("LANGCHAIN_ENDPOINT", "https://api.smith.langchain.com")
 
 # Set in os.environ explicitly to ensure LangChain SDK catches them
