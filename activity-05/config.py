@@ -5,12 +5,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # LangSmith Tracing Configuration
-LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2", "false").lower() in ("true", "1", "yes")
-LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY", "")
-LANGCHAIN_PROJECT = os.getenv("LANGCHAIN_PROJECT", "RADIX")
-LANGCHAIN_ENDPOINT = os.getenv("LANGCHAIN_ENDPOINT", "https://api.smith.langchain.com")
+LANGCHAIN_TRACING_V2_str = os.getenv("LANGCHAIN_TRACING_V2") or os.getenv("LANGSMITH_TRACING") or "false"
+LANGCHAIN_TRACING_V2 = LANGCHAIN_TRACING_V2_str.lower() in ("true", "1", "yes")
+LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY") or os.getenv("LANGSMITH_API_KEY") or ""
+LANGCHAIN_PROJECT = os.getenv("LANGCHAIN_PROJECT") or os.getenv("LANGSMITH_PROJECT") or "RADIX"
+LANGCHAIN_ENDPOINT = os.getenv("LANGCHAIN_ENDPOINT") or os.getenv("LANGSMITH_ENDPOINT") or "https://api.smith.langchain.com"
 
-# Set in os.environ explicitly to ensure LangChain SDK catches them
+# Set standard in os.environ explicitly to ensure LangChain SDK catches them
 if LANGCHAIN_TRACING_V2 and LANGCHAIN_API_KEY:
     os.environ["LANGCHAIN_TRACING_V2"] = "true"
     os.environ["LANGCHAIN_API_KEY"] = LANGCHAIN_API_KEY
@@ -28,13 +29,13 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY") or os.getenv("SUPABASE_ANON_KEY") or ""
 
 # Researcher Model Configs
 MODEL_CLAUDE = os.getenv("MODEL_CLAUDE", "openai/gpt-4o-mini")
-MODEL_CLAUDE_FALLBACKS = ["perplexity/sonar-pro-search", "meta-llama/llama-3.2-3b-instruct:free"]
+MODEL_CLAUDE_FALLBACKS = ["google/gemini-2.5-flash", "meta-llama/llama-3.2-3b-instruct:free"]
 
 MODEL_GEMINI = os.getenv("MODEL_GEMINI", "perplexity/sonar-pro-search")
-MODEL_GEMINI_FALLBACKS = ["openai/gpt-4o-mini", "meta-llama/llama-3.2-3b-instruct:free"]
+MODEL_GEMINI_FALLBACKS = ["google/gemini-2.5-flash", "openai/gpt-4o-mini"]
 
 MODEL_LLAMA = os.getenv("MODEL_LLAMA", "meta-llama/llama-3.3-70b-instruct")
-MODEL_LLAMA_FALLBACKS = ["meta-llama/llama-3.1-8b-instant", "google/gemini-2.5-flash"]
+MODEL_LLAMA_FALLBACKS = ["google/gemini-2.5-flash", "meta-llama/llama-3.1-8b-instant"]
 
 # Consolidation Model Config
 MODEL_CONSOLIDATOR = os.getenv("MODEL_CONSOLIDATOR", "google/gemini-2.5-pro")
