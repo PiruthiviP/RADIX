@@ -1,0 +1,1223 @@
+================================================================================
+                       RADIX AGENTIC PIPELINE EXECUTION
+================================================================================
+Target Company: Microsoft
+
+[1] DATABASE CONNECTIVITY STATUS
+--------------------------------------------------------------------------------
+Supabase Status: CONNECTED SUCCESSFULLY!
+
+[2] PARALLEL RESEARCH INPUTS (RAW LLM OUTPUTS)
+--------------------------------------------------------------------------------
+>>> Researcher: CLAUDE (Model: openai/gpt-4o-mini)
+Completeness: 97.5% | Validation Errors: 0
+Raw JSON Output:
+{
+  "name": "Microsoft Corporation",
+  "short_name": "Microsoft",
+  "logo_url": "https://www.microsoft.com/en-us/assets/shared/images/logo.svg",
+  "category": "Technology",
+  "incorporation_year": 1975,
+  "overview_text": "Microsoft is a global technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and services.",
+  "nature_of_company": "Public",
+  "headquarters_address": "Redmond, Washington, United States",
+  "operating_countries": "United States; Canada; United Kingdom; India; Germany; France; Japan; Australia; China; Brazil",
+  "office_count": "700+",
+  "office_locations": "New York, United States; London, United Kingdom; Bangalore, India; Paris, France; Tokyo, Japan; Beijing, China; Sydney, Australia; Toronto, Canada",
+  "employee_size": "180,000 employees",
+  "hiring_velocity": "Cloud ~10,000 open roles; AI ~8,000 open roles; Cybersecurity ~5,000 open roles; Sales ~3,000 open roles",
+  "employee_turnover": "15% annually",
+  "avg_retention_tenure": "5 years",
+  "pain_points_addressed": "Digital transformation complexity; Legacy IT modernization; Cloud migration risk; Cybersecurity threats; Operational inefficiency; Talent and skill gaps",
+  "focus_sectors": "Financials; Health Care; Consumer Discretionary; Industrials; Energy; Telecommunications; Public Sector; Technology",
+  "offerings_description": "Cloud Computing; Artificial Intelligence; Cybersecurity; Productivity Software; Gaming; Enterprise Software",
+  "top_customers": "Fortune 500 Enterprises; Global Banks; Government Agencies; Healthcare Systems; Telecom Operators; Energy Majors",
+  "core_value_proposition": "Innovative technology solutions; Global reach; Deep industry expertise; Strong partner network",
+  "vision_statement": "To empower every person and organization on the planet to achieve more",
+  "mission_statement": "To drive continuous innovation and help the world\u2019s leading organizations build their digital core and achieve greater value",
+  "core_values": "Integrity; Respect for individuals; Innovation; Stewardship; Customer obsession",
+  "unique_differentiators": "Global cloud infrastructure; Industry-specific solutions; Strong alliance ecosystem; Proprietary AI and analytics platforms",
+  "competitive_advantages": "Brand leadership; Scale and geographic reach; Deep enterprise relationships; Strong partner network",
+  "weaknesses_gaps": "High research and development expenses; Dependency on Windows and Office software; Complex organizational structure",
+  "key_challenges_needs": "Talent retention; Pricing pressure from competitors; Rapid AI disruption; Regulatory compliance across regions",
+  "key_competitors": "Amazon Web Services; Google Cloud; IBM; Oracle; Salesforce",
+  "technology_partners": "SAP; Oracle; AWS; Google Cloud; Salesforce; NVIDIA",
+  "history_timeline": "Founded in 1975 by Bill Gates and Paul Allen; Went public in 1986; Released Windows 1.0 in 1985; Acquired LinkedIn in 2016",
+  "recent_news": "2024, Invested $10B in OpenAI; 2024, Released new Azure cloud services",
+  "website_url": "https://www.microsoft.com",
+  "website_quality": "Enterprise-grade, high clarity, strong thought leadership, polished UX",
+  "website_rating": "NA",
+  "website_traffic_rank": "Global 34; US 6",
+  "social_media_followers": 35000000,
+  "glassdoor_rating": 4.4,
+  "indeed_rating": 4.5,
+  "google_rating": 4.3,
+  "linkedin_url": "https://www.linkedin.com/company/microsoft",
+  "twitter_handle": "@Microsoft",
+  "facebook_url": "https://www.facebook.com/Microsoft",
+  "instagram_url": "https://www.instagram.com/microsoft",
+  "ceo_name": "Satya Nadella",
+  "ceo_linkedin_url": "https://www.linkedin.com/in/satyanadella",
+  "key_leaders": "Satya Nadella, CEO; Brad Smith, President; Amy Hood, CFO",
+  "warm_intro_pathways": "Fortune 500 board connections; Alumni network; Technology partner ecosystems",
+  "decision_maker_access": "Low, Large enterprise structure with formal procurement and partner-led access",
+  "primary_contact_email": "contact@microsoft.com",
+  "primary_phone_number": "NA",
+  "contact_person_name": "Satya Nadella",
+  "contact_person_title": "CEO",
+  "contact_person_email": "satya.nadella@microsoft.com",
+  "contact_person_phone": "NA",
+  "awards_recognitions": "Fortune Global 500; Great Place to Work Certified; Gartner Magic Quadrant Leader; Forbes Most Admired Companies",
+  "brand_sentiment_score": "Very Positive, strong global brand, high enterprise trust",
+  "event_participation": "World Economic Forum; Microsoft Ignite; AWS re:Invent; Global Fintech Fest",
+  "regulatory_status": "ISO 27001; SOC 2; GDPR Compliance; HIPAA Compliance",
+  "legal_issues": "Periodic labor and contract disputes; no major unresolved global litigation",
+  "annual_revenue": "$242B (FY2023)",
+  "annual_profit": "$69.4B net income (FY2023)",
+  "revenue_mix": "Cloud 45%; Productivity and Business Processes 30%; Personal Computing 25%",
+  "valuation": "$2.3T market capitalization",
+  "yoy_growth_rate": 0.1,
+  "profitability_status": "Profitable",
+  "market_share_percentage": "5-6% of global IT services market",
+  "key_investors": "Vanguard Group; BlackRock; State Street; FMR, LLC; T. Rowe Price Associates",
+  "recent_funding_rounds": "Public equity markets, ongoing institutional investment",
+  "total_capital_raised": "Public market funded",
+  "esg_ratings": "Net-zero commitment by 2030; Science Based Targets; Diversity equity programs",
+  "sales_motion": "Enterprise Field Sales; Cloud Solution Sales; Inside Sales",
+  "customer_acquisition_cost": "$100K+ per enterprise",
+  "customer_lifetime_value": "$10M+",
+  "cac_ltv_ratio": "NA",
+  "churn_rate": "<5%",
+  "net_promoter_score": "70",
+  "customer_concentration_risk": "No, highly diversified client base",
+  "burn_rate": "Not Applicable, cash-flow positive",
+  "runway_months": "Not Applicable",
+  "burn_multiplier": "<1.0",
+  "intellectual_property": "Microsoft Azure IP; Industry AI frameworks; Proprietary cloud accelerators; Windows; Office",
+  "r_and_d_investment": "$20B annually",
+  "ai_ml_adoption_level": "High, generative AI platforms, AI-led consulting, automation for delivery optimization",
+  "tech_stack": "Microsoft Azure; AWS; Google Cloud; Kubernetes; Python; Java; .NET",
+  "cybersecurity_posture": "ISO 27001; SOC 2; Global cyber defense centers; Microsoft Security",
+  "supply_chain_dependencies": "Cloud providers; Software vendors; Talent workforce; Hardware manufacturers",
+  "geopolitical_risks": "Trade regulations; Data privacy laws; Regional conflicts; US-China trade tensions",
+  "macro_risks": "Global recession; Enterprise IT budget cuts; Interest rate changes",
+  "diversity_metrics": "30% women workforce; Global DEI programs; 50% underrepresented groups in hiring",
+  "remote_policy_details": "Hybrid, 80% flexible",
+  "training_spend": "$2,000 per employee/year",
+  "partnership_ecosystem": "Microsoft; SAP; Oracle; Google; AWS; Salesforce; IBM",
+  "exit_strategy_history": "Mature public enterprise; Strategic acquisitions",
+  "carbon_footprint": "Actively reducing via renewable energy sourcing; 100% renewable energy by 2025",
+  "ethical_sourcing": "Supplier code of conduct; ESG audits; Conflict minerals policy",
+  "benchmark_vs_peers": "Higher revenue than Alphabet; Comparable margins to Amazon; Stronger cloud alliances than Facebook",
+  "future_projections": "Revenue projected $300B by 2025",
+  "strategic_priorities": "Generative AI leadership; Cloud transformation; Sustainability consulting; Emerging markets growth; Gaming",
+  "industry_associations": "World Economic Forum; NASSCOM; Business Roundtable; IT Industry Council",
+  "case_studies": "Microsoft cloud modernization; Unilever digital supply chain; Coca-Cola digital transformation; Walmart retail innovation",
+  "go_to_market_strategy": "Enterprise account teams; Strategic alliances; Thought leadership marketing; Digital marketing campaigns",
+  "innovation_roadmap": "GenAI platforms; Industry cloud solutions; Cyber resilience tools; Quantum computing research",
+  "product_pipeline": "AI copilots; Industry SaaS accelerators; Azure IoT solutions; Microsoft 365 enhancements",
+  "board_members": "Satya Nadella; Reid Hoffman; Sandra Peterson; Former global executives like Bill Gates",
+  "marketing_video_url": "https://www.youtube.com/@Microsoft",
+  "customer_testimonials": "Unilever transformation story; Microsoft cloud case study; Coca-Cola digital success story",
+  "tech_adoption_rating": "High, Industry Leader",
+  "tam": "$2.5T global IT and business services",
+  "sam": "$500B enterprise digital transformation",
+  "som": "0.10",
+  "work_culture_summary": "Collaborative; Performance-driven; Innovative",
+  "manager_quality": "Strong coaching focus; Leadership development programs",
+  "psychological_safety": "High",
+  "feedback_culture": "Continuous feedback; Annual reviews; Regular check-ins",
+  "diversity_inclusion_score": "Gender equity; Inclusive leadership; Diversity training programs",
+  "ethical_standards": "High integrity; Compliance-driven; Ethics training",
+  "typical_hours": "Flexible; 40 hours/week",
+  "overtime_expectations": "Occasional during project peaks",
+  "weekend_work": "Rare",
+  "flexibility_level": "Remote; Hybrid; Flexible work arrangements",
+  "leave_policy": "Paid leave; Mental health days; Vacation time",
+  "burnout_risk": "Moderate",
+  "location_centrality": "Central business districts; Urban areas",
+  "public_transport_access": "Metro; Bus; Train; Bike-friendly",
+  "cab_policy": "Ride-hailing; Company transport; Reimbursement options",
+  "airport_commute_time": "30 minutes",
+  "office_zone_type": "IT hub; Tech park",
+  "area_safety": "Secure; Well-monitored; Low crime rate",
+  "safety_policies": "Late-night transport; Workplace safety training; Emergency response plan",
+  "infrastructure_safety": "Fire compliant; Secure access; Regular maintenance",
+  "emergency_preparedness": "Medical support; Fire drills; Emergency response plan",
+  "health_support": "Health insurance; Mental wellness programs; Employee assistance programs",
+  "onboarding_quality": "Industry-leading",
+  "learning_culture": "Internal LMS; Certifications; Microsoft Learn",
+  "exposure_quality": "High",
+  "mentorship_availability": "Leadership mentors; Peer mentors; Mentorship programs",
+  "internal_mobility": "High",
+  "promotion_clarity": "Merit-based; Transparent",
+  "tools_access": "Enterprise software; Cloud platforms; Microsoft Azure; Microsoft 365",
+  "role_clarity": "High",
+  "early_ownership": "Medium",
+  "work_impact": "Client-facing; Revenue-linked; Social impact",
+  "execution_thinking_balance": "Balanced",
+  "automation_level": "High",
+  "cross_functional_exposure": "Consulting; Technology; Sales; Marketing",
+  "company_maturity": "Mature enterprise",
+  "brand_value": "Global top-tier brand",
+  "client_quality": "Fortune 500; Governments; Global organizations",
+  "layoff_history": "Periodic restructuring",
+  "fixed_vs_variable_pay": "Mostly fixed",
+  "bonus_predictability": "Moderate",
+  "esops_incentives": "Stock grants; Performance shares",
+  "family_health_insurance": "Dependents covered; OPD; Medical benefits",
+  "relocation_support": "Housing; Travel reimbursement; Relocation assistance",
+  "lifestyle_benefits": "Wellness programs; Meals; Fitness; On-site gyms",
+  "exit_opportunities": "Big Tech; Global consultancies; Industry leadership roles; Entrepreneurship",
+  "skill_relevance": "Very High",
+  "external_recognition": "Strong global credibility",
+  "network_strength": "Global alumni network; Executive connections",
+  "global_exposure": "Global clients; International teams; Remote work options",
+  "mission_clarity": "High",
+  "sustainability_csr": "Net-zero goals; Community programs; Philanthropy",
+  "crisis_behavior": "Transparent and compliance-driven"
+}
+
+>>> Researcher: GEMINI (Model: perplexity/sonar-pro-search)
+Completeness: 97.5% | Validation Errors: 0
+Raw JSON Output:
+{
+  "name": "Microsoft Corporation",
+  "short_name": "Microsoft",
+  "logo_url": "https://www.microsoft.com/en-us/assets/shared/images/logo.png",
+  "category": "Technology",
+  "incorporation_year": 1975,
+  "overview_text": "Microsoft is a global technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and services.",
+  "nature_of_company": "Public",
+  "headquarters_address": "Redmond, Washington, United States",
+  "operating_countries": "United States; Canada; United Kingdom; India; Germany; France; Japan; Australia; China; Brazil; Mexico",
+  "office_count": "700+",
+  "office_locations": "Redmond, United States; Vancouver, Canada; London, United Kingdom; Bangalore, India; Paris, France; Tokyo, Japan; Sydney, Australia; Beijing, China; Sao Paulo, Brazil; Mexico City, Mexico",
+  "employee_size": "220,000 employees",
+  "hiring_velocity": "Cloud ~10,000 open roles; Artificial Intelligence ~8,000 open roles; Cybersecurity ~5,000 open roles; Data Science ~3,000 open roles",
+  "employee_turnover": "15%",
+  "avg_retention_tenure": "4.2 years",
+  "pain_points_addressed": "Digital transformation complexity; Cloud migration risk; Cybersecurity threats; Data management; Artificial intelligence adoption",
+  "focus_sectors": "Financials; Health Care; Consumer Discretionary; Industrials; Energy; Telecommunications; Public Sector; Technology",
+  "offerings_description": "Cloud Computing; Artificial Intelligence; Cybersecurity; Data Analytics; Gaming; Productivity Software; Business Applications",
+  "top_customers": "Fortune 500 Enterprises; Global Banks; Government Agencies; Healthcare Systems; Telecom Operators; Energy Majors",
+  "core_value_proposition": "Innovative solutions; Global reach; Deep industry expertise; Strong technology partnerships; Customer-centric approach",
+  "vision_statement": "To empower every person and organization on the planet to achieve more.",
+  "mission_statement": "To drive continuous innovation and help the world\u2019s leading organizations build their digital core and achieve greater value.",
+  "core_values": "Integrity; Respect; Accountability; Innovation; Customer-centricity",
+  "unique_differentiators": "Global cloud infrastructure; Artificial intelligence capabilities; Strong gaming ecosystem; Productivity software leadership",
+  "competitive_advantages": "Brand recognition; Global scale; Deep enterprise relationships; Strong partner network",
+  "weaknesses_gaps": "High research and development expenses; Dependence on Windows and Office software; Intense competition in cloud computing",
+  "key_challenges_needs": "Talent acquisition and retention; Cloud security and compliance; Artificial intelligence ethics; Regulatory compliance across regions",
+  "key_competitors": "Amazon Web Services; Google Cloud; IBM; Oracle; Salesforce",
+  "technology_partners": "SAP; Oracle; Salesforce; Dell; HP",
+  "history_timeline": "Founded in 1975 by Bill Gates and Paul Allen; Released Windows 1.0 in 1985; Acquired LinkedIn in 2016",
+  "recent_news": "2022, Launched Azure OpenAI service; 2022, Acquired Activision Blizzard for $68.7 billion",
+  "website_url": "https://www.microsoft.com",
+  "website_quality": "Enterprise-grade, high clarity, strong thought leadership, polished UX",
+  "website_rating": "NA",
+  "website_traffic_rank": "Global 34; US 6",
+  "social_media_followers": 35000000,
+  "glassdoor_rating": 4.4,
+  "indeed_rating": 4.5,
+  "google_rating": 4.3,
+  "linkedin_url": "https://www.linkedin.com/company/microsoft",
+  "twitter_handle": "@Microsoft",
+  "facebook_url": "https://www.facebook.com/Microsoft",
+  "instagram_url": "https://www.instagram.com/microsoft",
+  "ceo_name": "Satya Nadella",
+  "ceo_linkedin_url": "https://www.linkedin.com/in/satyanadella",
+  "key_leaders": "Satya Nadella, CEO; Brad Smith, President; Amy Hood, CFO",
+  "warm_intro_pathways": "Fortune 500 board connections; Alumni network; Technology partner ecosystems",
+  "decision_maker_access": "Low, Large enterprise structure with formal procurement and partner-led access",
+  "primary_contact_email": "contact@microsoft.com",
+  "primary_phone_number": "NA",
+  "contact_person_name": "Satya Nadella",
+  "contact_person_title": "CEO",
+  "contact_person_email": "satya.nadella@microsoft.com",
+  "contact_person_phone": "NA",
+  "awards_recognitions": "Fortune Global 500; Great Place to Work Certified; Gartner Magic Quadrant Leader; Forbes Most Admired Companies",
+  "brand_sentiment_score": "Very Positive, strong global brand, high enterprise trust",
+  "event_participation": "World Economic Forum; Microsoft Ignite; AWS re:Invent; Global Fintech Fest",
+  "regulatory_status": "ISO 27001; SOC 2; GDPR Compliance; HIPAA Compliance",
+  "legal_issues": "Periodic labor and contract disputes; no major unresolved global litigation",
+  "annual_revenue": "$242B (FY2023)",
+  "annual_profit": "$69.4B net income (FY2023)",
+  "revenue_mix": "Cloud 45%; Productivity and Business Processes 30%; Personal Computing 25%",
+  "valuation": "$2.3T market capitalization",
+  "yoy_growth_rate": 0.1,
+  "profitability_status": "Profitable",
+  "market_share_percentage": "5-6% of global IT services market",
+  "key_investors": "Vanguard Group; BlackRock; State Street; FMR, LLC; T. Rowe Price Associates, Inc.",
+  "recent_funding_rounds": "Public equity markets, ongoing institutional investment",
+  "total_capital_raised": "Public market funded",
+  "esg_ratings": "Net-zero commitment by 2030; Science Based Targets; Diversity equity programs",
+  "sales_motion": "Enterprise Field Sales; Cloud Solution Sales; Customer Success",
+  "customer_acquisition_cost": "$100K+ per enterprise",
+  "customer_lifetime_value": "$5M+",
+  "cac_ltv_ratio": "NA",
+  "churn_rate": "<3%",
+  "net_promoter_score": "60",
+  "customer_concentration_risk": "No, highly diversified client base",
+  "burn_rate": "Not Applicable, cash-flow positive",
+  "runway_months": "Not Applicable",
+  "burn_multiplier": "<1.0",
+  "intellectual_property": "Azure IP; Industry AI frameworks; Proprietary cloud accelerators; Windows; Office",
+  "r_and_d_investment": "$20B annually",
+  "ai_ml_adoption_level": "High, generative AI platforms, AI-led consulting, automation for delivery optimization",
+  "tech_stack": "Microsoft Azure; AWS; Salesforce; SAP; Oracle; Kubernetes; Python; Java; C#",
+  "cybersecurity_posture": "ISO 27001; SOC 2; Global cyber defense centers; Microsoft Security",
+  "supply_chain_dependencies": "Cloud providers; Software vendors; Talent workforce; Hardware manufacturers",
+  "geopolitical_risks": "Trade regulations; Data privacy laws; Regional conflicts; US-China trade tensions",
+  "macro_risks": "Global recession; Enterprise IT budget cuts; Interest rate changes",
+  "diversity_metrics": "30% women workforce; Global DEI programs; 50% underrepresented groups in hiring",
+  "remote_policy_details": "Hybrid, 50% flexible",
+  "training_spend": "$1,500 per employee/year",
+  "partnership_ecosystem": "Microsoft; SAP; Oracle; Google; AWS; Salesforce; Intel",
+  "exit_strategy_history": "Mature public enterprise; Strategic acquisitions",
+  "carbon_footprint": "Actively reducing via renewable energy sourcing; 100% renewable energy by 2025",
+  "ethical_sourcing": "Supplier code of conduct; ESG audits; Conflict mineral-free sourcing",
+  "benchmark_vs_peers": "Higher revenue than Alphabet; Comparable margins to Amazon; Stronger cloud alliances than IBM",
+  "future_projections": "Revenue projected $300B by 2027",
+  "strategic_priorities": "Generative AI leadership; Cloud transformation; Sustainability consulting; Emerging markets growth; Gaming",
+  "industry_associations": "World Economic Forum; NASSCOM; Business Roundtable; ITI; BSA",
+  "case_studies": "Microsoft cloud modernization; Unilever digital supply chain; Coca-Cola digital transformation; Walmart retail innovation",
+  "go_to_market_strategy": "Enterprise account teams; Strategic alliances; Thought leadership marketing; Digital marketing campaigns",
+  "innovation_roadmap": "GenAI platforms; Industry cloud solutions; Cyber resilience tools; Quantum computing research",
+  "product_pipeline": "AI copilots; Industry SaaS accelerators; Azure IoT solutions; Microsoft 365 productivity tools",
+  "board_members": "Satya Nadella; Reid Hoffman; Sandra Peterson; Former global executives like Bill Gates",
+  "marketing_video_url": "https://www.youtube.com/@Microsoft",
+  "customer_testimonials": "Unilever transformation story; Microsoft cloud case; Coca-Cola digital success; Walmart retail innovation",
+  "tech_adoption_rating": "High, Industry Leader",
+  "tam": "$2.5T global IT and business services",
+  "sam": "$500B enterprise digital transformation",
+  "som": "0.10",
+  "work_culture_summary": "Collaborative; Performance-driven; Innovative; Inclusive",
+  "manager_quality": "Strong coaching focus; Leadership development programs",
+  "psychological_safety": "High",
+  "feedback_culture": "Continuous feedback; Annual reviews; Regular check-ins",
+  "diversity_inclusion_score": "Gender equity; Inclusive leadership; Diversity training programs",
+  "ethical_standards": "High integrity; Compliance-driven; Ethics training programs",
+  "typical_hours": "Flexible; 40 hours/week",
+  "overtime_expectations": "Occasional during project peaks",
+  "weekend_work": "Rare",
+  "flexibility_level": "Remote; Hybrid",
+  "leave_policy": "Paid leave; Mental health days; Vacation time",
+  "burnout_risk": "Moderate",
+  "location_centrality": "Central business districts; Urban areas",
+  "public_transport_access": "Metro; Bus; Train; Bike-friendly",
+  "cab_policy": "Ride-hailing; Company transport; Reimbursement options",
+  "airport_commute_time": "30-60 minutes",
+  "office_zone_type": "IT hub; Tech park",
+  "area_safety": "Secure; Well-monitored; Low crime rate",
+  "safety_policies": "Late-night transport; Workplace safety; Emergency response plans",
+  "infrastructure_safety": "Fire compliant; Secure access; Regular maintenance",
+  "emergency_preparedness": "Medical support; Fire drills; Emergency response training",
+  "health_support": "Health insurance; Mental wellness programs; Employee assistance programs",
+  "onboarding_quality": "Industry-leading",
+  "learning_culture": "Internal LMS; Certifications; Microsoft Learn",
+  "exposure_quality": "High",
+  "mentorship_availability": "Leadership mentors; Peer mentors",
+  "internal_mobility": "High",
+  "promotion_clarity": "Merit-based; Transparent",
+  "tools_access": "Enterprise software; Cloud platforms; Microsoft Azure; Microsoft 365",
+  "role_clarity": "High",
+  "early_ownership": "Medium",
+  "work_impact": "Client-facing; Revenue-linked; Social impact",
+  "execution_thinking_balance": "Balanced",
+  "automation_level": "High",
+  "cross_functional_exposure": "Consulting; Technology; Sales; Marketing",
+  "company_maturity": "Mature enterprise",
+  "brand_value": "Global top-tier brand",
+  "client_quality": "Fortune 500; Governments; Small businesses",
+  "layoff_history": "Periodic restructuring",
+  "fixed_vs_variable_pay": "Mostly fixed",
+  "bonus_predictability": "Moderate",
+  "esops_incentives": "Stock grants; Performance shares",
+  "family_health_insurance": "Dependents covered; OPD; Dental; Vision",
+  "relocation_support": "Housing; Travel reimbursement; Relocation assistance",
+  "lifestyle_benefits": "Wellness programs; Meals; Fitness; On-site childcare",
+  "exit_opportunities": "Big Tech; Global consultancies; Industry leadership roles; Entrepreneurship",
+  "skill_relevance": "Very High",
+  "external_recognition": "Strong global credibility",
+  "network_strength": "Global alumni network; Executive connections",
+  "global_exposure": "Global clients; International teams",
+  "mission_clarity": "High",
+  "sustainability_csr": "Net-zero goals; Community programs; Diversity and inclusion initiatives",
+  "crisis_behavior": "Transparent and compliance-driven"
+}
+
+>>> Researcher: LLAMA (Model: meta-llama/llama-3.3-70b-instruct)
+Completeness: 97.5% | Validation Errors: 0
+Raw JSON Output:
+{
+  "name": "Microsoft Corporation",
+  "short_name": "Microsoft",
+  "logo_url": "https://www.microsoft.com/en-us/assets/shared/images/logo.svg",
+  "category": "Technology",
+  "incorporation_year": 1975,
+  "overview_text": "Microsoft is a global technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and services.",
+  "nature_of_company": "Public",
+  "headquarters_address": "Redmond, Washington, United States",
+  "operating_countries": "United States; Canada; United Kingdom; India; Germany; France; Japan; Australia; China; Brazil; Mexico",
+  "office_count": "700+",
+  "office_locations": "New York, United States; London, United Kingdom; Bangalore, India; Paris, France; Tokyo, Japan; Toronto, Canada; Sydney, Australia; Beijing, China; Sao Paulo, Brazil; Mexico City, Mexico",
+  "employee_size": "221,000 employees",
+  "hiring_velocity": "Cloud ~10,000 open roles; AI ~8,000 open roles; Cybersecurity ~5,000 open roles; Sales ~3,000 open roles",
+  "employee_turnover": "12% annually",
+  "avg_retention_tenure": "5.5 years",
+  "pain_points_addressed": "Digital transformation complexity; Legacy IT modernization; Cloud migration risk; Cybersecurity threats; Operational inefficiency; Talent and skill gaps",
+  "focus_sectors": "Financials; Health Care; Consumer Discretionary; Industrials; Energy; Telecommunications; Public Sector; Technology",
+  "offerings_description": "Cloud Computing; Artificial Intelligence; Cybersecurity; Productivity Software; Gaming; Enterprise Software",
+  "top_customers": "Fortune 500 Enterprises; Global Banks; Government Agencies; Healthcare Systems; Telecom Operators; Energy Majors",
+  "core_value_proposition": "Innovative technology solutions; Global reach; Deep industry expertise; Strong partner network",
+  "vision_statement": "To empower every person and organization on the planet to achieve more.",
+  "mission_statement": "To drive continuous innovation and help the world\u2019s leading organizations build their digital core and achieve greater value.",
+  "core_values": "Integrity; Respect; Accountability; Innovation; Customer obsession",
+  "unique_differentiators": "Global cloud infrastructure; Artificial intelligence capabilities; Strong gaming ecosystem; Productivity software leadership",
+  "competitive_advantages": "Brand leadership; Scale and geographic reach; Deep enterprise relationships; Strong partner network",
+  "weaknesses_gaps": "High research and development expenses; Dependency on Windows and Office software; Complex organizational structure",
+  "key_challenges_needs": "Talent retention; Pricing pressure from competitors; Rapid AI disruption; Regulatory compliance across regions",
+  "key_competitors": "Amazon; Google; IBM; Oracle; Salesforce; SAP",
+  "technology_partners": "SAP; Oracle; Salesforce; Adobe; NVIDIA",
+  "history_timeline": "Founded in 1975 by Bill Gates and Paul Allen; Went public in 1986; Released Windows 1.0 in 1985; Acquired LinkedIn in 2016",
+  "recent_news": "2024, Released new AI-powered productivity tools; 2024, Expanded cloud infrastructure to new regions",
+  "website_url": "https://www.microsoft.com",
+  "website_quality": "Enterprise-grade, high clarity, strong thought leadership, polished UX",
+  "website_rating": "NA",
+  "website_traffic_rank": "Global 34; US 6",
+  "social_media_followers": 35000000,
+  "glassdoor_rating": 4.4,
+  "indeed_rating": 4.5,
+  "google_rating": 4.3,
+  "linkedin_url": "https://www.linkedin.com/company/microsoft",
+  "twitter_handle": "@Microsoft",
+  "facebook_url": "https://www.facebook.com/Microsoft",
+  "instagram_url": "https://www.instagram.com/microsoft",
+  "ceo_name": "Satya Nadella",
+  "ceo_linkedin_url": "https://www.linkedin.com/in/satyanadella",
+  "key_leaders": "Satya Nadella, CEO; Brad Smith, President; Amy Hood, CFO",
+  "warm_intro_pathways": "Fortune 500 board connections; Alumni network; Technology partner ecosystems",
+  "decision_maker_access": "Medium, Large enterprise structure with formal procurement and partner-led access",
+  "primary_contact_email": "contact@microsoft.com",
+  "primary_phone_number": "NA",
+  "contact_person_name": "Satya Nadella",
+  "contact_person_title": "CEO",
+  "contact_person_email": "satya.nadella@microsoft.com",
+  "contact_person_phone": "NA",
+  "awards_recognitions": "Fortune Global 500; Great Place to Work Certified; Gartner Magic Quadrant Leader; Forbes Most Admired Companies",
+  "brand_sentiment_score": "Very Positive, strong global brand, high enterprise trust",
+  "event_participation": "World Economic Forum; Microsoft Ignite; AWS re:Invent; Global Fintech Fest",
+  "regulatory_status": "ISO 27001; SOC 2; GDPR Compliance; HIPAA Compliance",
+  "legal_issues": "Periodic labor and contract disputes; no major unresolved global litigation",
+  "annual_revenue": "$242B (FY2023)",
+  "annual_profit": "$69B net income (FY2023)",
+  "revenue_mix": "Cloud 55%; Productivity and Business Processes 25%; Personal Computing 20%",
+  "valuation": "$2.3T market capitalization",
+  "yoy_growth_rate": 0.1,
+  "profitability_status": "Profitable",
+  "market_share_percentage": "30-40% of global cloud market",
+  "key_investors": "Vanguard Group; BlackRock; State Street; FMR, LLC; T. Rowe Price Associates, Inc.",
+  "recent_funding_rounds": "Public equity markets, ongoing institutional investment",
+  "total_capital_raised": "Public market funded",
+  "esg_ratings": "Net-zero commitment by 2030; Science Based Targets; Diversity equity programs",
+  "sales_motion": "Enterprise Field Sales; Cloud Solution Sales; Customer Success",
+  "customer_acquisition_cost": "$100K+ per enterprise",
+  "customer_lifetime_value": "$5M+",
+  "cac_ltv_ratio": "NA",
+  "churn_rate": "<3%",
+  "net_promoter_score": "60",
+  "customer_concentration_risk": "No, highly diversified client base",
+  "burn_rate": "Not Applicable, cash-flow positive",
+  "runway_months": "Not Applicable",
+  "burn_multiplier": "<1.0",
+  "intellectual_property": "Azure IP; Industry AI frameworks; Proprietary cloud accelerators; Windows; Office",
+  "r_and_d_investment": "$20B annually",
+  "ai_ml_adoption_level": "High, generative AI platforms, AI-led consulting, automation for delivery optimization",
+  "tech_stack": "Azure; Windows; Office; Dynamics; SAP; Salesforce; AWS; Kubernetes; Python; Java",
+  "cybersecurity_posture": "ISO 27001; SOC 2; Global cyber defense centers",
+  "supply_chain_dependencies": "Cloud providers; Software vendors; Talent workforce; Hardware manufacturers",
+  "geopolitical_risks": "Trade regulations; Data privacy laws; Regional conflicts; US-China trade tensions",
+  "macro_risks": "Global recession; Enterprise IT budget cuts; Interest rate changes",
+  "diversity_metrics": "30% women workforce; Global DEI programs",
+  "remote_policy_details": "Hybrid, 50% flexible",
+  "training_spend": "$1,500 per employee/year",
+  "partnership_ecosystem": "SAP; Oracle; Google; AWS; Salesforce; IBM",
+  "exit_strategy_history": "Mature public enterprise; Strategic acquisitions",
+  "carbon_footprint": "Actively reducing via renewable energy sourcing",
+  "ethical_sourcing": "Supplier code of conduct; ESG audits",
+  "benchmark_vs_peers": "Higher revenue than Alphabet; Comparable margins to Amazon; Stronger cloud alliances than IBM",
+  "future_projections": "Revenue projected $300B by 2025",
+  "strategic_priorities": "Cloud transformation; AI leadership; Gaming; Productivity software; Emerging markets growth",
+  "industry_associations": "World Economic Forum; Business Roundtable; National Center for Women & Information Technology",
+  "case_studies": "Microsoft cloud modernization; Unilever digital supply chain; Coca-Cola digital transformation; Walmart retail innovation",
+  "go_to_market_strategy": "Enterprise account teams; Strategic alliances; Thought leadership marketing; Digital marketing campaigns",
+  "innovation_roadmap": "GenAI platforms; Industry cloud solutions; Cyber resilience tools; Quantum computing research",
+  "product_pipeline": "AI copilots; Industry SaaS accelerators; Azure IoT solutions; Microsoft 365 enhancements",
+  "board_members": "Satya Nadella; Reid Hoffman; Sandra Peterson; Former global executives like Bill Gates",
+  "marketing_video_url": "https://www.youtube.com/@Microsoft",
+  "customer_testimonials": "Unilever transformation story; Microsoft cloud case; Coca-Cola digital success; Walmart retail innovation",
+  "tech_adoption_rating": "High, Industry Leader",
+  "tam": "$2.5T global IT and business services",
+  "sam": "$500B enterprise digital transformation",
+  "som": "0.10",
+  "work_culture_summary": "Collaborative; Performance-driven; Innovative",
+  "manager_quality": "Strong coaching focus; Leadership development",
+  "psychological_safety": "High",
+  "feedback_culture": "Continuous feedback; Annual reviews; Regular check-ins",
+  "diversity_inclusion_score": "Gender equity; Inclusive leadership; Diversity training",
+  "ethical_standards": "High integrity; Compliance-driven; Responsible AI",
+  "typical_hours": "Flexible; 40 hours/week",
+  "overtime_expectations": "Occasional during project peaks",
+  "weekend_work": "Rare",
+  "flexibility_level": "Remote; Hybrid; Flexible work arrangements",
+  "leave_policy": "Paid leave; Mental health days; Vacation time",
+  "burnout_risk": "Moderate",
+  "location_centrality": "Central business districts; Urban areas",
+  "public_transport_access": "Metro; Bus; Train; Bike-friendly",
+  "cab_policy": "Ride-hailing; Company transport; Reimbursement",
+  "airport_commute_time": "30 minutes",
+  "office_zone_type": "IT hub; Tech park",
+  "area_safety": "Secure; Well-monitored; Low crime rate",
+  "safety_policies": "Late-night transport; Workplace safety; Emergency response plan",
+  "infrastructure_safety": "Fire compliant; Secure access; Regular maintenance",
+  "emergency_preparedness": "Medical support; Fire drills; Emergency training",
+  "health_support": "Health insurance; Mental wellness; Employee assistance programs",
+  "onboarding_quality": "Industry-leading",
+  "learning_culture": "Internal LMS; Certifications; Online courses",
+  "exposure_quality": "High",
+  "mentorship_availability": "Leadership mentors; Peer mentors; Mentorship programs",
+  "internal_mobility": "High",
+  "promotion_clarity": "Merit-based; Transparent; Regular feedback",
+  "tools_access": "Enterprise software; Cloud platforms; Microsoft products",
+  "role_clarity": "High",
+  "early_ownership": "Medium",
+  "work_impact": "Client-facing; Revenue-linked; Innovative projects",
+  "execution_thinking_balance": "Balanced",
+  "automation_level": "High",
+  "cross_functional_exposure": "Consulting; Technology; Sales; Marketing",
+  "company_maturity": "Mature enterprise",
+  "brand_value": "Global top-tier brand",
+  "client_quality": "Fortune 500; Governments; Global organizations",
+  "layoff_history": "Periodic restructuring",
+  "fixed_vs_variable_pay": "Mostly fixed",
+  "bonus_predictability": "Moderate",
+  "esops_incentives": "Stock grants; Performance shares; Stock options",
+  "family_health_insurance": "Dependents covered; OPD; Medical benefits",
+  "relocation_support": "Housing; Travel reimbursement; Relocation assistance",
+  "lifestyle_benefits": "Wellness programs; Meals; Fitness; On-site gyms",
+  "exit_opportunities": "Big Tech; Global consultancies; Industry leadership roles; Entrepreneurship",
+  "skill_relevance": "Very High",
+  "external_recognition": "Strong global credibility",
+  "network_strength": "Global alumni network; Executive connections; Industry partnerships",
+  "global_exposure": "Global clients; International teams; Remote work options",
+  "mission_clarity": "High",
+  "sustainability_csr": "Net-zero goals; Community programs; Environmental initiatives",
+  "crisis_behavior": "Transparent and compliance-driven"
+}
+
+[3] CONSOLIDATION STAGE (GOLDEN RECORD MERGE)
+--------------------------------------------------------------------------------
+Conflicts/Disagreements Found: 67
+- Field 'logo_url':
+    * Claude: https://www.microsoft.com/en-us/assets/shared/images/logo.svg
+    * Gemini: https://www.microsoft.com/en-us/assets/shared/images/logo.png
+    * Llama: https://www.microsoft.com/en-us/assets/shared/images/logo.svg
+- Field 'operating_countries':
+    * Claude: United States; Canada; United Kingdom; India; Germany; France; Japan; Australia; China; Brazil
+    * Gemini: United States; Canada; United Kingdom; India; Germany; France; Japan; Australia; China; Brazil; Mexico
+    * Llama: United States; Canada; United Kingdom; India; Germany; France; Japan; Australia; China; Brazil; Mexico
+- Field 'office_locations':
+    * Claude: New York, United States; London, United Kingdom; Bangalore, India; Paris, France; Tokyo, Japan; Beijing, China; Sydney, Australia; Toronto, Canada
+    * Gemini: Redmond, United States; Vancouver, Canada; London, United Kingdom; Bangalore, India; Paris, France; Tokyo, Japan; Sydney, Australia; Beijing, China; Sao Paulo, Brazil; Mexico City, Mexico
+    * Llama: New York, United States; London, United Kingdom; Bangalore, India; Paris, France; Tokyo, Japan; Toronto, Canada; Sydney, Australia; Beijing, China; Sao Paulo, Brazil; Mexico City, Mexico
+- Field 'employee_size':
+    * Claude: 180,000 employees
+    * Gemini: 220,000 employees
+    * Llama: 221,000 employees
+- Field 'hiring_velocity':
+    * Claude: Cloud ~10,000 open roles; AI ~8,000 open roles; Cybersecurity ~5,000 open roles; Sales ~3,000 open roles
+    * Gemini: Cloud ~10,000 open roles; Artificial Intelligence ~8,000 open roles; Cybersecurity ~5,000 open roles; Data Science ~3,000 open roles
+    * Llama: Cloud ~10,000 open roles; AI ~8,000 open roles; Cybersecurity ~5,000 open roles; Sales ~3,000 open roles
+- Field 'employee_turnover':
+    * Claude: 15% annually
+    * Gemini: 15%
+    * Llama: 12% annually
+- Field 'avg_retention_tenure':
+    * Claude: 5 years
+    * Gemini: 4.2 years
+    * Llama: 5.5 years
+- Field 'pain_points_addressed':
+    * Claude: Digital transformation complexity; Legacy IT modernization; Cloud migration risk; Cybersecurity threats; Operational inefficiency; Talent and skill gaps
+    * Gemini: Digital transformation complexity; Cloud migration risk; Cybersecurity threats; Data management; Artificial intelligence adoption
+    * Llama: Digital transformation complexity; Legacy IT modernization; Cloud migration risk; Cybersecurity threats; Operational inefficiency; Talent and skill gaps
+- Field 'offerings_description':
+    * Claude: Cloud Computing; Artificial Intelligence; Cybersecurity; Productivity Software; Gaming; Enterprise Software
+    * Gemini: Cloud Computing; Artificial Intelligence; Cybersecurity; Data Analytics; Gaming; Productivity Software; Business Applications
+    * Llama: Cloud Computing; Artificial Intelligence; Cybersecurity; Productivity Software; Gaming; Enterprise Software
+- Field 'core_value_proposition':
+    * Claude: Innovative technology solutions; Global reach; Deep industry expertise; Strong partner network
+    * Gemini: Innovative solutions; Global reach; Deep industry expertise; Strong technology partnerships; Customer-centric approach
+    * Llama: Innovative technology solutions; Global reach; Deep industry expertise; Strong partner network
+- Field 'vision_statement':
+    * Claude: To empower every person and organization on the planet to achieve more
+    * Gemini: To empower every person and organization on the planet to achieve more.
+    * Llama: To empower every person and organization on the planet to achieve more.
+- Field 'mission_statement':
+    * Claude: To drive continuous innovation and help the world’s leading organizations build their digital core and achieve greater value
+    * Gemini: To drive continuous innovation and help the world’s leading organizations build their digital core and achieve greater value.
+    * Llama: To drive continuous innovation and help the world’s leading organizations build their digital core and achieve greater value.
+- Field 'core_values':
+    * Claude: Integrity; Respect for individuals; Innovation; Stewardship; Customer obsession
+    * Gemini: Integrity; Respect; Accountability; Innovation; Customer-centricity
+    * Llama: Integrity; Respect; Accountability; Innovation; Customer obsession
+- Field 'unique_differentiators':
+    * Claude: Global cloud infrastructure; Industry-specific solutions; Strong alliance ecosystem; Proprietary AI and analytics platforms
+    * Gemini: Global cloud infrastructure; Artificial intelligence capabilities; Strong gaming ecosystem; Productivity software leadership
+    * Llama: Global cloud infrastructure; Artificial intelligence capabilities; Strong gaming ecosystem; Productivity software leadership
+- Field 'competitive_advantages':
+    * Claude: Brand leadership; Scale and geographic reach; Deep enterprise relationships; Strong partner network
+    * Gemini: Brand recognition; Global scale; Deep enterprise relationships; Strong partner network
+    * Llama: Brand leadership; Scale and geographic reach; Deep enterprise relationships; Strong partner network
+- Field 'weaknesses_gaps':
+    * Claude: High research and development expenses; Dependency on Windows and Office software; Complex organizational structure
+    * Gemini: High research and development expenses; Dependence on Windows and Office software; Intense competition in cloud computing
+    * Llama: High research and development expenses; Dependency on Windows and Office software; Complex organizational structure
+- Field 'key_challenges_needs':
+    * Claude: Talent retention; Pricing pressure from competitors; Rapid AI disruption; Regulatory compliance across regions
+    * Gemini: Talent acquisition and retention; Cloud security and compliance; Artificial intelligence ethics; Regulatory compliance across regions
+    * Llama: Talent retention; Pricing pressure from competitors; Rapid AI disruption; Regulatory compliance across regions
+- Field 'key_competitors':
+    * Claude: Amazon Web Services; Google Cloud; IBM; Oracle; Salesforce
+    * Gemini: Amazon Web Services; Google Cloud; IBM; Oracle; Salesforce
+    * Llama: Amazon; Google; IBM; Oracle; Salesforce; SAP
+- Field 'technology_partners':
+    * Claude: SAP; Oracle; AWS; Google Cloud; Salesforce; NVIDIA
+    * Gemini: SAP; Oracle; Salesforce; Dell; HP
+    * Llama: SAP; Oracle; Salesforce; Adobe; NVIDIA
+- Field 'history_timeline':
+    * Claude: Founded in 1975 by Bill Gates and Paul Allen; Went public in 1986; Released Windows 1.0 in 1985; Acquired LinkedIn in 2016
+    * Gemini: Founded in 1975 by Bill Gates and Paul Allen; Released Windows 1.0 in 1985; Acquired LinkedIn in 2016
+    * Llama: Founded in 1975 by Bill Gates and Paul Allen; Went public in 1986; Released Windows 1.0 in 1985; Acquired LinkedIn in 2016
+- Field 'recent_news':
+    * Claude: 2024, Invested $10B in OpenAI; 2024, Released new Azure cloud services
+    * Gemini: 2022, Launched Azure OpenAI service; 2022, Acquired Activision Blizzard for $68.7 billion
+    * Llama: 2024, Released new AI-powered productivity tools; 2024, Expanded cloud infrastructure to new regions
+- Field 'decision_maker_access':
+    * Claude: Low, Large enterprise structure with formal procurement and partner-led access
+    * Gemini: Low, Large enterprise structure with formal procurement and partner-led access
+    * Llama: Medium, Large enterprise structure with formal procurement and partner-led access
+- Field 'annual_profit':
+    * Claude: $69.4B net income (FY2023)
+    * Gemini: $69.4B net income (FY2023)
+    * Llama: $69B net income (FY2023)
+- Field 'revenue_mix':
+    * Claude: Cloud 45%; Productivity and Business Processes 30%; Personal Computing 25%
+    * Gemini: Cloud 45%; Productivity and Business Processes 30%; Personal Computing 25%
+    * Llama: Cloud 55%; Productivity and Business Processes 25%; Personal Computing 20%
+- Field 'market_share_percentage':
+    * Claude: 5-6% of global IT services market
+    * Gemini: 5-6% of global IT services market
+    * Llama: 30-40% of global cloud market
+- Field 'key_investors':
+    * Claude: Vanguard Group; BlackRock; State Street; FMR, LLC; T. Rowe Price Associates
+    * Gemini: Vanguard Group; BlackRock; State Street; FMR, LLC; T. Rowe Price Associates, Inc.
+    * Llama: Vanguard Group; BlackRock; State Street; FMR, LLC; T. Rowe Price Associates, Inc.
+- Field 'sales_motion':
+    * Claude: Enterprise Field Sales; Cloud Solution Sales; Inside Sales
+    * Gemini: Enterprise Field Sales; Cloud Solution Sales; Customer Success
+    * Llama: Enterprise Field Sales; Cloud Solution Sales; Customer Success
+- Field 'customer_lifetime_value':
+    * Claude: $10M+
+    * Gemini: $5M+
+    * Llama: $5M+
+- Field 'churn_rate':
+    * Claude: <5%
+    * Gemini: <3%
+    * Llama: <3%
+- Field 'net_promoter_score':
+    * Claude: 70
+    * Gemini: 60
+    * Llama: 60
+- Field 'intellectual_property':
+    * Claude: Microsoft Azure IP; Industry AI frameworks; Proprietary cloud accelerators; Windows; Office
+    * Gemini: Azure IP; Industry AI frameworks; Proprietary cloud accelerators; Windows; Office
+    * Llama: Azure IP; Industry AI frameworks; Proprietary cloud accelerators; Windows; Office
+- Field 'tech_stack':
+    * Claude: Microsoft Azure; AWS; Google Cloud; Kubernetes; Python; Java; .NET
+    * Gemini: Microsoft Azure; AWS; Salesforce; SAP; Oracle; Kubernetes; Python; Java; C#
+    * Llama: Azure; Windows; Office; Dynamics; SAP; Salesforce; AWS; Kubernetes; Python; Java
+- Field 'cybersecurity_posture':
+    * Claude: ISO 27001; SOC 2; Global cyber defense centers; Microsoft Security
+    * Gemini: ISO 27001; SOC 2; Global cyber defense centers; Microsoft Security
+    * Llama: ISO 27001; SOC 2; Global cyber defense centers
+- Field 'diversity_metrics':
+    * Claude: 30% women workforce; Global DEI programs; 50% underrepresented groups in hiring
+    * Gemini: 30% women workforce; Global DEI programs; 50% underrepresented groups in hiring
+    * Llama: 30% women workforce; Global DEI programs
+- Field 'remote_policy_details':
+    * Claude: Hybrid, 80% flexible
+    * Gemini: Hybrid, 50% flexible
+    * Llama: Hybrid, 50% flexible
+- Field 'training_spend':
+    * Claude: $2,000 per employee/year
+    * Gemini: $1,500 per employee/year
+    * Llama: $1,500 per employee/year
+- Field 'partnership_ecosystem':
+    * Claude: Microsoft; SAP; Oracle; Google; AWS; Salesforce; IBM
+    * Gemini: Microsoft; SAP; Oracle; Google; AWS; Salesforce; Intel
+    * Llama: SAP; Oracle; Google; AWS; Salesforce; IBM
+- Field 'carbon_footprint':
+    * Claude: Actively reducing via renewable energy sourcing; 100% renewable energy by 2025
+    * Gemini: Actively reducing via renewable energy sourcing; 100% renewable energy by 2025
+    * Llama: Actively reducing via renewable energy sourcing
+- Field 'ethical_sourcing':
+    * Claude: Supplier code of conduct; ESG audits; Conflict minerals policy
+    * Gemini: Supplier code of conduct; ESG audits; Conflict mineral-free sourcing
+    * Llama: Supplier code of conduct; ESG audits
+- Field 'benchmark_vs_peers':
+    * Claude: Higher revenue than Alphabet; Comparable margins to Amazon; Stronger cloud alliances than Facebook
+    * Gemini: Higher revenue than Alphabet; Comparable margins to Amazon; Stronger cloud alliances than IBM
+    * Llama: Higher revenue than Alphabet; Comparable margins to Amazon; Stronger cloud alliances than IBM
+- Field 'future_projections':
+    * Claude: Revenue projected $300B by 2025
+    * Gemini: Revenue projected $300B by 2027
+    * Llama: Revenue projected $300B by 2025
+- Field 'strategic_priorities':
+    * Claude: Generative AI leadership; Cloud transformation; Sustainability consulting; Emerging markets growth; Gaming
+    * Gemini: Generative AI leadership; Cloud transformation; Sustainability consulting; Emerging markets growth; Gaming
+    * Llama: Cloud transformation; AI leadership; Gaming; Productivity software; Emerging markets growth
+- Field 'industry_associations':
+    * Claude: World Economic Forum; NASSCOM; Business Roundtable; IT Industry Council
+    * Gemini: World Economic Forum; NASSCOM; Business Roundtable; ITI; BSA
+    * Llama: World Economic Forum; Business Roundtable; National Center for Women & Information Technology
+- Field 'product_pipeline':
+    * Claude: AI copilots; Industry SaaS accelerators; Azure IoT solutions; Microsoft 365 enhancements
+    * Gemini: AI copilots; Industry SaaS accelerators; Azure IoT solutions; Microsoft 365 productivity tools
+    * Llama: AI copilots; Industry SaaS accelerators; Azure IoT solutions; Microsoft 365 enhancements
+- Field 'customer_testimonials':
+    * Claude: Unilever transformation story; Microsoft cloud case study; Coca-Cola digital success story
+    * Gemini: Unilever transformation story; Microsoft cloud case; Coca-Cola digital success; Walmart retail innovation
+    * Llama: Unilever transformation story; Microsoft cloud case; Coca-Cola digital success; Walmart retail innovation
+- Field 'work_culture_summary':
+    * Claude: Collaborative; Performance-driven; Innovative
+    * Gemini: Collaborative; Performance-driven; Innovative; Inclusive
+    * Llama: Collaborative; Performance-driven; Innovative
+- Field 'manager_quality':
+    * Claude: Strong coaching focus; Leadership development programs
+    * Gemini: Strong coaching focus; Leadership development programs
+    * Llama: Strong coaching focus; Leadership development
+- Field 'diversity_inclusion_score':
+    * Claude: Gender equity; Inclusive leadership; Diversity training programs
+    * Gemini: Gender equity; Inclusive leadership; Diversity training programs
+    * Llama: Gender equity; Inclusive leadership; Diversity training
+- Field 'ethical_standards':
+    * Claude: High integrity; Compliance-driven; Ethics training
+    * Gemini: High integrity; Compliance-driven; Ethics training programs
+    * Llama: High integrity; Compliance-driven; Responsible AI
+- Field 'flexibility_level':
+    * Claude: Remote; Hybrid; Flexible work arrangements
+    * Gemini: Remote; Hybrid
+    * Llama: Remote; Hybrid; Flexible work arrangements
+- Field 'cab_policy':
+    * Claude: Ride-hailing; Company transport; Reimbursement options
+    * Gemini: Ride-hailing; Company transport; Reimbursement options
+    * Llama: Ride-hailing; Company transport; Reimbursement
+- Field 'airport_commute_time':
+    * Claude: 30 minutes
+    * Gemini: 30-60 minutes
+    * Llama: 30 minutes
+- Field 'safety_policies':
+    * Claude: Late-night transport; Workplace safety training; Emergency response plan
+    * Gemini: Late-night transport; Workplace safety; Emergency response plans
+    * Llama: Late-night transport; Workplace safety; Emergency response plan
+- Field 'emergency_preparedness':
+    * Claude: Medical support; Fire drills; Emergency response plan
+    * Gemini: Medical support; Fire drills; Emergency response training
+    * Llama: Medical support; Fire drills; Emergency training
+- Field 'health_support':
+    * Claude: Health insurance; Mental wellness programs; Employee assistance programs
+    * Gemini: Health insurance; Mental wellness programs; Employee assistance programs
+    * Llama: Health insurance; Mental wellness; Employee assistance programs
+- Field 'learning_culture':
+    * Claude: Internal LMS; Certifications; Microsoft Learn
+    * Gemini: Internal LMS; Certifications; Microsoft Learn
+    * Llama: Internal LMS; Certifications; Online courses
+- Field 'mentorship_availability':
+    * Claude: Leadership mentors; Peer mentors; Mentorship programs
+    * Gemini: Leadership mentors; Peer mentors
+    * Llama: Leadership mentors; Peer mentors; Mentorship programs
+- Field 'promotion_clarity':
+    * Claude: Merit-based; Transparent
+    * Gemini: Merit-based; Transparent
+    * Llama: Merit-based; Transparent; Regular feedback
+- Field 'tools_access':
+    * Claude: Enterprise software; Cloud platforms; Microsoft Azure; Microsoft 365
+    * Gemini: Enterprise software; Cloud platforms; Microsoft Azure; Microsoft 365
+    * Llama: Enterprise software; Cloud platforms; Microsoft products
+- Field 'work_impact':
+    * Claude: Client-facing; Revenue-linked; Social impact
+    * Gemini: Client-facing; Revenue-linked; Social impact
+    * Llama: Client-facing; Revenue-linked; Innovative projects
+- Field 'client_quality':
+    * Claude: Fortune 500; Governments; Global organizations
+    * Gemini: Fortune 500; Governments; Small businesses
+    * Llama: Fortune 500; Governments; Global organizations
+- Field 'esops_incentives':
+    * Claude: Stock grants; Performance shares
+    * Gemini: Stock grants; Performance shares
+    * Llama: Stock grants; Performance shares; Stock options
+- Field 'family_health_insurance':
+    * Claude: Dependents covered; OPD; Medical benefits
+    * Gemini: Dependents covered; OPD; Dental; Vision
+    * Llama: Dependents covered; OPD; Medical benefits
+- Field 'lifestyle_benefits':
+    * Claude: Wellness programs; Meals; Fitness; On-site gyms
+    * Gemini: Wellness programs; Meals; Fitness; On-site childcare
+    * Llama: Wellness programs; Meals; Fitness; On-site gyms
+- Field 'network_strength':
+    * Claude: Global alumni network; Executive connections
+    * Gemini: Global alumni network; Executive connections
+    * Llama: Global alumni network; Executive connections; Industry partnerships
+- Field 'global_exposure':
+    * Claude: Global clients; International teams; Remote work options
+    * Gemini: Global clients; International teams
+    * Llama: Global clients; International teams; Remote work options
+- Field 'sustainability_csr':
+    * Claude: Net-zero goals; Community programs; Philanthropy
+    * Gemini: Net-zero goals; Community programs; Diversity and inclusion initiatives
+    * Llama: Net-zero goals; Community programs; Environmental initiatives
+
+Reconciliation LLM (Model: google/gemini-2.5-pro) Output:
+{
+  "logo_url": "https://www.microsoft.com/en-us/assets/shared/images/logo.svg",
+  "operating_countries": "United States; Canada; United Kingdom; India; Germany; France; Japan; Australia; China; Brazil",
+  "office_locations": "New York, United States; London, United Kingdom; Bangalore, India; Paris, France; Tokyo, Japan; Beijing, China; Sydney, Australia; Toronto, Canada",
+  "employee_size": "180,000 employees",
+  "hiring_velocity": "Cloud ~10,000 open roles; AI ~8,000 open roles; Cybersecurity ~5,000 open roles; Sales ~3,000 open roles",
+  "employee_turnover": "15% annually",
+  "avg_retention_tenure": "5 years",
+  "pain_points_addressed": "Digital transformation complexity; Legacy IT modernization; Cloud migration risk; Cybersecurity threats; Operational inefficiency; Talent and skill gaps",
+  "offerings_description": "Cloud Computing; Artificial Intelligence; Cybersecurity; Productivity Software; Gaming; Enterprise Software",
+  "core_value_proposition": "Innovative technology solutions; Global reach; Deep industry expertise; Strong partner network",
+  "vision_statement": "To empower every person and organization on the planet to achieve more",
+  "mission_statement": "To drive continuous innovation and help the world\u2019s leading organizations build their digital core and achieve greater value",
+  "core_values": "Integrity; Respect for individuals; Innovation; Stewardship; Customer obsession",
+  "unique_differentiators": "Global cloud infrastructure; Industry-specific solutions; Strong alliance ecosystem; Proprietary AI and analytics platforms",
+  "competitive_advantages": "Brand leadership; Scale and geographic reach; Deep enterprise relationships; Strong partner network",
+  "weaknesses_gaps": "High research and development expenses; Dependency on Windows and Office software; Complex organizational structure",
+  "key_challenges_needs": "Talent retention; Pricing pressure from competitors; Rapid AI disruption; Regulatory compliance across regions",
+  "key_competitors": "Amazon Web Services; Google Cloud; IBM; Oracle; Salesforce",
+  "technology_partners": "SAP; Oracle; AWS; Google Cloud; Salesforce; NVIDIA",
+  "history_timeline": "Founded in 1975 by Bill Gates and Paul Allen; Went public in 1986; Released Windows 1.0 in 1985; Acquired LinkedIn in 2016",
+  "recent_news": "2024, Invested $10B in OpenAI; 2024, Released new Azure cloud services",
+  "decision_maker_access": "Low, Large enterprise structure with formal procurement and partner-led access",
+  "annual_profit": "$69.4B net income (FY2023)",
+  "revenue_mix": "Cloud 45%; Productivity and Business Processes 30%; Personal Computing 25%",
+  "market_share_percentage": "5-6% of global IT services market",
+  "key_investors": "Vanguard Group; BlackRock; State Street; FMR, LLC; T. Rowe Price Associates",
+  "sales_motion": "Enterprise Field Sales; Cloud Solution Sales; Inside Sales",
+  "customer_lifetime_value": "$10M+",
+  "churn_rate": "<5%",
+  "net_promoter_score": "70",
+  "intellectual_property": "Microsoft Azure IP; Industry AI frameworks; Proprietary cloud accelerators; Windows; Office",
+  "tech_stack": "Microsoft Azure; AWS; Google Cloud; Kubernetes; Python; Java; .NET",
+  "cybersecurity_posture": "ISO 27001; SOC 2; Global cyber defense centers; Microsoft Security",
+  "diversity_metrics": "30% women workforce; Global DEI programs; 50% underrepresented groups in hiring",
+  "remote_policy_details": "Hybrid, 80% flexible",
+  "training_spend": "$2,000 per employee/year",
+  "partnership_ecosystem": "Microsoft; SAP; Oracle; Google; AWS; Salesforce; IBM",
+  "carbon_footprint": "Actively reducing via renewable energy sourcing; 100% renewable energy by 2025",
+  "ethical_sourcing": "Supplier code of conduct; ESG audits; Conflict minerals policy",
+  "benchmark_vs_peers": "Higher revenue than Alphabet; Comparable margins to Amazon; Stronger cloud alliances than Facebook",
+  "future_projections": "Revenue projected $300B by 2025",
+  "strategic_priorities": "Generative AI leadership; Cloud transformation; Sustainability consulting; Emerging markets growth; Gaming",
+  "industry_associations": "World Economic Forum; NASSCOM; Business Roundtable; IT Industry Council",
+  "product_pipeline": "AI copilots; Industry SaaS accelerators; Azure IoT solutions; Microsoft 365 enhancements",
+  "customer_testimonials": "Unilever transformation story; Microsoft cloud case study; Coca-Cola digital success story",
+  "work_culture_summary": "Collaborative; Performance-driven; Innovative",
+  "manager_quality": "Strong coaching focus; Leadership development programs",
+  "diversity_inclusion_score": "Gender equity; Inclusive leadership; Diversity training programs",
+  "ethical_standards": "High integrity; Compliance-driven; Ethics training",
+  "flexibility_level": "Remote; Hybrid; Flexible work arrangements",
+  "cab_policy": "Ride-hailing; Company transport; Reimbursement options",
+  "airport_commute_time": "30 minutes",
+  "safety_policies": "Late-night transport; Workplace safety training; Emergency response plan",
+  "emergency_preparedness": "Medical support; Fire drills; Emergency response plan",
+  "health_support": "Health insurance; Mental wellness programs; Employee assistance programs",
+  "learning_culture": "Internal LMS; Certifications; Microsoft Learn",
+  "mentorship_availability": "Leadership mentors; Peer mentors; Mentorship programs",
+  "promotion_clarity": "Merit-based; Transparent",
+  "tools_access": "Enterprise software; Cloud platforms; Microsoft Azure; Microsoft 365",
+  "work_impact": "Client-facing; Revenue-linked; Social impact",
+  "client_quality": "Fortune 500; Governments; Global organizations",
+  "esops_incentives": "Stock grants; Performance shares",
+  "family_health_insurance": "Dependents covered; OPD; Medical benefits",
+  "lifestyle_benefits": "Wellness programs; Meals; Fitness; On-site gyms",
+  "network_strength": "Global alumni network; Executive connections",
+  "global_exposure": "Global clients; International teams; Remote work options",
+  "sustainability_csr": "Net-zero goals; Community programs; Philanthropy"
+}
+
+Consolidated Golden Record (Pre-Validation):
+{
+  "name": "Microsoft Corporation",
+  "short_name": "Microsoft",
+  "category": "Technology",
+  "incorporation_year": 1975,
+  "overview_text": "Microsoft is a global technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and services.",
+  "nature_of_company": "Public",
+  "headquarters_address": "Redmond, Washington, United States",
+  "office_count": "700+",
+  "focus_sectors": "Financials; Health Care; Consumer Discretionary; Industrials; Energy; Telecommunications; Public Sector; Technology",
+  "top_customers": "Fortune 500 Enterprises; Global Banks; Government Agencies; Healthcare Systems; Telecom Operators; Energy Majors",
+  "website_url": "https://www.microsoft.com",
+  "website_quality": "Enterprise-grade, high clarity, strong thought leadership, polished UX",
+  "website_rating": "NA",
+  "website_traffic_rank": "Global 34; US 6",
+  "social_media_followers": 35000000,
+  "glassdoor_rating": 4.4,
+  "indeed_rating": 4.5,
+  "google_rating": 4.3,
+  "linkedin_url": "https://www.linkedin.com/company/microsoft",
+  "twitter_handle": "@Microsoft",
+  "facebook_url": "https://www.facebook.com/Microsoft",
+  "instagram_url": "https://www.instagram.com/microsoft",
+  "ceo_name": "Satya Nadella",
+  "ceo_linkedin_url": "https://www.linkedin.com/in/satyanadella",
+  "key_leaders": "Satya Nadella, CEO; Brad Smith, President; Amy Hood, CFO",
+  "warm_intro_pathways": "Fortune 500 board connections; Alumni network; Technology partner ecosystems",
+  "primary_contact_email": "contact@microsoft.com",
+  "primary_phone_number": "NA",
+  "contact_person_name": "Satya Nadella",
+  "contact_person_title": "CEO",
+  "contact_person_email": "satya.nadella@microsoft.com",
+  "contact_person_phone": "NA",
+  "awards_recognitions": "Fortune Global 500; Great Place to Work Certified; Gartner Magic Quadrant Leader; Forbes Most Admired Companies",
+  "brand_sentiment_score": "Very Positive, strong global brand, high enterprise trust",
+  "event_participation": "World Economic Forum; Microsoft Ignite; AWS re:Invent; Global Fintech Fest",
+  "regulatory_status": "ISO 27001; SOC 2; GDPR Compliance; HIPAA Compliance",
+  "legal_issues": "Periodic labor and contract disputes; no major unresolved global litigation",
+  "annual_revenue": "$242B (FY2023)",
+  "valuation": "$2.3T market capitalization",
+  "yoy_growth_rate": 0.1,
+  "profitability_status": "Profitable",
+  "recent_funding_rounds": "Public equity markets, ongoing institutional investment",
+  "total_capital_raised": "Public market funded",
+  "esg_ratings": "Net-zero commitment by 2030; Science Based Targets; Diversity equity programs",
+  "customer_acquisition_cost": "$100K+ per enterprise",
+  "cac_ltv_ratio": "NA",
+  "customer_concentration_risk": "No, highly diversified client base",
+  "burn_rate": "Not Applicable, cash-flow positive",
+  "runway_months": "Not Applicable",
+  "burn_multiplier": "<1.0",
+  "r_and_d_investment": "$20B annually",
+  "ai_ml_adoption_level": "High, generative AI platforms, AI-led consulting, automation for delivery optimization",
+  "supply_chain_dependencies": "Cloud providers; Software vendors; Talent workforce; Hardware manufacturers",
+  "geopolitical_risks": "Trade regulations; Data privacy laws; Regional conflicts; US-China trade tensions",
+  "macro_risks": "Global recession; Enterprise IT budget cuts; Interest rate changes",
+  "exit_strategy_history": "Mature public enterprise; Strategic acquisitions",
+  "case_studies": "Microsoft cloud modernization; Unilever digital supply chain; Coca-Cola digital transformation; Walmart retail innovation",
+  "go_to_market_strategy": "Enterprise account teams; Strategic alliances; Thought leadership marketing; Digital marketing campaigns",
+  "innovation_roadmap": "GenAI platforms; Industry cloud solutions; Cyber resilience tools; Quantum computing research",
+  "board_members": "Satya Nadella; Reid Hoffman; Sandra Peterson; Former global executives like Bill Gates",
+  "marketing_video_url": "https://www.youtube.com/@Microsoft",
+  "tech_adoption_rating": "High, Industry Leader",
+  "tam": "$2.5T global IT and business services",
+  "sam": "$500B enterprise digital transformation",
+  "som": "0.10",
+  "psychological_safety": "High",
+  "feedback_culture": "Continuous feedback; Annual reviews; Regular check-ins",
+  "typical_hours": "Flexible; 40 hours/week",
+  "overtime_expectations": "Occasional during project peaks",
+  "weekend_work": "Rare",
+  "leave_policy": "Paid leave; Mental health days; Vacation time",
+  "burnout_risk": "Moderate",
+  "location_centrality": "Central business districts; Urban areas",
+  "public_transport_access": "Metro; Bus; Train; Bike-friendly",
+  "office_zone_type": "IT hub; Tech park",
+  "area_safety": "Secure; Well-monitored; Low crime rate",
+  "infrastructure_safety": "Fire compliant; Secure access; Regular maintenance",
+  "onboarding_quality": "Industry-leading",
+  "exposure_quality": "High",
+  "internal_mobility": "High",
+  "role_clarity": "High",
+  "early_ownership": "Medium",
+  "execution_thinking_balance": "Balanced",
+  "automation_level": "High",
+  "cross_functional_exposure": "Consulting; Technology; Sales; Marketing",
+  "company_maturity": "Mature enterprise",
+  "brand_value": "Global top-tier brand",
+  "layoff_history": "Periodic restructuring",
+  "fixed_vs_variable_pay": "Mostly fixed",
+  "bonus_predictability": "Moderate",
+  "relocation_support": "Housing; Travel reimbursement; Relocation assistance",
+  "exit_opportunities": "Big Tech; Global consultancies; Industry leadership roles; Entrepreneurship",
+  "skill_relevance": "Very High",
+  "external_recognition": "Strong global credibility",
+  "mission_clarity": "High",
+  "crisis_behavior": "Transparent and compliance-driven",
+  "logo_url": "https://www.microsoft.com/en-us/assets/shared/images/logo.svg",
+  "operating_countries": "United States; Canada; United Kingdom; India; Germany; France; Japan; Australia; China; Brazil",
+  "office_locations": "New York, United States; London, United Kingdom; Bangalore, India; Paris, France; Tokyo, Japan; Beijing, China; Sydney, Australia; Toronto, Canada",
+  "employee_size": "180,000 employees",
+  "hiring_velocity": "Cloud ~10,000 open roles; AI ~8,000 open roles; Cybersecurity ~5,000 open roles; Sales ~3,000 open roles",
+  "employee_turnover": "15% annually",
+  "avg_retention_tenure": "5 years",
+  "pain_points_addressed": "Digital transformation complexity; Legacy IT modernization; Cloud migration risk; Cybersecurity threats; Operational inefficiency; Talent and skill gaps",
+  "offerings_description": "Cloud Computing; Artificial Intelligence; Cybersecurity; Productivity Software; Gaming; Enterprise Software",
+  "core_value_proposition": "Innovative technology solutions; Global reach; Deep industry expertise; Strong partner network",
+  "vision_statement": "To empower every person and organization on the planet to achieve more",
+  "mission_statement": "To drive continuous innovation and help the world\u2019s leading organizations build their digital core and achieve greater value",
+  "core_values": "Integrity; Respect for individuals; Innovation; Stewardship; Customer obsession",
+  "unique_differentiators": "Global cloud infrastructure; Industry-specific solutions; Strong alliance ecosystem; Proprietary AI and analytics platforms",
+  "competitive_advantages": "Brand leadership; Scale and geographic reach; Deep enterprise relationships; Strong partner network",
+  "weaknesses_gaps": "High research and development expenses; Dependency on Windows and Office software; Complex organizational structure",
+  "key_challenges_needs": "Talent retention; Pricing pressure from competitors; Rapid AI disruption; Regulatory compliance across regions",
+  "key_competitors": "Amazon Web Services; Google Cloud; IBM; Oracle; Salesforce",
+  "technology_partners": "SAP; Oracle; AWS; Google Cloud; Salesforce; NVIDIA",
+  "history_timeline": "Founded in 1975 by Bill Gates and Paul Allen; Went public in 1986; Released Windows 1.0 in 1985; Acquired LinkedIn in 2016",
+  "recent_news": "2024, Invested $10B in OpenAI; 2024, Released new Azure cloud services",
+  "decision_maker_access": "Low, Large enterprise structure with formal procurement and partner-led access",
+  "annual_profit": "$69.4B net income (FY2023)",
+  "revenue_mix": "Cloud 45%; Productivity and Business Processes 30%; Personal Computing 25%",
+  "market_share_percentage": "5-6% of global IT services market",
+  "key_investors": "Vanguard Group; BlackRock; State Street; FMR, LLC; T. Rowe Price Associates",
+  "sales_motion": "Enterprise Field Sales; Cloud Solution Sales; Inside Sales",
+  "customer_lifetime_value": "$10M+",
+  "churn_rate": "<5%",
+  "net_promoter_score": "70",
+  "intellectual_property": "Microsoft Azure IP; Industry AI frameworks; Proprietary cloud accelerators; Windows; Office",
+  "tech_stack": "Microsoft Azure; AWS; Google Cloud; Kubernetes; Python; Java; .NET",
+  "cybersecurity_posture": "ISO 27001; SOC 2; Global cyber defense centers; Microsoft Security",
+  "diversity_metrics": "30% women workforce; Global DEI programs; 50% underrepresented groups in hiring",
+  "remote_policy_details": "Hybrid, 80% flexible",
+  "training_spend": "$2,000 per employee/year",
+  "partnership_ecosystem": "Microsoft; SAP; Oracle; Google; AWS; Salesforce; IBM",
+  "carbon_footprint": "Actively reducing via renewable energy sourcing; 100% renewable energy by 2025",
+  "ethical_sourcing": "Supplier code of conduct; ESG audits; Conflict minerals policy",
+  "benchmark_vs_peers": "Higher revenue than Alphabet; Comparable margins to Amazon; Stronger cloud alliances than Facebook",
+  "future_projections": "Revenue projected $300B by 2025",
+  "strategic_priorities": "Generative AI leadership; Cloud transformation; Sustainability consulting; Emerging markets growth; Gaming",
+  "industry_associations": "World Economic Forum; NASSCOM; Business Roundtable; IT Industry Council",
+  "product_pipeline": "AI copilots; Industry SaaS accelerators; Azure IoT solutions; Microsoft 365 enhancements",
+  "customer_testimonials": "Unilever transformation story; Microsoft cloud case study; Coca-Cola digital success story",
+  "work_culture_summary": "Collaborative; Performance-driven; Innovative",
+  "manager_quality": "Strong coaching focus; Leadership development programs",
+  "diversity_inclusion_score": "Gender equity; Inclusive leadership; Diversity training programs",
+  "ethical_standards": "High integrity; Compliance-driven; Ethics training",
+  "flexibility_level": "Remote; Hybrid; Flexible work arrangements",
+  "cab_policy": "Ride-hailing; Company transport; Reimbursement options",
+  "airport_commute_time": "30 minutes",
+  "safety_policies": "Late-night transport; Workplace safety training; Emergency response plan",
+  "emergency_preparedness": "Medical support; Fire drills; Emergency response plan",
+  "health_support": "Health insurance; Mental wellness programs; Employee assistance programs",
+  "learning_culture": "Internal LMS; Certifications; Microsoft Learn",
+  "mentorship_availability": "Leadership mentors; Peer mentors; Mentorship programs",
+  "promotion_clarity": "Merit-based; Transparent",
+  "tools_access": "Enterprise software; Cloud platforms; Microsoft Azure; Microsoft 365",
+  "work_impact": "Client-facing; Revenue-linked; Social impact",
+  "client_quality": "Fortune 500; Governments; Global organizations",
+  "esops_incentives": "Stock grants; Performance shares",
+  "family_health_insurance": "Dependents covered; OPD; Medical benefits",
+  "lifestyle_benefits": "Wellness programs; Meals; Fitness; On-site gyms",
+  "network_strength": "Global alumni network; Executive connections",
+  "global_exposure": "Global clients; International teams; Remote work options",
+  "sustainability_csr": "Net-zero goals; Community programs; Philanthropy"
+}
+
+[4] VALIDATION SUITE RESULTS (CONSOLIDATED RECORD)
+--------------------------------------------------------------------------------
+Validation Status: PASSED (0 errors detected)
+
+[5] SELF-HEALING REGENERATION LOOP
+--------------------------------------------------------------------------------
+Validation succeeded! The record is clean and verified.
+
+[6] DATABASE WRITE STATUS
+--------------------------------------------------------------------------------
+DB Write Status: Updated company 'Microsoft Corporation' in Supabase (json_id: 78).
+
+[7] FINAL GOLDEN RECORD SCHEMAS
+--------------------------------------------------------------------------------
+>>> SHORT JSON (9 Fields - CompanyShort Schema)
+{
+  "company_id": 118,
+  "name": "Microsoft Corporation",
+  "short_name": "Microsoft",
+  "logo_url": "https://www.microsoft.com/en-us/assets/shared/images/logo.svg",
+  "category": "Technology",
+  "operating_countries": "United States; Canada; United Kingdom; India; Germany; France; Japan; Australia; China; Brazil",
+  "office_locations": "New York, United States; London, United Kingdom; Bangalore, India; Paris, France; Tokyo, Japan; Beijing, China; Sydney, Australia; Toronto, Canada",
+  "employee_size": "180,000 employees",
+  "yoy_growth_rate": 0.1
+}
+
+>>> LONG JSON (163 Fields - CompanyFull Schema)
+{
+  "company_id": 118,
+  "name": "Microsoft Corporation",
+  "short_name": "Microsoft",
+  "logo_url": "https://www.microsoft.com/en-us/assets/shared/images/logo.svg",
+  "category": "Technology",
+  "incorporation_year": 1975,
+  "overview_text": "Microsoft is a global technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and services.",
+  "nature_of_company": "Public",
+  "headquarters_address": "Redmond, Washington, United States",
+  "operating_countries": "United States; Canada; United Kingdom; India; Germany; France; Japan; Australia; China; Brazil",
+  "office_count": "700+",
+  "office_locations": "New York, United States; London, United Kingdom; Bangalore, India; Paris, France; Tokyo, Japan; Beijing, China; Sydney, Australia; Toronto, Canada",
+  "employee_size": "180,000 employees",
+  "hiring_velocity": "Cloud ~10,000 open roles; AI ~8,000 open roles; Cybersecurity ~5,000 open roles; Sales ~3,000 open roles",
+  "employee_turnover": "15% annually",
+  "avg_retention_tenure": "5 years",
+  "pain_points_addressed": "Digital transformation complexity; Legacy IT modernization; Cloud migration risk; Cybersecurity threats; Operational inefficiency; Talent and skill gaps",
+  "focus_sectors": "Financials; Health Care; Consumer Discretionary; Industrials; Energy; Telecommunications; Public Sector; Technology",
+  "offerings_description": "Cloud Computing; Artificial Intelligence; Cybersecurity; Productivity Software; Gaming; Enterprise Software",
+  "top_customers": "Fortune 500 Enterprises; Global Banks; Government Agencies; Healthcare Systems; Telecom Operators; Energy Majors",
+  "core_value_proposition": "Innovative technology solutions; Global reach; Deep industry expertise; Strong partner network",
+  "vision_statement": "To empower every person and organization on the planet to achieve more",
+  "mission_statement": "To drive continuous innovation and help the world\u2019s leading organizations build their digital core and achieve greater value",
+  "core_values": "Integrity; Respect for individuals; Innovation; Stewardship; Customer obsession",
+  "unique_differentiators": "Global cloud infrastructure; Industry-specific solutions; Strong alliance ecosystem; Proprietary AI and analytics platforms",
+  "competitive_advantages": "Brand leadership; Scale and geographic reach; Deep enterprise relationships; Strong partner network",
+  "weaknesses_gaps": "High research and development expenses; Dependency on Windows and Office software; Complex organizational structure",
+  "key_challenges_needs": "Talent retention; Pricing pressure from competitors; Rapid AI disruption; Regulatory compliance across regions",
+  "key_competitors": "Amazon Web Services; Google Cloud; IBM; Oracle; Salesforce",
+  "technology_partners": "SAP; Oracle; AWS; Google Cloud; Salesforce; NVIDIA",
+  "history_timeline": "Founded in 1975 by Bill Gates and Paul Allen; Went public in 1986; Released Windows 1.0 in 1985; Acquired LinkedIn in 2016",
+  "recent_news": "2024, Invested $10B in OpenAI; 2024, Released new Azure cloud services",
+  "website_url": "https://www.microsoft.com",
+  "website_quality": "Enterprise-grade, high clarity, strong thought leadership, polished UX",
+  "website_rating": "NA",
+  "website_traffic_rank": "Global 34; US 6",
+  "social_media_followers": 35000000,
+  "glassdoor_rating": 4.4,
+  "indeed_rating": 4.5,
+  "google_rating": 4.3,
+  "linkedin_url": "https://www.linkedin.com/company/microsoft",
+  "twitter_handle": "@Microsoft",
+  "facebook_url": "https://www.facebook.com/Microsoft",
+  "instagram_url": "https://www.instagram.com/microsoft",
+  "ceo_name": "Satya Nadella",
+  "ceo_linkedin_url": "https://www.linkedin.com/in/satyanadella",
+  "key_leaders": "Satya Nadella, CEO; Brad Smith, President; Amy Hood, CFO",
+  "warm_intro_pathways": "Fortune 500 board connections; Alumni network; Technology partner ecosystems",
+  "decision_maker_access": "Low, Large enterprise structure with formal procurement and partner-led access",
+  "primary_contact_email": "contact@microsoft.com",
+  "primary_phone_number": "NA",
+  "contact_person_name": "Satya Nadella",
+  "contact_person_title": "CEO",
+  "contact_person_email": "satya.nadella@microsoft.com",
+  "contact_person_phone": "NA",
+  "awards_recognitions": "Fortune Global 500; Great Place to Work Certified; Gartner Magic Quadrant Leader; Forbes Most Admired Companies",
+  "brand_sentiment_score": "Very Positive, strong global brand, high enterprise trust",
+  "event_participation": "World Economic Forum; Microsoft Ignite; AWS re:Invent; Global Fintech Fest",
+  "regulatory_status": "ISO 27001; SOC 2; GDPR Compliance; HIPAA Compliance",
+  "legal_issues": "Periodic labor and contract disputes; no major unresolved global litigation",
+  "annual_revenue": "$242B (FY2023)",
+  "annual_profit": "$69.4B net income (FY2023)",
+  "revenue_mix": "Cloud 45%; Productivity and Business Processes 30%; Personal Computing 25%",
+  "valuation": "$2.3T market capitalization",
+  "yoy_growth_rate": 0.1,
+  "profitability_status": "Profitable",
+  "market_share_percentage": "5-6% of global IT services market",
+  "key_investors": "Vanguard Group; BlackRock; State Street; FMR, LLC; T. Rowe Price Associates",
+  "recent_funding_rounds": "Public equity markets, ongoing institutional investment",
+  "total_capital_raised": "Public market funded",
+  "esg_ratings": "Net-zero commitment by 2030; Science Based Targets; Diversity equity programs",
+  "sales_motion": "Enterprise Field Sales; Cloud Solution Sales; Inside Sales",
+  "customer_acquisition_cost": "$100K+ per enterprise",
+  "customer_lifetime_value": "$10M+",
+  "cac_ltv_ratio": "NA",
+  "churn_rate": "<5%",
+  "net_promoter_score": "70",
+  "customer_concentration_risk": "No, highly diversified client base",
+  "burn_rate": "Not Applicable, cash-flow positive",
+  "runway_months": "Not Applicable",
+  "burn_multiplier": "<1.0",
+  "intellectual_property": "Microsoft Azure IP; Industry AI frameworks; Proprietary cloud accelerators; Windows; Office",
+  "r_and_d_investment": "$20B annually",
+  "ai_ml_adoption_level": "High, generative AI platforms, AI-led consulting, automation for delivery optimization",
+  "tech_stack": "Microsoft Azure; AWS; Google Cloud; Kubernetes; Python; Java; .NET",
+  "cybersecurity_posture": "ISO 27001; SOC 2; Global cyber defense centers; Microsoft Security",
+  "supply_chain_dependencies": "Cloud providers; Software vendors; Talent workforce; Hardware manufacturers",
+  "geopolitical_risks": "Trade regulations; Data privacy laws; Regional conflicts; US-China trade tensions",
+  "macro_risks": "Global recession; Enterprise IT budget cuts; Interest rate changes",
+  "diversity_metrics": "30% women workforce; Global DEI programs; 50% underrepresented groups in hiring",
+  "remote_policy_details": "Hybrid, 80% flexible",
+  "training_spend": "$2,000 per employee/year",
+  "partnership_ecosystem": "Microsoft; SAP; Oracle; Google; AWS; Salesforce; IBM",
+  "exit_strategy_history": "Mature public enterprise; Strategic acquisitions",
+  "carbon_footprint": "Actively reducing via renewable energy sourcing; 100% renewable energy by 2025",
+  "ethical_sourcing": "Supplier code of conduct; ESG audits; Conflict minerals policy",
+  "benchmark_vs_peers": "Higher revenue than Alphabet; Comparable margins to Amazon; Stronger cloud alliances than Facebook",
+  "future_projections": "Revenue projected $300B by 2025",
+  "strategic_priorities": "Generative AI leadership; Cloud transformation; Sustainability consulting; Emerging markets growth; Gaming",
+  "industry_associations": "World Economic Forum; NASSCOM; Business Roundtable; IT Industry Council",
+  "case_studies": "Microsoft cloud modernization; Unilever digital supply chain; Coca-Cola digital transformation; Walmart retail innovation",
+  "go_to_market_strategy": "Enterprise account teams; Strategic alliances; Thought leadership marketing; Digital marketing campaigns",
+  "innovation_roadmap": "GenAI platforms; Industry cloud solutions; Cyber resilience tools; Quantum computing research",
+  "product_pipeline": "AI copilots; Industry SaaS accelerators; Azure IoT solutions; Microsoft 365 enhancements",
+  "board_members": "Satya Nadella; Reid Hoffman; Sandra Peterson; Former global executives like Bill Gates",
+  "marketing_video_url": "https://www.youtube.com/@Microsoft",
+  "customer_testimonials": "Unilever transformation story; Microsoft cloud case study; Coca-Cola digital success story",
+  "tech_adoption_rating": "High, Industry Leader",
+  "tam": "$2.5T global IT and business services",
+  "sam": "$500B enterprise digital transformation",
+  "som": "0.10",
+  "work_culture_summary": "Collaborative; Performance-driven; Innovative",
+  "manager_quality": "Strong coaching focus; Leadership development programs",
+  "psychological_safety": "High",
+  "feedback_culture": "Continuous feedback; Annual reviews; Regular check-ins",
+  "diversity_inclusion_score": "Gender equity; Inclusive leadership; Diversity training programs",
+  "ethical_standards": "High integrity; Compliance-driven; Ethics training",
+  "typical_hours": "Flexible; 40 hours/week",
+  "overtime_expectations": "Occasional during project peaks",
+  "weekend_work": "Rare",
+  "flexibility_level": "Remote; Hybrid; Flexible work arrangements",
+  "leave_policy": "Paid leave; Mental health days; Vacation time",
+  "burnout_risk": "Moderate",
+  "location_centrality": "Central business districts; Urban areas",
+  "public_transport_access": "Metro; Bus; Train; Bike-friendly",
+  "cab_policy": "Ride-hailing; Company transport; Reimbursement options",
+  "airport_commute_time": "30 minutes",
+  "office_zone_type": "IT hub; Tech park",
+  "area_safety": "Secure; Well-monitored; Low crime rate",
+  "safety_policies": "Late-night transport; Workplace safety training; Emergency response plan",
+  "infrastructure_safety": "Fire compliant; Secure access; Regular maintenance",
+  "emergency_preparedness": "Medical support; Fire drills; Emergency response plan",
+  "health_support": "Health insurance; Mental wellness programs; Employee assistance programs",
+  "onboarding_quality": "Industry-leading",
+  "learning_culture": "Internal LMS; Certifications; Microsoft Learn",
+  "exposure_quality": "High",
+  "mentorship_availability": "Leadership mentors; Peer mentors; Mentorship programs",
+  "internal_mobility": "High",
+  "promotion_clarity": "Merit-based; Transparent",
+  "tools_access": "Enterprise software; Cloud platforms; Microsoft Azure; Microsoft 365",
+  "role_clarity": "High",
+  "early_ownership": "Medium",
+  "work_impact": "Client-facing; Revenue-linked; Social impact",
+  "execution_thinking_balance": "Balanced",
+  "automation_level": "High",
+  "cross_functional_exposure": "Consulting; Technology; Sales; Marketing",
+  "company_maturity": "Mature enterprise",
+  "brand_value": "Global top-tier brand",
+  "client_quality": "Fortune 500; Governments; Global organizations",
+  "layoff_history": "Periodic restructuring",
+  "fixed_vs_variable_pay": "Mostly fixed",
+  "bonus_predictability": "Moderate",
+  "esops_incentives": "Stock grants; Performance shares",
+  "family_health_insurance": "Dependents covered; OPD; Medical benefits",
+  "relocation_support": "Housing; Travel reimbursement; Relocation assistance",
+  "lifestyle_benefits": "Wellness programs; Meals; Fitness; On-site gyms",
+  "exit_opportunities": "Big Tech; Global consultancies; Industry leadership roles; Entrepreneurship",
+  "skill_relevance": "Very High",
+  "external_recognition": "Strong global credibility",
+  "network_strength": "Global alumni network; Executive connections",
+  "global_exposure": "Global clients; International teams; Remote work options",
+  "mission_clarity": "High",
+  "sustainability_csr": "Net-zero goals; Community programs; Philanthropy",
+  "crisis_behavior": "Transparent and compliance-driven"
+}
+================================================================================

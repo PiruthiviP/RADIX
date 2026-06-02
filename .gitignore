@@ -28,4 +28,4 @@ __pycache__/
 # Environments
 venv/
 .pytest_cache/
-logs/
+
