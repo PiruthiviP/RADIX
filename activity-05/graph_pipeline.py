@@ -29,9 +29,9 @@ def clean_node_name(model_path: str) -> str:
     clean = re.sub(r'[^a-zA-Z0-9_]', '_', name).lower()
     return clean
 
-claude_node_name = f"research_{clean_node_name(MODEL_CLAUDE)}"
-gemini_node_name = f"research_{clean_node_name(MODEL_GEMINI)}"
-llama_node_name = f"research_{clean_node_name(MODEL_LLAMA)}"
+claude_node_name = f"{clean_node_name(MODEL_CLAUDE)}"
+gemini_node_name = f"{clean_node_name(MODEL_GEMINI)}"
+llama_node_name = f"{clean_node_name(MODEL_LLAMA)}"
 consolidation_node_name = f"consolidation_{clean_node_name(MODEL_CONSOLIDATOR)}"
 
 class AgentState(TypedDict):
@@ -50,6 +50,16 @@ class AgentState(TypedDict):
     regeneration_log: List[str]
 
 # --- Nodes ---
+
+def research_start_node(state: AgentState) -> Dict[str, Any]:
+    print("\n" + "="*60)
+    print(" [Node: research]")
+    print(f" -> Current Company: {state['company_name']}")
+    print(" -> Action: Routing to parallel researcher models...")
+    print("="*60)
+    return {
+        "log": state.get("log", []) + ["Initiated parallel research stage"]
+    }
 
 async def claude_researcher_node(state: AgentState) -> Dict[str, Any]:
     from research_agents import ClaudeResearcher
@@ -215,6 +225,7 @@ def should_regenerate(state: AgentState) -> str:
 workflow = StateGraph(AgentState)
 
 # Add Nodes
+workflow.add_node("research", research_start_node)
 workflow.add_node(claude_node_name, claude_researcher_node)
 workflow.add_node(gemini_node_name, gemini_researcher_node)
 workflow.add_node(llama_node_name, llama_researcher_node)
@@ -224,9 +235,10 @@ workflow.add_node("regeneration", regeneration_node)
 workflow.add_node("supabase_write", supabase_write_node)
 
 # Set Parallel Edges
-workflow.add_edge(START, claude_node_name)
-workflow.add_edge(START, gemini_node_name)
-workflow.add_edge(START, llama_node_name)
+workflow.add_edge(START, "research")
+workflow.add_edge("research", claude_node_name)
+workflow.add_edge("research", gemini_node_name)
+workflow.add_edge("research", llama_node_name)
 
 # Fork-Join at Consolidation
 workflow.add_edge(claude_node_name, consolidation_node_name)
