@@ -1,6 +1,7 @@
 import os
 import re
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 from typing import List, Dict, Any, Optional
 
@@ -13,6 +14,10 @@ app = FastAPI(
     description="Backend API to run the LangGraph Company Intelligence research, validation, and self-healing pipeline.",
     version="2.0.0"
 )
+
+@app.get("/")
+def redirect_to_docs():
+    return RedirectResponse(url="/docs")
 
 class ResearchRequest(BaseModel):
     company_name: str
