@@ -20,15 +20,20 @@ from schemas import CompanyFull
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("ResearchAgents")
 
-# Split CompanyFull fields (excluding company_id) into 5 chunks of ~33 parameters
+# Split CompanyFull fields into chunks of core parameters
 def get_parameter_chunks(chunk_size: int = 33) -> List[List[str]]:
-    all_fields = list(CompanyFull.model_fields.keys())
-    if "company_id" in all_fields:
-        all_fields.remove("company_id")
+    core_fields = [
+        "name", "short_name", "logo_url", "category", "nature_of_company",
+        "incorporation_year", "overview_text", "headquarters_address",
+        "operating_countries", "office_locations", "employee_size",
+        "yoy_growth_rate", "website_url", "ceo_name", "primary_contact_email",
+        "tech_stack", "annual_revenue", "glassdoor_rating", "google_rating", "linkedin_url"
+    ]
+    fields_to_query = [f for f in core_fields if f in CompanyFull.model_fields]
     
     chunks = []
-    for i in range(0, len(all_fields), chunk_size):
-        chunks.append(all_fields[i:i + chunk_size])
+    for i in range(0, len(fields_to_query), chunk_size):
+        chunks.append(fields_to_query[i:i + chunk_size])
     return chunks
 
 class BaseResearcher:
