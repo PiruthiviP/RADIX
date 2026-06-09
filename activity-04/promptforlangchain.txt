@@ -1,0 +1,265 @@
+# Master Prompt: RADIX Company Intelligence Agentic Pipeline
+
+You are an expert software engineer and prompt engineer specializing in multi-agent architectures, structured data extraction, and self-healing validation pipelines.
+
+Your task is to build a Python-based backend application called the **RADIX Company Intelligence Agentic Pipeline**. The pipeline must orchestrate three independent LLM-based research agents to search and extract structured data, consolidate and reconcile discrepancies, validate the consolidated record against strict format rules, and self-heal any failed fields using LLM-based repair loops, before persisting the result into a Supabase database.
+
+Implement the application file-by-file according to the architectural layout, modules, schemas, and prompts detailed below.
+
+---
+
+## 1. System Design & Architectural Layout
+Create a clean directory structure matching this layout:
+```text
+radix-pipeline/
+│
+├── .env                  # local secrets and configurations (ignored in git)
+├── requirements.txt      # python package dependencies
+├── config.py             # environment checking and credentials resolver
+├── schemas.py            # pydantic schemas defining data structure
+├── validator.py          # validation rules for the data fields
+├── research_agents.py    # parallel researcher agent instances
+├── consolidation_agent.py# conflict detection and reconciliation agent
+├── regeneration_loop.py  # self-healing correction loop
+├── db_writer.py          # supabase integration and payload splitter
+├── pipeline.py           # main orchestrator class
+└── main.py               # command line entrypoint and CLI argument parser
+```
+
+---
+
+## 2. Dependencies (`requirements.txt`)
+Create a `requirements.txt` containing the following packages:
+```text
+langchain>=0.1.0
+langchain-community>=0.0.10
+langchain-openai>=0.0.2
+pydantic>=2.0
+python-dotenv>=1.0.0
+supabase>=2.0.0
+requests>=2.31.0
+aiohttp>=3.9.0
+grandalf>=0.8
+```
+
+---
+
+## 3. Environment & Configuration Configuration (`config.py`)
+1. Create a `config.py` file to load environment variables using `python-dotenv`.
+2. Extract the following keys from `os.environ`:
+   - `OPENROUTER_API_KEY` (Base base URL: `https://openrouter.ai/api/v1`)
+   - `GROQ_API_KEY`
+   - `GEMINI_API_KEY`
+   - `SUPABASE_URL`
+   - `SUPABASE_KEY` (or `SUPABASE_ANON_KEY`)
+   - Model variables for research agents:
+     - `MODEL_CLAUDE` (default: `openai/gpt-4o-mini`)
+     - `MODEL_GEMINI` (default: `perplexity/sonar-pro-search`)
+     - `MODEL_LLAMA` (default: `meta-llama/llama-3.3-70b-instruct`)
+   - Model variables for consolidation and regeneration:
+     - `MODEL_CONSOLIDATOR` (default: `google/gemini-2.5-pro`)
+     - `MODEL_REGENERATOR` (default: `meta-llama/llama-3.3-70b-instruct`)
+     - Define fallback configurations: `MODEL_CLAUDE_FALLBACKS`, `MODEL_GEMINI_FALLBACKS`, `MODEL_LLAMA_FALLBACKS`, `MODEL_CONSOLIDATOR_FALLBACK`, `MODEL_REGENERATOR_FALLBACK`.
+   - Setup LangSmith tracing parameters: `LANGCHAIN_TRACING_V2`, `LANGCHAIN_API_KEY`, `LANGCHAIN_PROJECT`, `LANGCHAIN_ENDPOINT`. If `LANGCHAIN_TRACING_V2` is active, write variables to `os.environ` to enable automatic SDK tracing.
+3. Write a helper function `get_client_credentials(model_name: str) -> tuple[str, str, str]` returning `(api_key, api_base, model_slug)`:
+   - If model contains `"llama"` and `GROQ_API_KEY` is present: Route to `https://api.groq.com/openai/v1` using `llama-3.3-70b-versatile` or `llama-3.1-8b-instant`.
+   - If model contains `"gemini"` and `GEMINI_API_KEY` is present: Route to `https://generativelanguage.googleapis.com/v1beta/openai/` using `models/gemini-2.5-pro` or `models/gemini-2.5-flash`.
+   - Otherwise: Route to OpenRouter (`https://openrouter.ai/api/v1`) using `OPENROUTER_API_KEY` and pass the raw model slug.
+4. Implement a `validate_config()` function to warn if required keys are missing or contain default placeholders.
+
+---
+
+## 4. Structured Data Schemas (`schemas.py`)
+Use Pydantic v2 to define two core classes:
+1. **`CompanyShort`**: Contains 9 core metadata fields:
+   - `company_id`: `Optional[int]`
+   - `name`: `Optional[str]`
+   - `short_name`: `Optional[str]`
+   - `logo_url`: `Optional[str]`
+   - `category`: `Optional[str]`
+   - `operating_countries`: `Optional[str]`
+   - `office_locations`: `Optional[str]`
+   - `employee_size`: `Optional[str]`
+   - `yoy_growth_rate`: `Optional[str]`
+2. **`CompanyFull`**: Contains all 163 detailed research fields. Ensure every field is defined as `Optional` and defaulted to `None`. Add representative description strings. Key sections inside the 163 parameters include:
+   - *Core Identifiers*: `name`, `short_name`, `logo_url`, `category`, `incorporation_year`, `overview_text`, `nature_of_company`, `headquarters_address`, `operating_countries`, `office_count`, `office_locations`, `employee_size`, `website_url`.
+   - *People & Contact*: `ceo_name`, `ceo_linkedin_url`, `key_leaders`, `primary_contact_email`, `primary_phone_number`, `contact_person_name`, `contact_person_title`, `contact_person_email`, `contact_person_phone`.
+   - *Ratings*: `glassdoor_rating` (`Optional[float]`), `indeed_rating` (`Optional[float]`), `google_rating` (`Optional[float]`), `website_rating` (`Optional[str]`), `website_traffic_rank`.
+   - *Financial Metrics*: `annual_revenue`, `annual_profit`, `valuation`, `yoy_growth_rate` (`Optional[float]`), `net_promoter_score` (`Optional[int]`).
+   - *Corporate Risks & Operations*: `tech_stack`, `supply_chain_dependencies`, `macro_risks`, `diversity_metrics`, `remote_policy_details`.
+   *(Generate the remaining fields up to 163 variables following standard corporate intelligence parameters).*
+
+---
+
+## 5. Parallel Researcher Agents (`research_agents.py`)
+1. Implement a `BaseResearcher` class initialized with a primary model, fallback models, and a researcher name.
+2. Implement chunking logic: A helper function `get_parameter_chunks(chunk_size: int = 33) -> List[List[str]]` splits the 162 parameters of `CompanyFull` (excluding `company_id`) into **5 chunks** to prevent LLM context limit exhaustion or truncation.
+3. For each parameter chunk, format a detailed research prompt:
+   - **System Instruction**: "You are a Corporate Intelligence Analyst and Data Researcher."
+   - **User Instruction**: "Search the web for the company '{company_name}' and gather detailed information for the following specific parameters: {param_descriptions}"
+   - **Constraints**:
+     - If no info is found, represent the value as `'NA'` or null.
+     - Values must match expected formats (semicolon-separated lists, percentages, integers).
+     - Response must be a single JSON object containing exactly the requested keys. No markdown backticks, no explanations.
+4. Execute chunk requests sequentially. Apply a **stagger sleep delay** of 6 seconds (if no search tool is available to respect free limits) or 1 second (if search tool is enabled) between chunk requests.
+5. In case of API failure, automatically switch to the next fallback model in the list.
+6. Subclass `BaseResearcher` into three concrete classes:
+   - `ClaudeResearcher` (using `MODEL_CLAUDE` and `MODEL_CLAUDE_FALLBACKS`)
+   - `GeminiResearcher` (using `MODEL_GEMINI` and `MODEL_GEMINI_FALLBACKS`)
+   - `LlamaResearcher` (using `MODEL_LLAMA` and `MODEL_LLAMA_FALLBACKS`)
+7. Write `run_parallel_research(company_name: str) -> Dict[str, Dict[str, Any]]` to run the researchers:
+   - Free Mode: Runs Claude, Gemini, and Llama sequentially with 6 seconds delay between them.
+   - Production Mode (when search tool is active): Runs them concurrently in parallel using `asyncio`.
+
+---
+
+## 6. Consolidation & Conflict Reconciliation Agent (`consolidation_agent.py`)
+1. Implement `pre_consolidate(datasets: Dict[str, Dict[str, Any]])` to check field-by-field agreements:
+   - Normalize values by removing punctuation, case differences, and corporate suffixes (`plc`, `inc`).
+   - If all active researchers agree, choose that value.
+   - If only one researcher has a non-empty, non-`'NA'` value, choose it.
+   - If values conflict, flag the field and save all proposed options for LLM resolution.
+2. Implement `resolve_conflicts(company_name: str, conflicts: Dict[str, Dict[str, Any]]) -> Dict[str, Any]`:
+   - Send the conflicts list to the consolidator model (`MODEL_CONSOLIDATOR`).
+   - **Reconciliation Prompt**:
+     - "You are a Data Reconciliation and Validation Engine."
+     - Input lists: `- **field_name** (description): - Claude: val1 - Gemini: val2 - Llama: val3`
+     - Instructions: Resolve conflicts by choosing the most detailed, complete, or standard value. Return a single JSON object mapping field names to resolved values. Do not output markdown backticks or extra text.
+   - If the consolidator model fails, try `MODEL_CONSOLIDATOR_FALLBACK`. If that fails too, fall back to the first non-empty value.
+3. Write a master `consolidate(company_name: str, datasets: Dict[str, Dict[str, Any]]) -> Dict[str, Any]` that runs rule-based pre-consolidation first, resolves conflicts via LLM, and returns the merged profile.
+
+---
+
+## 7. Pipeline Validation Engine (`validator.py`)
+Implement a `PipelineValidator` class containing:
+1. `is_empty_or_na(val: Any) -> bool`: returns `True` if value is `None`, empty string, or variations of `"NA"`, `"N/A"`, `"none"`, `"null"`.
+2. `validate_company(company_data: Dict[str, Any]) -> List[Dict[str, Any]]`:
+   - Checks **9 critical required fields** which must never be empty or `"NA"`: `name`, `logo_url`, `category`, `nature_of_company`, `headquarters_address`, `employee_size`, `website_url`, `ceo_name`, `primary_contact_email`.
+   - Format validation checks:
+     - `incorporation_year`: Valid integer between 1800 and the current year.
+     - URLs (`logo_url`, `website_url`, `linkedin_url`, etc.): Match standard URL regex.
+     - Emails: Match `^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`.
+     - Phone numbers: Match `^\+?[\d\s\-\(\).]{7,25}$`.
+     - Ratings (`glassdoor_rating`, `indeed_rating`, `google_rating`): Float between 1.0 and 5.0. Catch large large timestamp errors.
+     - `website_rating`: Float between 0.0 and 10.0 (or parsing formats like `8.5/10`).
+     - `net_promoter_score`: Integer between -100 and 100.
+     - `yoy_growth_rate`: Float between -1.0 and 10.0 (or parsing formats like `3%`).
+   - Returns a list of error dictionaries containing: `{"field": field_name, "value": current_value, "error": error_message}`.
+
+---
+
+## 8. Self-Healing Regeneration Loop (`regeneration_loop.py`)
+1. Implement `regenerate_field(company_name: str, field: str, current_value: Any, error_msg: str) -> Any`:
+   - Query the regeneration model (`MODEL_REGENERATOR`).
+   - **Correction Prompt**:
+     - "You are a Data Correction Agent."
+     - Input variables: company, parameter name, description, current invalid value, and validation error message.
+     - Instructions: Search specifically for the correct value. Ensure it satisfies the validation rule. Return **ONLY** the corrected value. Do not output JSON structure, explanations, markdown backticks, or extra words.
+   - Parse and cast the returned value to the correct type (int or float) based on the target Pydantic field annotation.
+   - If the primary model fails, run it through `MODEL_REGENERATOR_FALLBACK`.
+2. Implement `run_loop(company_name: str, consolidated: Dict[str, Any], max_attempts: int = 3) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]`:
+   - Runs validation. If errors are found, runs self-healing on all failed fields.
+   - Repeats validation and correction up to `max_attempts` times.
+   - Returns the repaired record and any remaining errors.
+
+---
+
+## 9. Supabase Database Writer (`db_writer.py`)
+1. Setup a `DBWriter` class. Check if `SUPABASE_URL` and `SUPABASE_KEY` are provided.
+2. Verify connection by querying 1 row of the `companies_json` table.
+3. Write `build_short_json(consolidated, company_id)` to filter fields to match the `CompanyShort` schema.
+4. Implement `write_company(consolidated: Dict[str, Any]) -> Tuple[bool, str]`:
+   - Get the next sequential `company_id` (by querying the maximum ID in the database + 1, or defaulting to `1`).
+   - Build both the `CompanyShort` payload and the `CompanyFull` payload.
+   - Query the `companies_json` table. Search if a company with the same name (case-insensitive) already exists in `full_json`.
+   - **Upsert Logic**:
+     - If it exists: Update the row matching `json_id` with updated `short_json` and `full_json` payloads, keeping the original `company_id`.
+     - If it does not exist: Insert a new row containing `company_id`, `short_json`, and `full_json`.
+   - Return `(success_status, status_message)`.
+
+---
+
+## 10. Main Pipeline Orchestrator & CLI (`pipeline.py` & `main.py`)
+1. **`pipeline.py`**:
+   - Create a `CompanyIntelligencePipeline` class.
+   - Implement `run_pipeline_async(company_name: str, dry_run: bool = False)`:
+     - Run connection test.
+     - Run Claude, Gemini, and Llama research agents.
+     - Consolidate raw outputs and reconcile conflicts.
+     - Validate the consolidated record.
+     - Run the self-healing regeneration loop on validation errors.
+     - If not a dry run, write the record to Supabase.
+     - Format a detailed, structured execution report. Print the report to the console and save it to `logs/<company_name>_pipeline.log`.
+2. **`main.py`**:
+   - Parse CLI arguments:
+     - `--company`: Target company name (required).
+     - `--dry-run`: Flag to run without saving to the database.
+     - `--output`: Optional path to save the final JSON result file locally.
+   - Run the pipeline asynchronously using `asyncio.run()`.
+
+---
+
+## 11. Pipeline Logging Output Format Specifications
+The generated execution log file (`logs/<company_name>_pipeline.log`) must format report boundaries exactly like this:
+```text
+================================================================================
+                       RADIX AGENTIC PIPELINE EXECUTION
+================================================================================
+Target Company: <Company Name>
+
+[1] DATABASE CONNECTIVITY STATUS
+--------------------------------------------------------------------------------
+Supabase Status: CONNECTED SUCCESSFULLY!
+
+[2] PARALLEL RESEARCH INPUTS (RAW LLM OUTPUTS)
+--------------------------------------------------------------------------------
+>>> Researcher: CLAUDE (Model: <model_id>)
+Completeness: <XX.X>% | Validation Errors: <count>
+Raw JSON Output:
+{ ... }
+
+>>> Researcher: GEMINI (Model: <model_id>)
+...
+>>> Researcher: LLAMA (Model: <model_id>)
+...
+
+[3] CONSOLIDATION STAGE (GOLDEN RECORD MERGE)
+--------------------------------------------------------------------------------
+Conflicts/Disagreements Found: <count>
+- Field 'annual_revenue':
+    * Claude: val1
+    * Gemini: val2
+    * Llama: val3
+
+Reconciliation LLM (Model: <model_id>) Output:
+{ "annual_revenue": "val2" }
+
+Consolidated Golden Record (Pre-Validation):
+{ ... }
+
+[4] VALIDATION SUITE RESULTS (CONSOLIDATED RECORD)
+--------------------------------------------------------------------------------
+Validation Status: FAILED (<count> errors detected)
+  - Field 'logo_url': Field 'logo_url' is required but is empty or 'NA'. (Value: NA)
+
+[5] SELF-HEALING REGENERATION LOOP
+--------------------------------------------------------------------------------
+[Attempt 1/3] Consolidated record has 1 validation errors.
+  - Regenerated field 'logo_url': 'NA' -> 'https://logo.com/url.png' (Reason: Field 'logo_url' is required...)
+Validation succeeded! The record is clean and verified.
+
+[6] DATABASE WRITE STATUS
+--------------------------------------------------------------------------------
+DB Write Status: Inserted new company 'Company Name' in Supabase (company_id: 1)
+
+[7] FINAL GOLDEN RECORD SCHEMAS
+--------------------------------------------------------------------------------
+>>> SHORT JSON (9 Fields - CompanyShort Schema)
+{ ... }
+
+>>> LONG JSON (163 Fields - CompanyFull Schema)
+{ ... }
+================================================================================
+```
+
+Generate the codebase step-by-step, starting with the configurations and schemas, followed by agent files, validator, loop, database connection, and the CLI execution files. Ensure clean error handling and docstrings throughout.
