@@ -1,0 +1,492 @@
+================================================================================
+                       RADIX AGENTIC PIPELINE EXECUTION
+================================================================================
+Target Company: Google
+
+[1] DATABASE CONNECTIVITY STATUS
+--------------------------------------------------------------------------------
+Supabase Status: CONNECTED SUCCESSFULLY!
+
+[2] PARALLEL RESEARCH INPUTS (RAW LLM OUTPUTS)
+--------------------------------------------------------------------------------
+>>> Researcher: CLAUDE (Model: google/gemini-2.5-flash)
+Completeness: 0.0% | Validation Errors: 9
+Raw JSON Output:
+{
+  "name": "NA",
+  "short_name": "NA",
+  "logo_url": "NA",
+  "category": "NA",
+  "nature_of_company": "NA",
+  "incorporation_year": "NA",
+  "overview_text": "NA",
+  "headquarters_address": "NA",
+  "operating_countries": "NA",
+  "office_locations": "NA",
+  "employee_size": "NA",
+  "yoy_growth_rate": "NA",
+  "website_url": "NA",
+  "ceo_name": "NA",
+  "primary_contact_email": "NA",
+  "tech_stack": "NA",
+  "annual_revenue": "NA",
+  "glassdoor_rating": "NA",
+  "google_rating": "NA",
+  "linkedin_url": "NA"
+}
+
+>>> Researcher: GEMINI (Model: google/gemini-2.5-flash)
+Completeness: 80.0% | Validation Errors: 1
+Raw JSON Output:
+{
+  "name": "Google LLC",
+  "short_name": "Google",
+  "logo_url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+  "category": "Technology",
+  "nature_of_company": "Public",
+  "incorporation_year": 1998,
+  "overview_text": "Google is an American multinational technology company that specializes in Internet-related services and products. These include online advertising technologies, a search engine, cloud computing, software, and hardware. Google is one of the world's most valuable companies, with a market capitalization of over $1 trillion as of 2023.",
+  "headquarters_address": "1600 Amphitheatre Parkway, Mountain View, CA 94043, USA",
+  "operating_countries": "United States; Canada; United Kingdom; India; Australia; Germany; France; Japan; Brazil; Singapore; and many others",
+  "office_locations": "Mountain View, California, USA; New York City, New York, USA; London, United Kingdom; Bangalore, India; Sydney, Australia; Tokyo, Japan; Toronto, Canada; and many others",
+  "employee_size": 200000,
+  "yoy_growth_rate": "NA",
+  "website_url": "https://www.google.com",
+  "ceo_name": "Sundar Pichai",
+  "primary_contact_email": "NA",
+  "tech_stack": "Kubernetes; TensorFlow; Google Cloud Platform; Google Cloud Storage; Google Cloud Datastore; Google Cloud Bigtable; Google Cloud Pub/Sub; Google Cloud Functions; Google Cloud App Engine; Google Cloud Run; Google Cloud AI Platform; Google Cloud Data Fusion; Google Cloud Dataflow; Google Cloud Dataproc; Google Cloud Firestore; Google Cloud Spanner; Google Cloud Tasks; Google Cloud Workflows; Google Cloud Workstations; Google Cloud Source Repositories; Google Cloud Source Repositories",
+  "annual_revenue": "$257.6B (FY2022)",
+  "glassdoor_rating": "NA",
+  "google_rating": "NA",
+  "linkedin_url": "https://www.linkedin.com/company/google"
+}
+
+>>> Researcher: LLAMA (Model: meta-llama/llama-3.1-8b-instant)
+Completeness: 90.0% | Validation Errors: 1
+Raw JSON Output:
+{
+  "name": "Google LLC",
+  "short_name": "Google",
+  "logo_url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+  "category": "Technology",
+  "nature_of_company": "Public",
+  "incorporation_year": 1998,
+  "overview_text": "Google is an American multinational technology company that specializes in Internet-related services and products. These include online advertising technologies, a search engine, cloud computing, software, and hardware. Google was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University in California.",
+  "headquarters_address": "1600 Amphitheatre Parkway, Mountain View, California, USA",
+  "operating_countries": "United States; Canada; United Kingdom; Ireland; Australia; Germany; France; India; Japan; Brazil; Singapore; and many more",
+  "office_locations": "Mountain View, California, USA; New York City, New York, USA; London, United Kingdom; Dublin, Ireland; Sydney, Australia; Tokyo, Japan; and many more",
+  "employee_size": 200000,
+  "yoy_growth_rate": "NA",
+  "website_url": "https://www.google.com",
+  "ceo_name": "Sundar Pichai",
+  "primary_contact_email": "NA",
+  "tech_stack": "Google Cloud Platform; Kubernetes; TensorFlow; Python; Java; C++",
+  "annual_revenue": "182.5B (FY2022)",
+  "glassdoor_rating": "4.4",
+  "google_rating": "4.4",
+  "linkedin_url": "https://www.linkedin.com/company/google"
+}
+
+[3] CONSOLIDATION STAGE (GOLDEN RECORD MERGE)
+--------------------------------------------------------------------------------
+Conflicts/Disagreements Found: 6
+- Field 'overview_text':
+    * Claude: NA
+    * Gemini: Google is an American multinational technology company that specializes in Internet-related services and products. These include online advertising technologies, a search engine, cloud computing, software, and hardware. Google is one of the world's most valuable companies, with a market capitalization of over $1 trillion as of 2023.
+    * Llama: Google is an American multinational technology company that specializes in Internet-related services and products. These include online advertising technologies, a search engine, cloud computing, software, and hardware. Google was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University in California.
+- Field 'headquarters_address':
+    * Claude: NA
+    * Gemini: 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
+    * Llama: 1600 Amphitheatre Parkway, Mountain View, California, USA
+- Field 'operating_countries':
+    * Claude: NA
+    * Gemini: United States; Canada; United Kingdom; India; Australia; Germany; France; Japan; Brazil; Singapore; and many others
+    * Llama: United States; Canada; United Kingdom; Ireland; Australia; Germany; France; India; Japan; Brazil; Singapore; and many more
+- Field 'office_locations':
+    * Claude: NA
+    * Gemini: Mountain View, California, USA; New York City, New York, USA; London, United Kingdom; Bangalore, India; Sydney, Australia; Tokyo, Japan; Toronto, Canada; and many others
+    * Llama: Mountain View, California, USA; New York City, New York, USA; London, United Kingdom; Dublin, Ireland; Sydney, Australia; Tokyo, Japan; and many more
+- Field 'annual_revenue':
+    * Claude: NA
+    * Gemini: $257.6B (FY2022)
+    * Llama: 182.5B (FY2022)
+- Field 'tech_stack':
+    * Claude: NA
+    * Gemini: Kubernetes; TensorFlow; Google Cloud Platform; Google Cloud Storage; Google Cloud Datastore; Google Cloud Bigtable; Google Cloud Pub/Sub; Google Cloud Functions; Google Cloud App Engine; Google Cloud Run; Google Cloud AI Platform; Google Cloud Data Fusion; Google Cloud Dataflow; Google Cloud Dataproc; Google Cloud Firestore; Google Cloud Spanner; Google Cloud Tasks; Google Cloud Workflows; Google Cloud Workstations; Google Cloud Source Repositories; Google Cloud Source Repositories
+    * Llama: Google Cloud Platform; Kubernetes; TensorFlow; Python; Java; C++
+
+Reconciliation LLM (Model: google/gemini-2.5-pro) Output:
+{
+  "overview_text": "Google is an American multinational technology company that specializes in Internet-related services and products, including online advertising technologies, a search engine, cloud computing, software, and hardware. Founded in 1998 by Larry Page and Sergey Brin, Google is one of the world's most valuable companies, with a market capitalization of over $1 trillion as of 2023.",
+  "headquarters_address": "1600 Amphitheatre Parkway, Mountain View, CA 94043, USA",
+  "operating_countries": "United States; Canada; United Kingdom; Ireland; India; Australia; Germany; France; Japan; Brazil; Singapore; and many more",
+  "office_locations": "Mountain View, California, USA; New York City, New York, USA; London, United Kingdom; Dublin, Ireland; Bangalore, India; Sydney, Australia; Tokyo, Japan; Toronto, Canada; and many more",
+  "annual_revenue": "$257.6B (FY2022)",
+  "tech_stack": "Google Cloud Platform; Kubernetes; TensorFlow; Python; Java; C++; Google Cloud Storage; Google Cloud Datastore; Google Cloud Bigtable; Google Cloud Pub/Sub; Google Cloud Functions; Google Cloud App Engine; Google Cloud Run; Google Cloud AI Platform; Google Cloud Data Fusion; Google Cloud Dataflow; Google Cloud Dataproc; Google Cloud Firestore; Google Cloud Spanner; Google Cloud Tasks; Google Cloud Workflows; Google Cloud Workstations; Google Cloud Source Repositories"
+}
+
+Consolidated Golden Record (Pre-Validation):
+{
+  "name": "Google LLC",
+  "short_name": "Google",
+  "logo_url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+  "category": "Technology",
+  "incorporation_year": 1998,
+  "nature_of_company": "Public",
+  "office_count": "NA",
+  "employee_size": 200000,
+  "hiring_velocity": "NA",
+  "employee_turnover": "NA",
+  "avg_retention_tenure": "NA",
+  "pain_points_addressed": "NA",
+  "focus_sectors": "NA",
+  "offerings_description": "NA",
+  "top_customers": "NA",
+  "core_value_proposition": "NA",
+  "vision_statement": "NA",
+  "mission_statement": "NA",
+  "core_values": "NA",
+  "unique_differentiators": "NA",
+  "competitive_advantages": "NA",
+  "weaknesses_gaps": "NA",
+  "key_challenges_needs": "NA",
+  "key_competitors": "NA",
+  "technology_partners": "NA",
+  "history_timeline": "NA",
+  "recent_news": "NA",
+  "website_url": "https://www.google.com",
+  "website_quality": "NA",
+  "website_rating": "NA",
+  "website_traffic_rank": "NA",
+  "social_media_followers": "NA",
+  "glassdoor_rating": "4.4",
+  "indeed_rating": "NA",
+  "google_rating": "4.4",
+  "linkedin_url": "https://www.linkedin.com/company/google",
+  "twitter_handle": "NA",
+  "facebook_url": "NA",
+  "instagram_url": "NA",
+  "ceo_name": "Sundar Pichai",
+  "ceo_linkedin_url": "NA",
+  "key_leaders": "NA",
+  "warm_intro_pathways": "NA",
+  "decision_maker_access": "NA",
+  "primary_contact_email": "NA",
+  "primary_phone_number": "NA",
+  "contact_person_name": "NA",
+  "contact_person_title": "NA",
+  "contact_person_email": "NA",
+  "contact_person_phone": "NA",
+  "awards_recognitions": "NA",
+  "brand_sentiment_score": "NA",
+  "event_participation": "NA",
+  "regulatory_status": "NA",
+  "legal_issues": "NA",
+  "annual_profit": "NA",
+  "revenue_mix": "NA",
+  "valuation": "NA",
+  "yoy_growth_rate": "NA",
+  "profitability_status": "NA",
+  "market_share_percentage": "NA",
+  "key_investors": "NA",
+  "recent_funding_rounds": "NA",
+  "total_capital_raised": "NA",
+  "esg_ratings": "NA",
+  "sales_motion": "NA",
+  "customer_acquisition_cost": "NA",
+  "customer_lifetime_value": "NA",
+  "cac_ltv_ratio": "NA",
+  "churn_rate": "NA",
+  "net_promoter_score": "NA",
+  "customer_concentration_risk": "NA",
+  "burn_rate": "NA",
+  "runway_months": "NA",
+  "burn_multiplier": "NA",
+  "intellectual_property": "NA",
+  "r_and_d_investment": "NA",
+  "ai_ml_adoption_level": "NA",
+  "cybersecurity_posture": "NA",
+  "supply_chain_dependencies": "NA",
+  "geopolitical_risks": "NA",
+  "macro_risks": "NA",
+  "diversity_metrics": "NA",
+  "remote_policy_details": "NA",
+  "training_spend": "NA",
+  "partnership_ecosystem": "NA",
+  "exit_strategy_history": "NA",
+  "carbon_footprint": "NA",
+  "ethical_sourcing": "NA",
+  "benchmark_vs_peers": "NA",
+  "future_projections": "NA",
+  "strategic_priorities": "NA",
+  "industry_associations": "NA",
+  "case_studies": "NA",
+  "go_to_market_strategy": "NA",
+  "innovation_roadmap": "NA",
+  "product_pipeline": "NA",
+  "board_members": "NA",
+  "marketing_video_url": "NA",
+  "customer_testimonials": "NA",
+  "tech_adoption_rating": "NA",
+  "tam": "NA",
+  "sam": "NA",
+  "som": "NA",
+  "work_culture_summary": "NA",
+  "manager_quality": "NA",
+  "psychological_safety": "NA",
+  "feedback_culture": "NA",
+  "diversity_inclusion_score": "NA",
+  "ethical_standards": "NA",
+  "typical_hours": "NA",
+  "overtime_expectations": "NA",
+  "weekend_work": "NA",
+  "flexibility_level": "NA",
+  "leave_policy": "NA",
+  "burnout_risk": "NA",
+  "location_centrality": "NA",
+  "public_transport_access": "NA",
+  "cab_policy": "NA",
+  "airport_commute_time": "NA",
+  "office_zone_type": "NA",
+  "area_safety": "NA",
+  "safety_policies": "NA",
+  "infrastructure_safety": "NA",
+  "emergency_preparedness": "NA",
+  "health_support": "NA",
+  "onboarding_quality": "NA",
+  "learning_culture": "NA",
+  "exposure_quality": "NA",
+  "mentorship_availability": "NA",
+  "internal_mobility": "NA",
+  "promotion_clarity": "NA",
+  "tools_access": "NA",
+  "role_clarity": "NA",
+  "early_ownership": "NA",
+  "work_impact": "NA",
+  "execution_thinking_balance": "NA",
+  "automation_level": "NA",
+  "cross_functional_exposure": "NA",
+  "company_maturity": "NA",
+  "brand_value": "NA",
+  "client_quality": "NA",
+  "layoff_history": "NA",
+  "fixed_vs_variable_pay": "NA",
+  "bonus_predictability": "NA",
+  "esops_incentives": "NA",
+  "family_health_insurance": "NA",
+  "relocation_support": "NA",
+  "lifestyle_benefits": "NA",
+  "exit_opportunities": "NA",
+  "skill_relevance": "NA",
+  "external_recognition": "NA",
+  "network_strength": "NA",
+  "global_exposure": "NA",
+  "mission_clarity": "NA",
+  "sustainability_csr": "NA",
+  "crisis_behavior": "NA",
+  "overview_text": "Google is an American multinational technology company that specializes in Internet-related services and products, including online advertising technologies, a search engine, cloud computing, software, and hardware. Founded in 1998 by Larry Page and Sergey Brin, Google is one of the world's most valuable companies, with a market capitalization of over $1 trillion as of 2023.",
+  "headquarters_address": "1600 Amphitheatre Parkway, Mountain View, CA 94043, USA",
+  "operating_countries": "United States; Canada; United Kingdom; Ireland; India; Australia; Germany; France; Japan; Brazil; Singapore; and many more",
+  "office_locations": "Mountain View, California, USA; New York City, New York, USA; London, United Kingdom; Dublin, Ireland; Bangalore, India; Sydney, Australia; Tokyo, Japan; Toronto, Canada; and many more",
+  "annual_revenue": "$257.6B (FY2022)",
+  "tech_stack": "Google Cloud Platform; Kubernetes; TensorFlow; Python; Java; C++; Google Cloud Storage; Google Cloud Datastore; Google Cloud Bigtable; Google Cloud Pub/Sub; Google Cloud Functions; Google Cloud App Engine; Google Cloud Run; Google Cloud AI Platform; Google Cloud Data Fusion; Google Cloud Dataflow; Google Cloud Dataproc; Google Cloud Firestore; Google Cloud Spanner; Google Cloud Tasks; Google Cloud Workflows; Google Cloud Workstations; Google Cloud Source Repositories"
+}
+
+[4] VALIDATION SUITE RESULTS (CONSOLIDATED RECORD)
+--------------------------------------------------------------------------------
+Validation Status: FAILED (1 errors detected)
+  - Field 'primary_contact_email': Field 'primary_contact_email' is required but is empty or 'NA'. (Value: NA)
+
+[5] SELF-HEALING REGENERATION LOOP
+--------------------------------------------------------------------------------
+[Attempt 1/3] Consolidated record has 1 validation errors.
+  - Regenerated field 'primary_contact_email': 'NA' -> 'investor-relations@google.com' (Reason: Field 'primary_contact_email' is required but is empty or 'NA'.)
+Validation succeeded! The record is clean and verified.
+
+[6] DATABASE WRITE STATUS
+--------------------------------------------------------------------------------
+DB Write Status: Skipped (Dry Run Mode)
+
+[7] FINAL GOLDEN RECORD SCHEMAS
+--------------------------------------------------------------------------------
+>>> SHORT JSON (9 Fields - CompanyShort Schema)
+{
+  "company_id": 120,
+  "name": "Google LLC",
+  "short_name": "Google",
+  "logo_url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+  "category": "Technology",
+  "operating_countries": "United States; Canada; United Kingdom; Ireland; India; Australia; Germany; France; Japan; Brazil; Singapore; and many more",
+  "office_locations": "Mountain View, California, USA; New York City, New York, USA; London, United Kingdom; Dublin, Ireland; Bangalore, India; Sydney, Australia; Tokyo, Japan; Toronto, Canada; and many more",
+  "employee_size": 200000,
+  "yoy_growth_rate": "NA"
+}
+
+>>> LONG JSON (163 Fields - CompanyFull Schema)
+{
+  "company_id": 120,
+  "name": "Google LLC",
+  "short_name": "Google",
+  "logo_url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+  "category": "Technology",
+  "incorporation_year": 1998,
+  "overview_text": "Google is an American multinational technology company that specializes in Internet-related services and products, including online advertising technologies, a search engine, cloud computing, software, and hardware. Founded in 1998 by Larry Page and Sergey Brin, Google is one of the world's most valuable companies, with a market capitalization of over $1 trillion as of 2023.",
+  "nature_of_company": "Public",
+  "headquarters_address": "1600 Amphitheatre Parkway, Mountain View, CA 94043, USA",
+  "operating_countries": "United States; Canada; United Kingdom; Ireland; India; Australia; Germany; France; Japan; Brazil; Singapore; and many more",
+  "office_count": "NA",
+  "office_locations": "Mountain View, California, USA; New York City, New York, USA; London, United Kingdom; Dublin, Ireland; Bangalore, India; Sydney, Australia; Tokyo, Japan; Toronto, Canada; and many more",
+  "employee_size": 200000,
+  "hiring_velocity": "NA",
+  "employee_turnover": "NA",
+  "avg_retention_tenure": "NA",
+  "pain_points_addressed": "NA",
+  "focus_sectors": "NA",
+  "offerings_description": "NA",
+  "top_customers": "NA",
+  "core_value_proposition": "NA",
+  "vision_statement": "NA",
+  "mission_statement": "NA",
+  "core_values": "NA",
+  "unique_differentiators": "NA",
+  "competitive_advantages": "NA",
+  "weaknesses_gaps": "NA",
+  "key_challenges_needs": "NA",
+  "key_competitors": "NA",
+  "technology_partners": "NA",
+  "history_timeline": "NA",
+  "recent_news": "NA",
+  "website_url": "https://www.google.com",
+  "website_quality": "NA",
+  "website_rating": "NA",
+  "website_traffic_rank": "NA",
+  "social_media_followers": "NA",
+  "glassdoor_rating": "4.4",
+  "indeed_rating": "NA",
+  "google_rating": "4.4",
+  "linkedin_url": "https://www.linkedin.com/company/google",
+  "twitter_handle": "NA",
+  "facebook_url": "NA",
+  "instagram_url": "NA",
+  "ceo_name": "Sundar Pichai",
+  "ceo_linkedin_url": "NA",
+  "key_leaders": "NA",
+  "warm_intro_pathways": "NA",
+  "decision_maker_access": "NA",
+  "primary_contact_email": "investor-relations@google.com",
+  "primary_phone_number": "NA",
+  "contact_person_name": "NA",
+  "contact_person_title": "NA",
+  "contact_person_email": "NA",
+  "contact_person_phone": "NA",
+  "awards_recognitions": "NA",
+  "brand_sentiment_score": "NA",
+  "event_participation": "NA",
+  "regulatory_status": "NA",
+  "legal_issues": "NA",
+  "annual_revenue": "$257.6B (FY2022)",
+  "annual_profit": "NA",
+  "revenue_mix": "NA",
+  "valuation": "NA",
+  "yoy_growth_rate": "NA",
+  "profitability_status": "NA",
+  "market_share_percentage": "NA",
+  "key_investors": "NA",
+  "recent_funding_rounds": "NA",
+  "total_capital_raised": "NA",
+  "esg_ratings": "NA",
+  "sales_motion": "NA",
+  "customer_acquisition_cost": "NA",
+  "customer_lifetime_value": "NA",
+  "cac_ltv_ratio": "NA",
+  "churn_rate": "NA",
+  "net_promoter_score": "NA",
+  "customer_concentration_risk": "NA",
+  "burn_rate": "NA",
+  "runway_months": "NA",
+  "burn_multiplier": "NA",
+  "intellectual_property": "NA",
+  "r_and_d_investment": "NA",
+  "ai_ml_adoption_level": "NA",
+  "tech_stack": "Google Cloud Platform; Kubernetes; TensorFlow; Python; Java; C++; Google Cloud Storage; Google Cloud Datastore; Google Cloud Bigtable; Google Cloud Pub/Sub; Google Cloud Functions; Google Cloud App Engine; Google Cloud Run; Google Cloud AI Platform; Google Cloud Data Fusion; Google Cloud Dataflow; Google Cloud Dataproc; Google Cloud Firestore; Google Cloud Spanner; Google Cloud Tasks; Google Cloud Workflows; Google Cloud Workstations; Google Cloud Source Repositories",
+  "cybersecurity_posture": "NA",
+  "supply_chain_dependencies": "NA",
+  "geopolitical_risks": "NA",
+  "macro_risks": "NA",
+  "diversity_metrics": "NA",
+  "remote_policy_details": "NA",
+  "training_spend": "NA",
+  "partnership_ecosystem": "NA",
+  "exit_strategy_history": "NA",
+  "carbon_footprint": "NA",
+  "ethical_sourcing": "NA",
+  "benchmark_vs_peers": "NA",
+  "future_projections": "NA",
+  "strategic_priorities": "NA",
+  "industry_associations": "NA",
+  "case_studies": "NA",
+  "go_to_market_strategy": "NA",
+  "innovation_roadmap": "NA",
+  "product_pipeline": "NA",
+  "board_members": "NA",
+  "marketing_video_url": "NA",
+  "customer_testimonials": "NA",
+  "tech_adoption_rating": "NA",
+  "tam": "NA",
+  "sam": "NA",
+  "som": "NA",
+  "work_culture_summary": "NA",
+  "manager_quality": "NA",
+  "psychological_safety": "NA",
+  "feedback_culture": "NA",
+  "diversity_inclusion_score": "NA",
+  "ethical_standards": "NA",
+  "typical_hours": "NA",
+  "overtime_expectations": "NA",
+  "weekend_work": "NA",
+  "flexibility_level": "NA",
+  "leave_policy": "NA",
+  "burnout_risk": "NA",
+  "location_centrality": "NA",
+  "public_transport_access": "NA",
+  "cab_policy": "NA",
+  "airport_commute_time": "NA",
+  "office_zone_type": "NA",
+  "area_safety": "NA",
+  "safety_policies": "NA",
+  "infrastructure_safety": "NA",
+  "emergency_preparedness": "NA",
+  "health_support": "NA",
+  "onboarding_quality": "NA",
+  "learning_culture": "NA",
+  "exposure_quality": "NA",
+  "mentorship_availability": "NA",
+  "internal_mobility": "NA",
+  "promotion_clarity": "NA",
+  "tools_access": "NA",
+  "role_clarity": "NA",
+  "early_ownership": "NA",
+  "work_impact": "NA",
+  "execution_thinking_balance": "NA",
+  "automation_level": "NA",
+  "cross_functional_exposure": "NA",
+  "company_maturity": "NA",
+  "brand_value": "NA",
+  "client_quality": "NA",
+  "layoff_history": "NA",
+  "fixed_vs_variable_pay": "NA",
+  "bonus_predictability": "NA",
+  "esops_incentives": "NA",
+  "family_health_insurance": "NA",
+  "relocation_support": "NA",
+  "lifestyle_benefits": "NA",
+  "exit_opportunities": "NA",
+  "skill_relevance": "NA",
+  "external_recognition": "NA",
+  "network_strength": "NA",
+  "global_exposure": "NA",
+  "mission_clarity": "NA",
+  "sustainability_csr": "NA",
+  "crisis_behavior": "NA"
+}
+================================================================================
