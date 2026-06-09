@@ -29,9 +29,9 @@ def clean_node_name(model_path: str) -> str:
     clean = re.sub(r'[^a-zA-Z0-9_]', '_', name).lower()
     return clean
 
-claude_node_name = f"{clean_node_name(MODEL_CLAUDE)}"
-gemini_node_name = f"{clean_node_name(MODEL_GEMINI)}"
-llama_node_name = f"{clean_node_name(MODEL_LLAMA)}"
+claude_node_name = f"claude_{clean_node_name(MODEL_CLAUDE)}"
+gemini_node_name = f"gemini_{clean_node_name(MODEL_GEMINI)}"
+llama_node_name = f"llama_{clean_node_name(MODEL_LLAMA)}"
 consolidation_node_name = f"consolidation_{clean_node_name(MODEL_CONSOLIDATOR)}"
 
 class AgentState(TypedDict):
