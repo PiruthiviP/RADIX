@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label ''
+            customWorkspace '/Users/Shared/jenkins_workspace/RADIX-Pipeline'
+        }
+    }
 
     environment {
         // Reference to credentials ID 'ENV' configured in Jenkins (Step 7)
