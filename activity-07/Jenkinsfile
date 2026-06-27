@@ -108,7 +108,7 @@ pipeline {
                         echo 'Tearing down activity-07 containers...'
                         sh 'docker compose down --remove-orphans || true'
                         echo 'Starting company intelligence stack...'
-                        sh 'docker compose up -d'
+                        sh 'docker compose up -d --build'
                     }
                 }
             }
@@ -118,7 +118,7 @@ pipeline {
             steps {
                 ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
                     echo 'Waiting for services to initialize...'
-                    sleep 5
+                    sleep 15
                     echo 'Verifying FastAPI Service Health...'
                     sh 'curl -f http://localhost:8000/docs || curl -I http://localhost:8000/'
                     echo 'Verifying Streamlit Admin UI Availability...'
