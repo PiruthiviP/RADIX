@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend-api
+    networks:
+      - radix-network
+
+  backend-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    networks:
+      - radix-network
+
+  backend-console:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: streamlit run app_ui.py --server.port=8501 --server.address=0.0.0.0
+    ports:
+      - "8501:8501"
+    env_file:
+      - ./backend/.env
+    environment:
+      - BACKEND_API_URL=http://backend-api:8000
+    depends_on:
+      - backend-api
+    networks:
+      - radix-network
+
+networks:
+  radix-network:
+    driver: bridge

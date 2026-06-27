@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    "."
+  ],
+  "graphs": {
+    "company_intelligence": "./graph_pipeline.py:graph"
+  },
+  "env": ".env"
+}

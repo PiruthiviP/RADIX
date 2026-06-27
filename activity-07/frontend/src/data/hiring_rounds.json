@@ -1,0 +1,152 @@
+{
+"company_name": "Walmart Inc.",
+"job_role_details": [
+{
+"opportunity_type": "Employment",
+"role_title": "Software Engineer II (Global Tech)",
+"role_category": "SDE",
+"job_description": "Develop and maintain large-scale distributed systems supporting Walmart’s global e-commerce, supply chain, and retail platforms. Responsibilities include backend service development, performance optimization, system scalability, and collaboration with product and platform teams.",
+"compensation": "CTC",
+"ctc_or_stipend": 2100000,
+"bonus": "Joining bonus, annual performance bonus, stock grants (RSUs)",
+"benefits_summary": "Health insurance, stock purchase plan, hybrid work model, learning budget, meal benefits",
+"hiring_rounds": [
+{
+"round_number": 1,
+"round_name": "Online Assessment",
+"round_category": "Coding Test",
+"evaluation_type": "Technical",
+"assessment_mode": "Online",
+"skill_sets": [
+{
+"skill_set_code": "DSA",
+"typical_questions": "Find maximum sum subarray; Detect cycle in an undirected graph; Given a string, find the first non-repeating character"
+},
+{
+"skill_set_code": "COD",
+"typical_questions": "Implement inventory reconciliation logic; Write code to merge sorted arrays; Optimize a function for large input size"
+},
+{
+"skill_set_code": "APTI",
+"typical_questions": "Data interpretation on sales metrics; Logical reasoning with constraints; Basic probability question"
+}
+]
+},
+{
+"round_number": 2,
+"round_name": "Technical Interview Round 1",
+"round_category": "Interview",
+"evaluation_type": "Technical",
+"assessment_mode": "Online",
+"skill_sets": [
+{
+"skill_set_code": "DSA",
+"typical_questions": "Explain hash table collisions; Solve a binary tree traversal problem; Time complexity analysis of sorting algorithms"
+},
+{
+"skill_set_code": "OS",
+"typical_questions": "Explain multithreading; Difference between process and thread; Basics of memory management"
+},
+{
+"skill_set_code": "SQL",
+"typical_questions": "Query to find top-selling products by category; Difference between INNER and OUTER JOIN; Indexing basics"
+}
+]
+},
+{
+"round_number": 3,
+"round_name": "System Design Interview",
+"round_category": "Interview",
+"evaluation_type": "Technical",
+"assessment_mode": "Online",
+"skill_sets": [
+{
+"skill_set_code": "SYSD",
+"typical_questions": "Design an online order management system; Design a recommendation system at high level; How would you scale checkout services"
+},
+{
+"skill_set_code": "OOD",
+"typical_questions": "Design an object-oriented shopping cart; Apply design patterns for extensibility; Explain SOLID principles"
+},
+{
+"skill_set_code": "SWE",
+"typical_questions": "Handling technical debt; Writing maintainable code; Importance of automated testing"
+}
+]
+},
+{
+"round_number": 4,
+"round_name": "Managerial & HR Round",
+"round_category": "Interview",
+"evaluation_type": "HR",
+"assessment_mode": "Online",
+"skill_sets": [
+{
+"skill_set_code": "COMM",
+"typical_questions": "Describe a challenging project; How do you handle conflicting priorities; Why Walmart Global Tech"
+}
+]
+}
+]
+},
+{
+"opportunity_type": "Internship",
+"role_title": "Software Engineering Intern",
+"role_category": "SDE",
+"job_description": "Assist in building and testing software components for Walmart’s technology platforms. Interns work on real-world problems, contribute code, write tests, and collaborate with mentors in Agile teams.",
+"compensation": "Stipend",
+"ctc_or_stipend": 45000,
+"bonus": "Pre-placement offer (PPO) opportunity based on performance",
+"benefits_summary": "Mentorship, learning resources, flexible work hours, internship completion certificate",
+"hiring_rounds": [
+{
+"round_number": 1,
+"round_name": "Online Coding Test",
+"round_category": "Coding Test",
+"evaluation_type": "Technical",
+"assessment_mode": "Online",
+"skill_sets": [
+{
+"skill_set_code": "DSA",
+"typical_questions": "Reverse a linked list; Find duplicate elements in an array; Basic recursion problem"
+},
+{
+"skill_set_code": "COD",
+"typical_questions": "Write a program to validate input format; Simple string manipulation; Implement basic search logic"
+}
+]
+},
+{
+"round_number": 2,
+"round_name": "Technical Interview",
+"round_category": "Interview",
+"evaluation_type": "Technical",
+"assessment_mode": "Online",
+"skill_sets": [
+{
+"skill_set_code": "OOD",
+"typical_questions": "Basics of OOP concepts; Difference between class and object; Explain encapsulation"
+},
+{
+"skill_set_code": "COMM",
+"typical_questions": "Explain your academic projects; How do you approach problem-solving; What did you learn from your internship or coursework"
+}
+]
+},
+{
+"round_number": 3,
+"round_name": "HR Round",
+"round_category": "Interview",
+"evaluation_type": "HR",
+"assessment_mode": "Online",
+"skill_sets": [
+{
+"skill_set_code": "COMM",
+"typical_questions": "Why Walmart; Availability for internship duration; Career goals"
+}
+]
+}
+]
+}
+]
+}

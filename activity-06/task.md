@@ -1,0 +1,29 @@
+# Restructure and Rebuild Activity-06 Task List
+
+- [x] Clean and prepare the workspace
+  - [x] Back up original configurations and custom backend files (e.g. `api.py`, `app_ui.py`)
+  - [x] Delete `activity-06` directory contents
+- [x] Restore Frontend
+  - [x] Copy source files from `remix-of-the-dream-weaver-main` to `activity-06/frontend`
+  - [x] Recreate frontend `Dockerfile`
+  - [x] Recreate frontend `nginx.conf`
+- [x] Restore Backend
+  - [x] Copy backend files from `activity-05` to `activity-06/backend`
+  - [x] Recreate backend `api.py` and `app_ui.py`
+  - [x] Recreate backend `Dockerfile`
+  - [x] Ensure `requirements.txt` is updated
+- [x] Restore Configurations & Jenkinsfile
+  - [x] Recreate `docker-compose.yml`
+  - [x] Update `Jenkinsfile` at root and in `activity-06` to dynamically inject Vite environment variables during build stage
+- [x] Local and Container Verification
+  - [x] Verify local frontend builds successfully (`npm run build`)
+  - [x] Verify local backend tests pass (`python -m unittest test_pipeline_logic.py`)
+  - [x] Build and start containers locally: `docker compose up -d --build`
+  - [x] Verify frontend loads correctly and fetches data from Supabase on port 8080
+- [x] Jenkins Pipeline Stabilization & Success
+  - [x] Diagnose Jenkins `sh` hang in default workspace (caused by single quote `'` in `/Users/Piruthivi'sMacbook/`)
+  - [x] Wrap pipeline stages in robust custom workspace block `ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline')`
+  - [x] Add explicit binary search paths for NVM and Homebrew to environment `PATH`
+  - [x] Prevent `Permission denied` errors by pre-emptively removing old `.env` files in execution workspace
+  - [x] Set Jenkins job to Pipeline from Git SCM, push changes, and trigger successfully
+  - [x] Verify that build #11 succeeds with all green ticks across the entire stage graph
