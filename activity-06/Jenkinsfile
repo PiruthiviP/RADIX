@@ -8,6 +8,8 @@ pipeline {
     environment {
         // Reference to credentials ID 'ENV' configured in Jenkins (Step 7)
         ENV_CREDENTIAL = credentials('ENV')
+        // Prepend Node/npm and Homebrew paths to PATH to ensure executables are found on macOS
+        PATH = "/Users/Piruthivi'sMacbook/.nvm/versions/node/v22.20.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${env.PATH}"
     }
 
     stages {
