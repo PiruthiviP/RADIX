@@ -2,82 +2,6 @@ import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/lib/supabase';
 import { CompanyShort, CompanyFull, InnovxData, HiringRoundsData } from '@/types/company';
 
-// Map raw database categories to placement categories for standard display & filtering
-export function mapDbCategoryToPlacementCategory(rawCategory: string, companyName: string): string {
-  if (!rawCategory) return 'Regular';
-  const cat = rawCategory.toLowerCase();
-  const name = companyName.toLowerCase();
-  
-  // 1. Enterprise Category
-  if (
-    cat.includes('enterprise') || 
-    cat.includes('it services') || 
-    cat.includes('consulting') || 
-    cat.includes('large cap') || 
-    cat.includes('telecommunications') || 
-    cat.includes('aviation') || 
-    cat.includes('multinational') || 
-    cat.includes('bank') || 
-    cat.includes('aerospace & defence') ||
-    cat.includes('corporate') ||
-    cat.includes('legal technology') ||
-    cat.includes('management')
-  ) {
-    return 'Enterprise';
-  }
-  
-  // 2. Marquee Category (Top tier tech / AI / high-profile)
-  if (
-    name.includes('google') || 
-    name.includes('microsoft') || 
-    name.includes('apple') || 
-    name.includes('meta') || 
-    name.includes('amazon') || 
-    name.includes('netflix') || 
-    name.includes('nvidia') || 
-    name.includes('openai') || 
-    name.includes('servicenow') ||
-    name.includes('rubrik') ||
-    name.includes('barclays') ||
-    cat.includes('artificial intelligence') || 
-    cat.includes('cybersecurity') || 
-    cat.includes('data security') ||
-    cat.includes('cloud security')
-  ) {
-    return 'Marquee';
-  }
-  
-  // 3. Super Dream Category (Mid-to-high level fintech, SaaS, unicorns)
-  if (
-    cat.includes('saas') || 
-    cat.includes('software as a service') ||
-    cat.includes('fintech') || 
-    cat.includes('unicorn') || 
-    cat.includes('e-commerce') || 
-    cat.includes('online travel') || 
-    cat.includes('scale-up') ||
-    name.includes('blinkit') ||
-    name.includes('freshworks')
-  ) {
-    return 'SuperDream';
-  }
-  
-  // 4. Dream Category (Other tech, healthtech, logistics)
-  if (
-    cat.includes('technology') || 
-    cat.includes('health') || 
-    cat.includes('logistics') || 
-    cat.includes('edtech') || 
-    cat.includes('learning') ||
-    cat.includes('e-learning')
-  ) {
-    return 'Dream';
-  }
-  
-  // 5. Default/Regular Category
-  return 'Regular';
-}
-
 // Fetch all short JSON representations of companies (for listing, cards, dashboard)
 export function useCompaniesShort() {
   return useQuery<CompanyShort[]>({
@@ -93,15 +17,14 @@ export function useCompaniesShort() {
       }
       if (!data) return [];
       
-      return data.map((row: { company_id: number; short_json: any }) => {
+      return data.map((row: any) => {
         const short = row.short_json || {};
-        const compName = short.name ?? 'Not Available';
         return {
           company_id: row.company_id ?? 0,
-          name: compName,
+          name: short.name ?? 'Not Available',
           short_name: short.short_name ?? 'Not Available',
           logo_url: short.logo_url ?? '',
-          category: mapDbCategoryToPlacementCategory(short.category ?? '', compName),
+          category: short.category ?? 'Not Available',
           operating_countries: short.operating_countries ?? 'Not Available',
           office_locations: short.office_locations ?? 'Not Available',
           employee_size: short.employee_size ?? 'Not Available',
@@ -130,11 +53,7 @@ export function useCompanyFull(companyId: number | undefined) {
       }
       if (!data || !data.full_json) return null;
       
-      const full = data.full_json as CompanyFull;
-      if (full) {
-        full.category = mapDbCategoryToPlacementCategory(full.category ?? '', full.name ?? '');
-      }
-      return full;
+      return data.full_json as CompanyFull;
     },
     enabled: !!companyId
   });
@@ -203,7 +122,7 @@ export function useAllJobRoles() {
       }
       if (!data) return [];
       
-      return data.map((row: { company_id: number; job_role_json: any }) => ({
+      return data.map((row: any) => ({
         company_id: row.company_id,
         job_role_json: row.job_role_json as HiringRoundsData
       }));

@@ -1,9 +1,8 @@
 pipeline {
-    agent {
-        node {
-            label ''
-            customWorkspace '/Users/Shared/jenkins_workspace/RADIX-Pipeline'
-        }
+    agent any
+
+    options {
+        skipDefaultCheckout()
     }
 
     environment {
@@ -12,83 +11,116 @@ pipeline {
     }
 
     stages {
+        stage('Checkout SCM') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    checkout scm
+                }
+            }
+        }
+
         stage('Inject Environment Configuration') {
             steps {
-                echo 'Injecting .env file to backend...'
-                sh 'cp ${ENV_CREDENTIAL} activity-06/backend/.env'
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    echo 'Injecting .env file to backend...'
+                    sh 'cp "${ENV_CREDENTIAL}" activity-06/backend/.env'
+                    echo 'Generating .env file for frontend from backend credentials...'
+                    sh '''
+                    SUPABASE_URL_VAL=$(grep '^SUPABASE_URL=' activity-06/backend/.env | cut -d= -f2-)
+                    SUPABASE_ANON_KEY_VAL=$(grep '^SUPABASE_ANON_KEY=' activity-06/backend/.env | cut -d= -f2-)
+                    echo "VITE_SUPABASE_URL=${SUPABASE_URL_VAL}" > activity-06/frontend/.env
+                    echo "VITE_SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY_VAL}" >> activity-06/frontend/.env
+                    '''
+                }
             }
         }
 
         // --- FRONT-END PIPELINE ---
         stage('Frontend - Install Dependencies') {
             steps {
-                dir('activity-06/frontend') {
-                    sh 'npm install'
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('activity-06/frontend') {
+                        sh 'npm install'
+                    }
                 }
             }
         }
 
         stage('Frontend - Build & Validate') {
             steps {
-                dir('activity-06/frontend') {
-                    sh 'npm run build'
-                    sh 'npm run lint || true' // continue even if lint warnings exist
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('activity-06/frontend') {
+                        sh 'npm run build'
+                        sh 'npm run lint || true' // continue even if lint warnings exist
+                    }
                 }
             }
         }
 
         stage('Frontend - Docker Build') {
             steps {
-                sh 'docker build -t radix-frontend:latest ./activity-06/frontend'
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    sh 'docker build -t radix-frontend:latest ./activity-06/frontend'
+                }
             }
         }
 
         // --- BACK-END PIPELINE ---
         stage('Backend - Install Dependencies') {
             steps {
-                dir('activity-06/backend') {
-                    sh 'python3 -m venv venv'
-                    sh './venv/bin/pip install -r requirements.txt'
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('activity-06/backend') {
+                        sh 'python3 -m venv venv'
+                        sh './venv/bin/pip install -r requirements.txt'
+                    }
                 }
             }
         }
 
         stage('Backend - Execute Tests') {
             steps {
-                dir('activity-06/backend') {
-                    sh './venv/bin/python -m unittest test_pipeline_logic.py'
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('activity-06/backend') {
+                        sh './venv/bin/python -m unittest test_pipeline_logic.py'
+                    }
                 }
             }
         }
 
         stage('Backend - Docker Build') {
             steps {
-                sh 'docker build -t radix-backend:latest ./activity-06/backend'
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    sh 'docker build -t radix-backend:latest ./activity-06/backend'
+                }
             }
         }
 
         // --- AGENTIC ORCHESTRATION PIPELINE ---
         stage('Orchestration - Service Initialization') {
             steps {
-                dir('activity-06') {
-                    echo 'Tearing down existing containers if any...'
-                    sh 'docker compose down --remove-orphans || true'
-                    echo 'Starting company intelligence stack...'
-                    sh 'docker compose up -d'
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('activity-06') {
+                        echo 'Tearing down existing containers if any...'
+                        sh 'docker compose down --remove-orphans || true'
+                        echo 'Starting company intelligence stack...'
+                        sh 'docker compose up -d'
+                    }
                 }
             }
         }
 
         stage('Orchestration - Workflow Verification') {
             steps {
-                echo 'Waiting for services to initialize...'
-                sleep 5
-                echo 'Verifying FastAPI Service Health...'
-                sh 'curl -f http://localhost:8000/docs || curl -I http://localhost:8000/'
-                echo 'Verifying Streamlit Admin UI Availability...'
-                sh 'curl -f http://localhost:8501 || curl -I http://localhost:8501/'
-                echo 'Verifying React Frontend Portal Availability...'
-                sh 'curl -f http://localhost:8080 || curl -I http://localhost:8080/'
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    echo 'Waiting for services to initialize...'
+                    sleep 5
+                    echo 'Verifying FastAPI Service Health...'
+                    sh 'curl -f http://localhost:8000/docs || curl -I http://localhost:8000/'
+                    echo 'Verifying Streamlit Admin UI Availability...'
+                    sh 'curl -f http://localhost:8501 || curl -I http://localhost:8501/'
+                    echo 'Verifying React Frontend Portal Availability...'
+                    sh 'curl -f http://localhost:8080 || curl -I http://localhost:8080/'
+                }
             }
         }
     }

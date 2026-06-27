@@ -85,16 +85,24 @@ export function CompanyCard({ company, index = 0 }: CompanyCardProps) {
         </div>
 
         <div className="flex items-center gap-2 text-sm">
-          <TrendingUp className={cn(
-            "w-4 h-4 flex-shrink-0",
-            company.yoy_growth_rate.startsWith('-') ? 'text-destructive' : 'text-accent'
-          )} />
-          <span className={cn(
-            "font-medium",
-            company.yoy_growth_rate.startsWith('-') ? 'text-destructive' : 'text-accent'
-          )}>
-            {company.yoy_growth_rate} YoY Growth
-          </span>
+          {(() => {
+            const yoyStr = company.yoy_growth_rate !== undefined && company.yoy_growth_rate !== null ? String(company.yoy_growth_rate) : '0';
+            const isNegative = yoyStr.startsWith('-');
+            return (
+              <>
+                <TrendingUp className={cn(
+                  "w-4 h-4 flex-shrink-0",
+                  isNegative ? 'text-destructive' : 'text-accent'
+                )} />
+                <span className={cn(
+                  "font-medium",
+                  isNegative ? 'text-destructive' : 'text-accent'
+                )}>
+                  {yoyStr} YoY Growth
+                </span>
+              </>
+            );
+          })()}
         </div>
       </div>
     </motion.div>

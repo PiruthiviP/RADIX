@@ -28,21 +28,21 @@ SUPABASE_URL = os.getenv("SUPABASE_URL", "")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY") or os.getenv("SUPABASE_ANON_KEY") or ""
 
 # Researcher Model Configs
-MODEL_CLAUDE = os.getenv("MODEL_CLAUDE", "openai/gpt-4o-mini")
-MODEL_CLAUDE_FALLBACKS = ["google/gemini-2.5-flash", "meta-llama/llama-3.2-3b-instruct:free"]
+MODEL_CLAUDE = os.getenv("MODEL_CLAUDE", "google/gemini-2.5-flash")
+MODEL_CLAUDE_FALLBACKS = ["google/gemini-2.5-pro", "meta-llama/llama-3.1-8b-instant"]
 
-MODEL_GEMINI = os.getenv("MODEL_GEMINI", "perplexity/sonar-pro-search")
-MODEL_GEMINI_FALLBACKS = ["google/gemini-2.5-flash", "openai/gpt-4o-mini"]
+MODEL_GEMINI = os.getenv("MODEL_GEMINI", "google/gemini-2.5-flash")
+MODEL_GEMINI_FALLBACKS = ["google/gemini-2.5-pro", "meta-llama/llama-3.1-8b-instant"]
 
-MODEL_LLAMA = os.getenv("MODEL_LLAMA", "meta-llama/llama-3.3-70b-instruct")
-MODEL_LLAMA_FALLBACKS = ["google/gemini-2.5-flash", "meta-llama/llama-3.1-8b-instant"]
+MODEL_LLAMA = os.getenv("MODEL_LLAMA", "meta-llama/llama-3.1-8b-instant")
+MODEL_LLAMA_FALLBACKS = ["google/gemini-2.5-flash", "google/gemini-2.5-pro"]
 
 # Consolidation Model Config
 MODEL_CONSOLIDATOR = os.getenv("MODEL_CONSOLIDATOR", "google/gemini-2.5-pro")
 MODEL_CONSOLIDATOR_FALLBACK = os.getenv("MODEL_CONSOLIDATOR_FALLBACK", "google/gemini-2.5-flash")
 
 # Regeneration Model Config
-MODEL_REGENERATOR = os.getenv("MODEL_REGENERATOR", "meta-llama/llama-3.3-70b-instruct")
+MODEL_REGENERATOR = os.getenv("MODEL_REGENERATOR", "google/gemini-2.5-flash")
 MODEL_REGENERATOR_FALLBACK = os.getenv("MODEL_REGENERATOR_FALLBACK", "meta-llama/llama-3.1-8b-instant")
 
 # Web Search Tool Toggle (paid feature on OpenRouter)

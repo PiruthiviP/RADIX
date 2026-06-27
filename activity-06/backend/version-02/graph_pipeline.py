@@ -21,6 +21,10 @@ def merge_raw_results(existing: Dict[str, Any], new_value: Dict[str, Any]) -> Di
     merged.update(new_value)
     return merged
 
+# Reducer for log list to allow parallel merge
+def merge_logs(existing: List[str], new_value: List[str]) -> List[str]:
+    return (existing or []) + (new_value or [])
+
 # Clean model name for node labeling in the graph visualization
 def clean_node_name(model_path: str) -> str:
     parts = model_path.split("/")
@@ -42,7 +46,7 @@ class AgentState(TypedDict):
     errors: NotRequired[List[Dict[str, Any]]]
     attempts: NotRequired[int]
     db_status: NotRequired[str]
-    log: NotRequired[List[str]]
+    log: NotRequired[Annotated[List[str], merge_logs]]
     conflicts: NotRequired[Dict[str, Any]]
     resolved: NotRequired[Dict[str, Any]]
     pre_val_errors: NotRequired[List[Dict[str, Any]]]
@@ -58,7 +62,7 @@ def research_start_node(state: AgentState) -> Dict[str, Any]:
     print(" -> Action: Routing to parallel researcher models...")
     print("="*60)
     return {
-        "log": state.get("log", []) + ["Initiated parallel research stage"]
+        "log": ["Initiated parallel research stage"]
     }
 
 async def claude_researcher_node(state: AgentState) -> Dict[str, Any]:
@@ -73,7 +77,7 @@ async def claude_researcher_node(state: AgentState) -> Dict[str, Any]:
     results = await agent.research_company_async(state["company_name"])
     return {
         "raw_results": {"claude": results},
-        "log": state.get("log", []) + [f"Executed {claude_node_name}"]
+        "log": [f"Executed {claude_node_name}"]
     }
 
 async def gemini_researcher_node(state: AgentState) -> Dict[str, Any]:
@@ -88,7 +92,7 @@ async def gemini_researcher_node(state: AgentState) -> Dict[str, Any]:
     results = await agent.research_company_async(state["company_name"])
     return {
         "raw_results": {"gemini": results},
-        "log": state.get("log", []) + [f"Executed {gemini_node_name}"]
+        "log": [f"Executed {gemini_node_name}"]
     }
 
 async def llama_researcher_node(state: AgentState) -> Dict[str, Any]:
@@ -103,7 +107,7 @@ async def llama_researcher_node(state: AgentState) -> Dict[str, Any]:
     results = await agent.research_company_async(state["company_name"])
     return {
         "raw_results": {"llama": results},
-        "log": state.get("log", []) + [f"Executed {llama_node_name}"]
+        "log": [f"Executed {llama_node_name}"]
     }
 
 def consolidation_node(state: AgentState) -> Dict[str, Any]:
@@ -133,7 +137,7 @@ def consolidation_node(state: AgentState) -> Dict[str, Any]:
         "conflicts": conflicts,
         "resolved": resolved,
         "pre_healing_consolidated": pre_healing,
-        "log": state.get("log", []) + [f"Executed {consolidation_node_name} (resolved {len(conflicts)} conflicts)"]
+        "log": [f"Executed {consolidation_node_name} (resolved {len(conflicts)} conflicts)"]
     }
 
 def validation_check_node(state: AgentState) -> Dict[str, Any]:
@@ -150,7 +154,7 @@ def validation_check_node(state: AgentState) -> Dict[str, Any]:
         
     update_dict = {
         "errors": errors,
-        "log": state.get("log", []) + [f"Executed validation_check (found {len(errors)} errors)"]
+        "log": [f"Executed validation_check (found {len(errors)} errors)"]
     }
     if state.get("attempts", 0) == 0:
         update_dict["pre_val_errors"] = errors
@@ -186,7 +190,7 @@ def regeneration_node(state: AgentState) -> Dict[str, Any]:
         "consolidated": consolidated,
         "attempts": attempts,
         "regeneration_log": regen_log,
-        "log": state.get("log", []) + [f"Executed regeneration attempt {attempts}"]
+        "log": [f"Executed regeneration attempt {attempts}"]
     }
 
 def supabase_write_node(state: AgentState) -> Dict[str, Any]:
@@ -207,7 +211,7 @@ def supabase_write_node(state: AgentState) -> Dict[str, Any]:
         
     return {
         "db_status": db_status,
-        "log": state.get("log", []) + [f"Executed supabase_write: {db_status}"]
+        "log": [f"Executed supabase_write: {db_status}"]
     }
 
 # --- Router ---
