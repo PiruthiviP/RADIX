@@ -23,6 +23,9 @@ if LANGCHAIN_TRACING_V2 and LANGCHAIN_API_KEY:
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 OPENROUTER_API_BASE = "https://openrouter.ai/api/v1"
 
+# Gemini API Configuration
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+
 # Supabase Configuration
 SUPABASE_URL = os.getenv("SUPABASE_URL", "")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY") or os.getenv("SUPABASE_ANON_KEY") or ""
