@@ -99,12 +99,13 @@ pipeline {
             }
         }
 
-        // --- AGENTIC ORCHESTRATION PIPELINE ---
         stage('Orchestration - Service Initialization') {
             steps {
                 ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    echo 'Tearing down activity-06 containers to free up ports...'
+                    sh 'dir="activity-06"; [ -d "$dir" ] && (cd "$dir" && docker compose down --remove-orphans) || true'
                     dir('activity-07') {
-                        echo 'Tearing down existing containers if any...'
+                        echo 'Tearing down activity-07 containers...'
                         sh 'docker compose down --remove-orphans || true'
                         echo 'Starting company intelligence stack...'
                         sh 'docker compose up -d'
