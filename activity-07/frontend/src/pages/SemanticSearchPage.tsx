@@ -198,9 +198,12 @@ export default function SemanticSearchPage() {
               <select
                 value={selectedCompId}
                 onChange={(e) => {
-                  if (e.target.value) handleCompanySelect(Number(e.target.value));
+                  const val = e.target.value;
+                  setSelectedCompId(val ? Number(val) : '');
+                  if (val) handleCompanySelect(Number(val));
                 }}
                 className="w-full px-4 py-2 text-sm rounded-xl border border-border bg-background focus:outline-none focus:ring-1 focus:ring-primary"
+                disabled={companies.length === 0}
               >
                 <option value="">-- Choose Company --</option>
                 {companies.map((c) => (

@@ -45,6 +45,24 @@ ml_analytics = MLAnalytics()
 # Keep a local copy of feature importance after training
 feature_importance_cache = []
 
+def post_gemini_with_retry(url: str, json_payload: dict, max_retries: int = 3) -> dict:
+    import time
+    for attempt in range(max_retries):
+        try:
+            response = requests.post(url, json=json_payload, timeout=20)
+            if response.status_code in (503, 429):
+                logger.warning(f"Gemini API returned {response.status_code}. Retrying in 2 seconds... (Attempt {attempt+1}/{max_retries})")
+                time.sleep(2)
+                continue
+            response.raise_for_status()
+            return response.json()
+        except Exception as e:
+            if attempt == max_retries - 1:
+                raise e
+            logger.warning(f"Error calling Gemini API: {e}. Retrying in 2 seconds...")
+            time.sleep(2)
+    raise RuntimeError("Failed to reach Gemini API after retries.")
+
 import threading
 
 def run_indexing_and_training():
@@ -291,12 +309,8 @@ def chat(req: ChatRequest):
         
         # Call Gemini API
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
-        headers = {"Content-Type": "application/json"}
         payload = {"contents": contents}
-        
-        response = requests.post(url, headers=headers, json=payload, timeout=20)
-        response.raise_for_status()
-        res_json = response.json()
+        res_json = post_gemini_with_retry(url, payload)
         
         # Extract reply text
         reply = ""
@@ -355,7 +369,6 @@ def generate_recommendation(company_id: int):
     
     try:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
-        headers = {"Content-Type": "application/json"}
         payload = {
             "contents": [
                 {
@@ -363,10 +376,7 @@ def generate_recommendation(company_id: int):
                 }
             ]
         }
-        
-        response = requests.post(url, headers=headers, json=payload, timeout=20)
-        response.raise_for_status()
-        res_json = response.json()
+        res_json = post_gemini_with_retry(url, payload)
         
         reply = ""
         candidates = res_json.get("candidates", [])

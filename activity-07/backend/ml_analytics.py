@@ -31,7 +31,7 @@ class MLAnalytics:
         cluster_labels = kmeans.fit_predict(embeddings)
         
         # Apply PCA to project to 2D
-        coords_2d = self.pca.fit_predict(embeddings)
+        coords_2d = self.pca.fit_transform(embeddings)
         
         results = []
         for i, comp in enumerate(companies_with_embeddings):

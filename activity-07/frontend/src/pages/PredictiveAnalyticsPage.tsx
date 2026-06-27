@@ -294,10 +294,9 @@ export default function PredictiveAnalyticsPage() {
             <div className="flex gap-2 mb-4">
               <select
                 value={selectedRecommendId}
-                onChange={(e) => {
-                  if (e.target.value) setSelectedRecommendId(Number(e.target.value));
-                }}
+                onChange={(e) => setSelectedRecommendId(e.target.value ? Number(e.target.value) : '')}
                 className="flex-1 px-4 py-2 text-xs rounded-xl border border-border bg-background"
+                disabled={companies.length === 0}
               >
                 <option value="">-- Select Target Company --</option>
                 {companies.map((c) => (
