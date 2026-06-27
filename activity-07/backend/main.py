@@ -45,9 +45,10 @@ ml_analytics = MLAnalytics()
 # Keep a local copy of feature importance after training
 feature_importance_cache = []
 
-@app.on_event("startup")
-def startup_event():
-    logger.info("RADIX Backend Service starting up...")
+import threading
+
+def run_indexing_and_training():
+    logger.info("Background indexing and training thread started...")
     try:
         # Fetch companies from Supabase
         companies = db_client.fetch_all_companies()
@@ -63,12 +64,18 @@ def startup_event():
         if training_res.get("status") == "trained":
             global feature_importance_cache
             feature_importance_cache = training_res.get("feature_importances", [])
-            logger.info("Successfully completed startup indexing and ML training.")
+            logger.info("Background indexing and ML training completed successfully.")
         else:
-            logger.warning(f"ML Model training skipped: {training_res.get('reason')}")
-            
+            logger.warning(f"ML Model training skipped in background: {training_res.get('reason')}")
     except Exception as e:
-        logger.error(f"Error during startup initialization: {e}")
+        logger.error(f"Error in background startup indexing: {e}")
+
+@app.on_event("startup")
+def startup_event():
+    logger.info("RADIX Backend Service starting up (initializing background thread)...")
+    thread = threading.Thread(target=run_indexing_and_training, daemon=True)
+    thread.start()
+    logger.info("FastAPI startup finished (indexing deferred to background).")
 
 @app.get("/")
 def redirect_to_docs():
