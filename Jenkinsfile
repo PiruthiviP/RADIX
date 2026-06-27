@@ -25,8 +25,10 @@ pipeline {
             steps {
                 ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
                     echo 'Injecting .env file to backend...'
+                    sh 'rm -f activity-06/backend/.env'
                     sh 'cp "${ENV_CREDENTIAL}" activity-06/backend/.env'
                     echo 'Generating .env file for frontend from backend credentials...'
+                    sh 'rm -f activity-06/frontend/.env'
                     sh '''
                     SUPABASE_URL_VAL=$(grep '^SUPABASE_URL=' activity-06/backend/.env | cut -d= -f2-)
                     SUPABASE_ANON_KEY_VAL=$(grep '^SUPABASE_ANON_KEY=' activity-06/backend/.env | cut -d= -f2-)
