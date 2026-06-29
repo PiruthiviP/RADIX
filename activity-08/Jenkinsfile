@@ -1,0 +1,144 @@
+pipeline {
+    agent any
+
+    options {
+        skipDefaultCheckout()
+    }
+
+    environment {
+        // Reference to credentials ID 'ENV' configured in Jenkins (Step 7)
+        ENV_CREDENTIAL = credentials('ENV')
+        // Prepend Node/npm and Homebrew paths to PATH to ensure executables are found on macOS
+        PATH = "/Users/Piruthivi'sMacbook/.nvm/versions/node/v22.20.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${env.PATH}"
+    }
+
+    stages {
+        stage('Checkout SCM') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    checkout scm
+                }
+            }
+        }
+
+        stage('Inject Environment Configuration') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    echo 'Injecting .env file to backend...'
+                    sh 'rm -f activity-07/backend/.env'
+                    sh 'cp "${ENV_CREDENTIAL}" activity-07/backend/.env'
+                    echo 'Generating .env file for frontend from backend credentials...'
+                    sh 'rm -f activity-07/frontend/.env'
+                    sh '''
+                    SUPABASE_URL_VAL=$(grep '^SUPABASE_URL=' activity-07/backend/.env | cut -d= -f2-)
+                    SUPABASE_ANON_KEY_VAL=$(grep '^SUPABASE_ANON_KEY=' activity-07/backend/.env | cut -d= -f2-)
+                    echo "VITE_SUPABASE_URL=${SUPABASE_URL_VAL}" > activity-07/frontend/.env
+                    echo "VITE_SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY_VAL}" >> activity-07/frontend/.env
+                    '''
+                }
+            }
+        }
+
+        // --- FRONT-END PIPELINE ---
+        stage('Frontend - Install Dependencies') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('activity-07/frontend') {
+                        sh 'npm install'
+                    }
+                }
+            }
+        }
+
+        stage('Frontend - Build & Validate') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('activity-07/frontend') {
+                        sh 'npm run build'
+                        sh 'npm run lint || true' // continue even if lint warnings exist
+                    }
+                }
+            }
+        }
+
+        stage('Frontend - Docker Build') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    sh 'docker build -t radix-frontend:latest ./activity-07/frontend'
+                }
+            }
+        }
+
+        // --- BACK-END PIPELINE ---
+        stage('Backend - Install Dependencies') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('activity-07/backend') {
+                        sh 'python3 -m venv venv'
+                        sh './venv/bin/pip install -r requirements.txt'
+                    }
+                }
+            }
+        }
+
+        stage('Backend - Execute Tests') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('activity-07/backend') {
+                        sh './venv/bin/python -m unittest test_pipeline_logic.py'
+                    }
+                }
+            }
+        }
+
+        stage('Backend - Docker Build') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    sh 'docker build -t radix-backend:latest ./activity-07/backend'
+                }
+            }
+        }
+
+        stage('Orchestration - Service Initialization') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    echo 'Tearing down activity-06 containers to free up ports...'
+                    sh 'dir="activity-06"; [ -d "$dir" ] && (cd "$dir" && docker compose down --remove-orphans) || true'
+                    dir('activity-07') {
+                        echo 'Tearing down activity-07 containers...'
+                        sh 'docker compose down --remove-orphans || true'
+                        echo 'Starting company intelligence stack...'
+                        sh 'docker compose up -d --build'
+                    }
+                }
+            }
+        }
+
+        stage('Orchestration - Workflow Verification') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    echo 'Waiting for services to initialize...'
+                    sleep 15
+                    echo 'Verifying FastAPI Service Health...'
+                    sh 'curl -f http://localhost:8000/docs || curl -I http://localhost:8000/'
+                    echo 'Verifying Streamlit Admin UI Availability...'
+                    sh 'curl -f http://localhost:8501 || curl -I http://localhost:8501/'
+                    echo 'Verifying React Frontend Portal Availability...'
+                    sh 'curl -f http://localhost:8080 || curl -I http://localhost:8080/'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline Execution Completed.'
+        }
+        success {
+            echo 'Build and Deployment succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed. Check stage logs for details.'
+        }
+    }
+}
