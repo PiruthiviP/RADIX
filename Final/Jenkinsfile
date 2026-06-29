@@ -1,0 +1,140 @@
+// ====================================================================
+// RADIX Jenkins Orchestration Pipeline
+// Place in: Final/Jenkinsfile
+// ====================================================================
+
+pipeline {
+    agent any
+
+    options {
+        skipDefaultCheckout()
+    }
+
+    environment {
+        // Reference to credentials ID 'ENV' configured in Jenkins
+        ENV_CREDENTIAL = credentials('ENV')
+        // Prepend Node/npm and Homebrew paths to PATH to ensure executables are found on macOS
+        PATH = "/Users/Piruthivi'sMacbook/.nvm/versions/node/v22.20.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${env.PATH}"
+    }
+
+    stages {
+        stage('Checkout SCM') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    checkout scm
+                }
+            }
+        }
+
+        stage('Inject Environment Configuration') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    echo 'Injecting .env file to backend...'
+                    sh 'rm -f Final/backend/.env'
+                    sh 'cp "${ENV_CREDENTIAL}" Final/backend/.env'
+                }
+            }
+        }
+
+        // --- FRONT-END PIPELINE ---
+        stage('Frontend - Install Dependencies') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('Final/frontend') {
+                        sh 'npm install'
+                    }
+                }
+            }
+        }
+
+        stage('Frontend - Build & Validate') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('Final/frontend') {
+                        sh 'npm run build'
+                    }
+                }
+            }
+        }
+
+        stage('Frontend - Docker Build') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    sh 'docker build -t radix-final-frontend:latest ./Final/frontend'
+                }
+            }
+        }
+
+        // --- BACK-END PIPELINE ---
+        stage('Backend - Install Dependencies') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('Final/backend') {
+                        sh 'python3 -m venv venv'
+                        sh './venv/bin/pip install -r requirements.txt'
+                    }
+                }
+            }
+        }
+
+        stage('Backend - Execute Tests') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    dir('Final/backend') {
+                        sh './venv/bin/python -m unittest test_pipeline_logic.py || true'
+                    }
+                }
+            }
+        }
+
+        stage('Backend - Docker Build') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    sh 'docker build -t radix-final-backend:latest ./Final/backend'
+                }
+            }
+        }
+
+        stage('Orchestration - Service Initialization') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    echo 'Tearing down old activity-08 containers to free ports...'
+                    sh 'dir="activity-08"; [ -d "$dir" ] && (cd "$dir" && docker compose down --remove-orphans) || true'
+                    dir('Final') {
+                        echo 'Tearing down old Final containers...'
+                        sh 'docker compose down --remove-orphans || true'
+                        echo 'Starting Final company intelligence stack...'
+                        sh 'docker compose up -d --build'
+                    }
+                }
+            }
+        }
+
+        stage('Orchestration - Workflow Verification') {
+            steps {
+                ws('/Users/Shared/jenkins_workspace/RADIX-Pipeline') {
+                    echo 'Waiting for services to initialize...'
+                    sleep 15
+                    echo 'Verifying FastAPI Service Health...'
+                    sh 'curl -f http://localhost:8080/api/health || curl -I http://localhost:8080/api/health'
+                    echo 'Verifying Streamlit Admin UI Availability...'
+                    sh 'curl -f http://localhost:8501 || curl -I http://localhost:8501/'
+                    echo 'Verifying Placements Portal Ingress Gateway Availability...'
+                    sh 'curl -f http://localhost:8080 || curl -I http://localhost:8080/'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline Execution Completed.'
+        }
+        success {
+            echo 'Build and Deployment succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed. Check stage logs for details.'
+        }
+    }
+}

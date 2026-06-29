@@ -1,0 +1,62 @@
+# ====================================================================
+# RADIX Integrated Stack Orchestration (docker-compose)
+# Place in: Final/docker-compose.yml
+# ====================================================================
+
+services:
+  # Ingress gateway router
+  gateway:
+    image: nginx:alpine
+    container_name: radix-final-gateway
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - frontend
+      - backend-api
+    networks:
+      - radix-network
+
+  # Next.js placements portal frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: radix-final-frontend
+    environment:
+      - NODE_ENV=production
+    networks:
+      - radix-network
+
+  # FastAPI business intelligence server
+  backend-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: radix-final-backend-api
+    env_file:
+      - ./backend/.env
+    networks:
+      - radix-network
+
+  # Streamlit management supervisor console
+  backend-console:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: radix-final-backend-console
+    environment:
+      - BACKEND_API_URL=http://backend-api:8000
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8501:8501"
+    command: streamlit run app_ui.py
+    networks:
+      - radix-network
+
+networks:
+  radix-network:
+    name: radix-final-network
+    driver: bridge
