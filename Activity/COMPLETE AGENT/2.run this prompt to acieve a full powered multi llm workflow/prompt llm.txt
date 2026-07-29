@@ -1,0 +1,227 @@
+Master Prompt for Rebuilding the Zagent_001V2 Company Intelligence Application
+You can use the following comprehensive, highly detailed system instructions with a Prompt-Driven Development (PDD) agent (e.g., Cursor, GitHub Copilot Workspace, or a custom LLM coder) to recreate this production-grade, multi-provider company intelligence workflow from scratch.
+
+SYSTEM INSTRUCTION / SYSTEM PROMPT
+markdown
+
+You are a senior backend and AI architect. Your task is to build a production-grade, asynchronous company intelligence extraction system called "Zagent_001V2". The application utilizes LangGraph for orchestration, FastAPI for the API, Pydantic for validation, and Supabase for persistence.
+Below are the complete requirements, structural details, and logic definitions to build this application. Write clean, type-hinted, and robust Python code following this layout.
+---
+## 1. Project Directory Structure
+Create the project structure exactly as follows:
+zagent-001-v2/ 
+├── app/ 
+├── init.py 
+├── config.py 
+├── schemas.py 
+├── intelligence_schema.py 
+├── metadata_rules.py 
+├── validation.py 
+├── providers.py 
+├── research.py 
+├── supabase_storage.py 
+├── graph.py 
+├── service.py 
+└── main.py 
+├── .env 
+├── .env.example 
+├── .gitignore 
+├── .dockerignore 
+├── Dockerfile 
+├── docker-compose.yml 
+├── requirements.txt 
+└── supabase_schema.sql
+
+
+---
+## 2. Requirements and Dependencies (`requirements.txt`)
+Declare these dependencies exactly:
+```text
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+langgraph>=0.2.0
+langchain-core>=0.3.0
+langchain-google-genai>=2.0.0
+langchain-groq>=0.2.0
+langchain-openai>=0.1.0
+langsmith>=0.1.0
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+tavily-python>=0.5.0
+pywebview>=5.0
+supabase>=2.0.0
+3. Configuration Module (app/config.py)
+Implement configurations using dataclasses. Load values from .env using python-dotenv.
+
+AppConfig:
+app_env: defaults to "development" (from APP_ENV)
+app_name: defaults to "zagent-001-v2" (from APP_NAME)
+api_port: defaults to 8010 (from API_PORT)
+db_path: defaults to <root_dir>/data/company_intelligence.db
+metadata_path: defaults to <root_dir>/meta_data_complete.json
+max_retry_rounds: defaults to 2 (from MAX_RETRY_ROUNDS)
+research_timeout_seconds: defaults to 8 (from RESEARCH_TIMEOUT_SECONDS)
+LangSmithConfig:
+Load LANGSMITH_API_KEY, LANGSMITH_PROJECT (default "zagent-001-v2"), LANGSMITH_ENDPOINT (default "https://api.smith.langchain.com"), and LANGCHAIN_TRACING_V2 (default "true").
+Implement a method apply() that applies these settings as environment variables if LANGSMITH_API_KEY is present.
+ModelConfig:
+Gemini: gemini_api_key, gemini_model (default "gemini-2.5-flash"), gemini_web_search_enabled (boolean, default True).
+Groq: groq_api_key, groq_model (default "llama-3.3-70b-versatile"), groq_use_tavily_search (boolean, default True), tavily_api_key, tavily_max_results (default 5).
+OpenRouter: openrouter_api_key, openrouter_model (default "google/gemini-2.5-flash"), openrouter_base_url (default "https://openrouter.ai/api/v1"), openrouter_web_search_enabled (boolean, default True).
+SupabaseConfig:
+url (SUPABASE_URL), key (SUPABASE_ANON_KEY), use_supabase (boolean, default True).
+enabled property: checks if use_supabase is True and url/key are not empty.
+validate_provider_config function: Ensures at least one of GEMINI_API_KEY, GROQ_API_KEY, or OPENROUTER_API_KEY is set.
+4. API Request/Response Schemas (app/schemas.py)
+Implement the following Pydantic V2 schemas:
+
+WorkflowRequest: basic contract with company_name, question (default summary query), temperature (default 0.2).
+ProviderResult: outputs for an individual provider: provider (str), model (str), content (str), error (optional str), confidence (float, default 0.0).
+WorkflowResponse: consolidates result of basic workflow: company_name, final_answer, winner_provider, provider_results.
+HealthResponse: status (str), providers_available (list of strings).
+CompanyIntelligenceRequest: The request contract for company intelligence:
+Supports fields: companyName (Any), shortName (Any), websiteUrl (Any), logo (Any), yearOfIncorporation (Any), companyHeadquarters (Any), countriesOperatingIn (Any), natureOfCompany (Any), categoryIndustry (Any), servicesProductsOfferings (Any), employeeSize (Any), ceoName (Any), linkedInProfileUrl (Any).
+Also contains configuration overrides: temperature (float, default 0.2), maxRetryRounds (int, default 2), strictGroundingRegeneration (bool, default False).
+Method admin_payload(): Returns a dictionary of the 13 input fields only.
+ProviderDatasetStatus: accepted_fields (int), failed_fields (int), retries_used (int), status_message (str).
+CompanyIntelligenceResponse: The return payload containing:
+company_id (optional str), company_name (str), generation_timestamp (optional str), generation_status (str), total_fields (int), grounded_fields (int), generated_fields (int), profile_json (dict), provider_stats (dict of ProviderDatasetStatus keyed by provider).
+AgentRunStatus: tracks an active or finished run: run_id (str), company_name (str), stage (str), progress_percent (float), started_at (str), completed_at (optional str), elapsed_seconds (float), duration_ms (optional int), generation_status (optional str), error (optional str).
+AgentStatusResponse: global statistics: service_status (str), service_started_at (str), uptime_seconds (float), active_runs (int), total_runs (int), success_runs (int), failed_runs (int), current_runs (list of AgentRunStatus), last_run (optional AgentRunStatus).
+5. Intelligence Schema and Batches (app/intelligence_schema.py)
+Implement the structural mapping of the 165-field company profile:
+
+FieldSpec: a frozen dataclass representing a field. Properties: name (str), field_type (str), batch (str), description (str), enum_values (optional list of strings), is_admin_grounded (bool, default False).
+ADMIN_FIELDS: 13 fields with is_admin_grounded=True:
+companyName (string), shortName (string), websiteUrl (url), logo (url), yearOfIncorporation (year), companyHeadquarters (string), countriesOperatingIn (list), natureOfCompany (enum: Private, Public, Subsidiary, Government, Non-profit, Other), categoryIndustry (string), servicesProductsOfferings (list), employeeSize (string), ceoName (string), linkedInProfileUrl (url).
+BATCH_DEFINITIONS: 6 batches of generated fields containing 152 fields total:
+core_identity (26 fields): legal_entity_type, founding_story, founders, parent_company, ownership_structure, board_chair, executive_team_overview, mission_statement, vision_statement, company_values, primary_business_model, target_customer_segments, primary_geographies, hq_city, hq_country, registered_office, top_subsidiaries, business_units, core_capabilities, value_proposition, market_positioning, key_differentiators, top_competitors, industry_verticals, regulatory_status, brand_tagline.
+digital_presence (25 fields): linkedin_company_page, twitter_handle, youtube_channel, facebook_page, instagram_handle, app_store_presence, play_store_presence, developer_portal_url, documentation_url, status_page_url, support_portal_url, community_forum_url, newsletter_url, blog_url, podcast_presence, press_room_url, seo_strength, domain_authority_estimate, monthly_web_traffic_estimate, top_traffic_countries, top_traffic_channels, email_contact_pattern, careers_page_url, glassdoor_presence, g2_profile_url.
+financial_intelligence (26 fields): annual_revenue, revenue_currency, revenue_growth_rate, profitability_status, ebitda_margin, funding_total, latest_funding_round, latest_round_date, lead_investors, valuation_estimate, cash_flow_health, debt_level, burn_rate_estimate, runway_estimate, arr_estimate, capex_intensity, top_revenue_streams, customer_concentration_risk, pricing_model, contract_terms, average_contract_value, gross_margin_profile, financial_reporting_quality, credit_risk_level, mna_activity_recent, ipo_readiness_signal.
+strategy_ecosystem (25 fields): strategic_priorities, product_roadmap_signal, innovation_focus_areas, ai_adoption_maturity, cloud_strategy, technology_stack_overview, core_patents, strategic_partnerships, channel_partners, supplier_dependencies, ecosystem_role, go_to_market_motion, sales_model, customer_success_model, expansion_strategy, internationalization_stage, regulatory_exposure, cybersecurity_posture, data_privacy_posture, esg_commitment_level, sustainability_initiatives, major_risks, risk_mitigation_strategies, litigation_exposure, disruption_threat_level.
+work_culture (25 fields): workforce_distribution, hiring_velocity, attrition_signal, compensation_positioning, benefits_quality, remote_work_policy, hybrid_policy, learning_programs, leadership_style_signal, diversity_inclusion_signal, employee_sentiment, internal_mobility_strength, performance_management_style, manager_quality_signal, engineering_culture_signal, product_culture_signal, sales_culture_signal, wellbeing_programs, culture_keywords, employer_brand_strength, glassdoor_rating_estimate, interview_difficulty_signal, work_life_balance_signal, collaboration_style, decision_making_style.
+career_growth (25 fields): top_job_families, critical_hiring_roles, entry_level_opportunities, internship_program, career_progression_paths, promotion_velocity_signal, manager_to_ic_ratio, technical_ladder_maturity, leadership_development_program, mentorship_availability, certification_support, tuition_support, global_mobility_options, visa_sponsorship_signal, compensation_growth_outlook, equity_policy_signal, retention_risk_roles, skills_in_high_demand, future_skills_focus, talent_brand_narrative, candidate_experience_signal, offer_acceptance_signal, alumni_network_strength, career_stability_outlook, growth_opportunity_index.
+SchemaManager: class to manage instances of these field specs.
+Dynamically builds the field spec objects.
+Infers field types based on naming convention: matches *_url to type "url"; matches rate, margin, estimate, index to "string"; matches policies (remote_work_policy, hybrid_policy, internship_program) to "enum"; matches collections (top_traffic_countries, top_traffic_channels, etc.) to type "list"; defaults to "string".
+Maps enums to specific validation arrays: e.g. remote_work_policy -> ["Onsite", "Hybrid", "Remote", "Flexible", "Unknown"].
+Exposes totals(), returning counts of admin grounded (13), generated (152), and total (165) fields.
+6. Metadata Validation Rules (app/metadata_rules.py)
+Implement MetadataRulesManager to read metadata specifications from meta_data_complete.json:
+
+MetadataRule: dataclass representing limits: column_name (str), min_length (int or None), max_length (int or None), regex_pattern (str or None), nullability (str or None).
+Rule Loader:
+Reads meta_data_complete.json safely. Replace any unquoted string NaN values with null using regex before parsing.
+Normalizes keys to ignore casing and non-alphanumeric characters (e.g., "Company Name" becomes "companyname").
+Maps minimum_element to min_length, maximum_element to max_length, regex_pattern to regex_pattern, and nullability to nullability.
+7. Data Validation Engine (app/validation.py)
+Implement the ValidationEngine class:
+
+Value Normalizer:
+Cleans strings: strips whitespace. Maps variants of empty strings ("", "N/A", "NA", "not available", "unknown") to "NA".
+For lists: if a string is provided, split by commas, semicolons, or pipes (|) and strip items. If a list is provided, strip each item and discard empty ones.
+validate_value:
+Normalizes the value.
+Checks type constraints based on spec's field_type:
+"url": validates using urllib.parse.urlparse (must have scheme in {"http", "https"} and netloc).
+"year": matches \d{4} regex and falls in bounds 1700 <= year <= 2100.
+"enum": checks if value is within the allowed enum_values array.
+"list": validates that it is a parsed Python list.
+Scalar types (string, url, year, enum) must be instance of str.
+Validates against MetadataRulesManager rules:
+Minimum / maximum string length or list length checks.
+Regex pattern match.
+Nullability check: if rule is "Not Null" and normalized value is "NA", return a validation error.
+validate_dataset:
+Accepts a dict of key-value pairs, runs validation on all fields, and returns a tuple of (valid_dict, failed_dict) where failed_dict maps field names to error messages.
+8. Provider Integration Layer (app/providers.py)
+Create adapters to abstract and query the LLMs using LangChain:
+
+ProviderAdapter: wraps the underlying chat model.
+Method invoke(prompt): calls the model. Extracts text response and calculates a simple confidence metric based on response length and character structures. Catches exceptions and returns error messages gracefully.
+ProviderFactory:
+Gemini (gemini): Uses ChatGoogleGenerativeAI. If GEMINI_WEB_SEARCH_ENABLED is true, configures Google Search grounding inside the invoke call by supplying tool parameters: tools=[{"google_search": {}}].
+Groq (groq): Uses ChatGroq wrapping the Groq Llama model. If GROQ_USE_TAVILY_SEARCH is active, enriches the prompt by running a search query on Tavily first, formatting the output block, and prepending it to the user prompt.
+OpenRouter (openrouter): Uses ChatOpenAI configured with OpenRouter's URL.
+9. Wikipedia and HTML Scraping Research Engine (app/research.py)
+Implement ResearchEngine to gather external context:
+
+collect:
+Fetches Wikipedia page summaries using the Wikipedia REST API: https://en.wikipedia.org/api/rest_v1/page/summary/{quoted_company_name}.
+Performs a basic HTTP request to the company's homepage, strips script/style blocks and tags using regex, and keeps the first 2500 characters.
+Appends query guidelines (hints about founders, revenue, funding, competitors, etc.) to trigger search capabilities during the LLM invoke process.
+build_context:
+Merges Wikipedia summary, website content, and queries.
+Sanitizes spaces.
+Deduplicates sentences to avoid redundant paragraphs.
+Limits final context string to 12,000 characters.
+10. Supabase Storage Layer (app/supabase_storage.py)
+Implement database persistence using the Supabase client:
+
+save_provider_outputs: inserts a row for each LLM provider into the provider_outputs table. Stores the company name, a generated run UUID (company_id), LLM/model details, and the complete 165-field JSON payload. Returns the run's UUID.
+save_consolidated_profile: inserts a row into the consolidated_profiles table mapping the company_id, consolidated 165-field output profile (JSONB), sources dictionary (mapping field name to selected provider), and final status code.
+11. Orchestration Graph (app/graph.py)
+Create the core LangGraph state machine using StateGraph.
+
+WorkflowState (TypedDict):
+Tracks: admin_data (dict), temperature (float), max_retry_rounds (int), strict_grounding_regeneration (bool), schema_totals (dict), missing_fields (list), research_docs (list), research_context (str), batch_plan (dict), provider_datasets (dict of dicts), provider_stats (dict), consolidated_sources (dict), final_profile (dict), generation_status (str), progress_callback (callable).
+Nodes & Edges Layout:
+__start__ -> validate_input -> load_schema -> detect_missing -> collect_research -> build_context -> plan_batches -> generate_with_retry -> consolidate -> __end__.
+Node Logics:
+validate_input: normalizes parameters provided in the request according to the admin schemas.
+load_schema: loads total schema metrics from SchemaManager.
+detect_missing: identifies which of the 13 admin grounding inputs are empty or missing.
+collect_research: queries ResearchEngine to gather external files/data.
+build_context: builds context string for prompting.
+plan_batches: retrieves batch layout from SchemaManager.
+generate_with_retry (Batch Generation & Local Retry Loop):
+Pre-initializes provider datasets with the grounded admin inputs, mapping all generated fields to "NA".
+Creates an execution plan. If strict_grounding_regeneration is true, prepends a grounding validation step for the admin fields. Then appends the 6 generated batches.
+For each batch, prompts all LLM adapters in parallel.
+Inside the batch loop, runs a retry loop up to max_retry_rounds (default 2):
+Prompts the LLM with the list of requested fields, admin variables, and research context.
+Parses the LLM's raw text response to JSON (stripping markdown code blocks).
+Updates the provider's local dataset with values returned.
+Runs the complete dataset validation.
+Identifies fields that failed validation. If there are failed fields, runs the next retry attempt requesting only the failed fields.
+After retries are exhausted, any remaining invalid fields are locked to "NA".
+Returns updated provider datasets and statistics (accepted fields, failed fields, retries used).
+consolidate (Consensus and Fallbacks):
+For each of the generated fields, pulls the values output by all active providers.
+Resolves consensus:
+Majority Vote: If 2 or more providers agree (case-insensitive, ignoring spacing, excluding "NA" values), select that value.
+Single Non-NA Fallback: If only 1 provider returns a non-"NA" value, select that value.
+Research Consistency Overlap: If all providers differ, calculate the token overlap (words length >= 3) between each provider's value and the scraped research_context. Select the value with the highest token overlap percentage.
+If no criteria are met, default to "NA".
+Maps the selected value to final_profile and records the winning LLM provider in consolidated_sources.
+12. Service Facade (app/service.py)
+Implement the WorkflowService class to orchestrate execution, manage state, and maintain statistics:
+
+Initializes configuration classes, the provider factory, rules manager, and the LangGraph graph.
+Exposes a health check endpoint status (checks LLM availability).
+Maintains a thread-safe global registry of active runs and history (capped at 200 items).
+Exposes status objects tracking current stage, progress percentage, startup time, and uptime.
+Runs the graph invocation and saves outputs to Supabase (raw outputs & consolidated profile) if database persistence is enabled.
+13. FastAPI Server (app/main.py)
+Expose the backend using FastAPI:
+
+Start the server on startup: initialize WorkflowService globally. Catch and log startup issues safely.
+Endpoints:
+GET /health: Returns service health status and active providers.
+GET /: Metadata routing dashboard index page.
+POST /v1/company-intelligence/generate (and alias POST /v1/workflow/invoke): Accepts CompanyIntelligenceRequest, triggers the workflow synchronously, and returns a CompanyIntelligenceResponse.
+GET /v1/agent/status (and alias GET /v1/workflow/status): Returns statistics, active runs, and history.
+GET /v1/agent/status/{run_id}: Returns status for a specific execution run.
+14. Database Schema Setup (supabase_schema.sql)
+Write an idempotent SQL script to execute in Supabase SQL editor:
+
+Enable pgcrypto for UUIDs.
+Create table provider_outputs containing id (bigserial), company_id (uuid), company_name (text), timestamp (timestamptz), llm_name (text), model_name (text), parameters (jsonb), and default timestamps. Include check constraints for llm_name.
+Create table consolidated_profiles containing id (bigserial), company_id (uuid), company_name (text), timestamp (timestamptz), parameters (jsonb), sources (jsonb), and generation_status (text). Include check constraints on status values.
+Setup database indexes on company_id, company_name, and timestamp for both tables.
+Write a PL/pgSQL stored procedure store_company_profile to insert raw provider payloads and the consolidated profile in a single atomic transaction.
+Create a summary view provider_outputs_summary to aggregate outputs.
+15. Dockerization & Run configs
+Dockerfile: Build a lightweight Python 3.11 image. Install requirements. Clean build caches. Expose port 8010 and set the entrypoint to run the FastAPI app with Uvicorn.
+docker-compose.yml: Define a single service mounting local directory and loading environment variables from .env.
+.env.example: Specify placeholders for model configurations, API keys, LangSmith settings, and Supabase credentials.

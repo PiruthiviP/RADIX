@@ -21,6 +21,14 @@ def merge_raw_results(existing: Dict[str, Any], new_value: Dict[str, Any]) -> Di
     merged.update(new_value)
     return merged
 
+# Reducer for log list to deduplicate and merge logs concurrently
+def merge_logs(existing: List[str], new_value: List[str]) -> List[str]:
+    merged = list(existing or [])
+    for val in (new_value or []):
+        if val not in merged:
+            merged.append(val)
+    return merged
+
 # Clean model name for node labeling in the graph visualization
 def clean_node_name(model_path: str) -> str:
     parts = model_path.split("/")
@@ -42,7 +50,7 @@ class AgentState(TypedDict):
     errors: NotRequired[List[Dict[str, Any]]]
     attempts: NotRequired[int]
     db_status: NotRequired[str]
-    log: NotRequired[List[str]]
+    log: NotRequired[Annotated[List[str], merge_logs]]
     conflicts: NotRequired[Dict[str, Any]]
     resolved: NotRequired[Dict[str, Any]]
     pre_val_errors: NotRequired[List[Dict[str, Any]]]

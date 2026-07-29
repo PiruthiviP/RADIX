@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  zagent-api:
+    build: .
+    ports:
+      - "8010:8010"
+    volumes:
+      - .:/workspace
+      # Mount meta_data_complete.json from parent if needed, or make sure it's present
+      - ../meta_data_complete.json:/workspace/meta_data_complete.json
+    env_file:
+      - .env
+    environment:
+      - APP_ENV=development
